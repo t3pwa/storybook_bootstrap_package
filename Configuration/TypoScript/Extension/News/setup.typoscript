@@ -1,0 +1,53 @@
+plugin.tx_news.settings.orderDirection = asc
+plugin.tx_news {
+	view {
+		templateRootPaths {
+			// 0 = EXT:news/Resources/Private/Templates/
+			// 1 = {$plugin.tx_news.view.templateRootPath}
+			2 = EXT:site_package/Resources/Private/Templates/Extension/News/
+
+			10 = EXT:site_package/Resources/Private/Templates/Extension/News/
+			20 = EXT:news_filter/Resources/Private/Templates/
+
+
+		}
+/*
+		partialRootPaths {
+			0 = EXT:news/Resources/Private/Partials/
+			1 = {$plugin.tx_news.view.partialRootPath}
+		}
+
+		layoutRootPaths {
+			0 = EXT:news/Resources/Private/Layouts/
+			1 = {$plugin.tx_news.view.layoutRootPath}
+		}
+*/
+
+	}
+	settings {
+		list.media {
+			image {
+				maxWidth = 300
+				maxHeight = 300
+			}
+		}
+	}
+
+}
+
+lib.tx_news.contentElementRendering = RECORDS
+lib.tx_news.contentElementRendering {
+	tables = tt_content
+
+	conf.tt_content = TEXT
+	conf.tt_content {
+		stdWrap.field = header
+		stdWrap.typolink.parameter = {field:pid}#{field:uid}
+		stdWrap.typolink.parameter.insertData = 1
+		stdWrap.wrap = <li class="contentElementRendering Overwrite">|</li>
+	}
+	wrap = <ul>|</ul>
+
+	source.current = 1
+	dontCheckPid = 1
+}

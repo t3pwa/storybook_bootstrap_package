@@ -1,0 +1,116 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default" />
+
+<f:section name="Debug">
+
+
+    <f:comment>@ToDo add condition for environment application context</f:comment>
+    <f:comment>
+    <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+        <div class="debug">
+            extension: 'site_package',
+            template: 'General/CeCarousel',
+            CeCarousel.html
+            public/typo3conf/ext/site_package/Resources/Private/Templates/General/CeCarousel.html
+        </div>
+    </div>
+    </f:comment>
+
+
+</f:section>
+
+<f:section name="Main">
+    {f:variable(name: '_activeItemIndex', value: 1)}
+    {f:variable(name: '_activeItemIndex', value: data.pi_flexform.activeItemIndex) -> f:if(condition: '{data.pi_flexform.activeItemIndex} > -1')}
+    {f:if(condition: data.pi_flexform.headerLayout, then: data.pi_flexform.headerLayout, else: '4') -> f:variable(name: '_headingLayout')}
+    <f:comment><!-- class=" {f:if(condition:'{data.pi_flexform.style}', then:'{data.pi_flexform.style}')}" --></f:comment>
+    <div class="carousel carousel-{data.pi_flexform.transition}fade slide{f:if(condition:'{data.pi_flexform.style}', then:' {data.pi_flexform.style}')}" {f:if(condition: data.pi_flexform.interval, then: 'data-interval="{data.pi_flexform.interval}"', else: '')}
+        data-wrap="{f:if(condition:data.pi_flexform.wrap,then:'true',else:'false')}"
+        {f:if(condition: data.pi_flexform.interval, then: 'data-bs-interval="{data.pi_flexform.interval}"', else: 'data-bs-interval="4999"' )}
+        data-bs-wrap="{f:if(condition:data.pi_flexform.wrap,then:'true',else:'false')}"
+        data-ride="carousel"
+        data-bs-ride="carousel"
+        id="carousel-{data.uid}"
+    >
+        <div class="carousel-inner">
+            <f:comment>add condition for envirnment application context</f:comment>
+            <f:if condition="{children_101}">
+                <f:then>
+                    yes children
+                </f:then>
+                <f:else>
+                    no children
+                    header: {header}
+                    layout: {layout},
+                    classname: {classname},
+                    displayClass: {displayClass},
+                    positionClass: {positionClass}',
+                    link: {link},
+
+
+                    <div class="{itemClass}" data-itemno="{iterator.index}" style="{itemStyle}" >
+                        <div class="carousel-content">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{header}</h5>
+                                            <p class="card-text">{Bodytext}</p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Special title treatment</h5>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </f:else>
+            </f:if>
+
+
+            <f:for each="{children_101}" as="record" iteration="iterator">
+
+                <f:variable name="itemClass">item</f:variable>
+                <f:if condition="{iterator.isFirst}"><f:variable name="itemClass">{itemClass} active</f:variable></f:if>
+                <f:variable name="itemClass">{itemClass} carousel-item</f:variable>
+                <f:variable name="itemClass">{itemClass} carousel-item-layout-{f:if(condition: item.data.layout,then:item.data.layout,else: 'custom')}</f:variable>
+                <f:variable name="itemClass">{itemClass} carousel-item-type-{item.data.item_type}</f:variable>
+                <f:variable name="itemStyle"></f:variable>
+
+                <f:if condition="{item.data.layout} == 'custom'">
+                    <f:if condition="{item.data.background_color}"><f:variable name="itemStyle">{itemStyle} --carousel-item-background: {item.data.background_color};</f:variable></f:if>
+                    <f:if condition="{item.data.text_color}"><f:variable name="itemStyle">{itemStyle} --carousel-item-color: {item.data.text_color};</f:variable></f:if>
+                </f:if>
+
+                <div class="{itemClass}" data-itemno="{iterator.index}" style="{itemStyle}" >
+                    <div class="carousel-content">
+
+                        <!-- Render: lib.containerElements.renderContent -->
+
+                            {f:cObject(typoscriptObjectPath: 'lib.containerElements.renderContent', data: record)}
+
+
+                    </div>
+                </div>
+            </f:for>
+
+
+        </div> <!-- carousel-inner -->
+        <f:render partial="Carousel/Control/Indicator" arguments="{_all}" />
+        <f:render partial="Carousel/Control/Control" arguments="{_all}" />
+    </div>
+</f:section>
+</html>

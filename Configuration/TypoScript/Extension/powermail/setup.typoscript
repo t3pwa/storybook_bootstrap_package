@@ -1,0 +1,691 @@
+plugin.tx_powermail.settings.setup {
+    finishers {
+        1 {
+          #class = Vendor\Ext\Finisher\AddImageFinisher
+          class = Faeb\SitePackage\Finisher\ImageFinisher
+
+           # optional: Add configuration for your PHP
+           config {
+#               foo = bar
+#               fooCObject = TEXT
+#               fooCObject.value = do something with this text
+
+             # set pid.
+             pid = TEXT
+             pid.value = 359
+
+             #set powermail fields title
+             field_name = Field_Name
+             field_title = Field_Title
+
+               title = TEXT
+               title.field = title
+               title.wrap  = t: | title
+               teaser = TEXT
+               teaser.field = teaser
+               teaser.wrap = Teaser: |
+               datetime = TEXT
+               datetime.data = date:U
+
+
+             #field_place = Place
+             #field_email = E-Mail
+             #field_message = Message
+          }
+        } #1
+    }
+}
+
+
+#https://stackoverflow.com/questions/50954177/typo3-pre-select-a-powermail-select-with-a-specific-tx-news-record-through-but
+plugin.tx_powermail.settings.setup.prefill {
+
+  job = RECORDS
+  job {
+    if.isTrue.data = GP:jobid
+    dontCheckPid = 1
+    tables = tx_news_domain_model_news
+    source.data = GP:jobid
+    source.intval = 1
+    conf.tx_news_domain_model_news = TEXT
+    conf.tx_news_domain_model_news {
+        field = title
+        htmlSpecialChars = 1
+    }
+}
+
+lib.joboptions = CONTENT
+lib.joboptions {
+        table = tx_news_domain_model_news
+        select.pidInList = 156
+        renderObj = COA
+        renderObj {
+                10 = TEXT
+                10.field = title
+                20 = TEXT
+                20.value = |
+                30 = TEXT
+                30.field = uid
+                stdWrap.wrap = |[\n]
+        }
+	}
+}
+
+plugin.tx_powermail.settings.setup.prefill {
+#    # Fill field with marker {email}
+#    email = mail@domain.org
+    type = 0
+}
+
+#not used
+lib.categories = CONTENT
+lib.categories {
+   table = sys_category
+   select.pidInList = 345
+   renderObj = COA
+   renderObj {
+       10 = TEXT
+       10.field = title
+       20 = TEXT
+       20.value = |
+       30 = TEXT
+       30.field = uid
+
+       stdWrap.wrap = |[\n]
+   }
+}
+
+# needed in prefill?
+lib.getFeUserId = TEXT
+lib.getFeUserId.data = TSFE:fe_user|user|uid
+#lib.getFeUserId.data.wrap = fe_users_|
+
+# needed in prefill?
+lib.getFeUserName = TEXT
+lib.getFeUserName.data = TSFE:fe_user|user|username
+
+lib.options = TEXT
+lib.options.value = red[\n]blue[\n]pink
+
+
+#https://github.com/einpraegsam/powermail/blob/develop/Documentation/ForAdministrators/BestPractice/SavingValuesToThirdPartyTables.md
+# powermail example aswell
+plugin.tx_powermail.settings.setup {
+    # Save values to (any) table (see following example)
+    dbEntry {
+        #####################################################
+        ### EXAMPLE for adding values to table tt_news ###
+        #####################################################
+        1 {
+            # Enable or disable db entry for table tt_address/news
+			_enable = TEXT
+			_enable.value = 1
+			_table = TEXT
+			_table.value = tx_news_domain_model_news
+
+            # Write only if any field is not yet filled with current value (e.g. test if an email is already in database)
+                # default: always add new records (don't care about existing values)
+                # update: update record if there is an existing entry (e.g. if email is already there)
+                # none: no entry if field is filled (do nothing if record already exists)
+#			_ifUnique.email = update
+#			_ifUnique.email = default
+
+            # optional: add additional where clause (only in mode "update") for search if a record still exists. You could use a plain string (see example below) or a cObject if needed
+#			_ifUniqueWhereClause = AND pid = 367
+
+          # field not in news model
+#			email = TEXT
+#			email.field = email
+
+            # from fe_user
+            author_email = TEXT
+            author_email.data = TSFE:fe_user|user|username
+            author = TEXT
+            author.data = TSFE:fe_user|user|username
+
+
+            # Fill tt_address.pid with the current pid (e.g. 12)
+			pid = TEXT
+#			pid.data = TSFE:id
+            # use ts constant
+            pid.value = 359
+
+            # Fill tx_news.tstamp with the current time as timestamp (like 123456789)
+			tstamp = TEXT
+			tstamp.data = date:U
+            datetime = TEXT
+            datetime.data = date:U
+            crdate = TEXT
+            crdate.data = date:U
+
+            # Fill tt_address.address with the current formatted time (like "Date: 20.01.2013")
+#			address = TEXT
+#			address.data = date:U
+#			address.strftime = Date: %d.%m.%Y
+
+            # Fill tt_address.name with the value from powermail {firstname}
+#			name = TEXT
+#			name.field = firstname
+
+            # Fill tt_address.last_name with the value from powermail {lastname}
+#			last_name = TEXT
+#			last_name.field = lastname
+
+            # Fill tt_address.company with the value from powermail {company}
+#			company = TEXT
+#			company.field = company
+
+            # Fill tt_address.position with the uid of the mail record
+#			position = TEXT
+#			position.field = uid
+
+# necessarray?
+            #uid = TEXT
+			#uid.field = uid
+            title = TEXT
+			title.field = title
+            #title.wrap  = |
+            teaser = TEXT
+			teaser.field = teaser
+            #teaser.wrap = |
+            type = TEXT
+			type.field = type
+
+            # ToDo make COA with filename and title
+            bodytext = TEXT
+			bodytext.field = teaser
+            bodytext.wrap = body from teasert: |
+
+            #content_elements = TEXT
+            #content_elements.if.isTrue.field = external_media_source
+            #content_elements.value = 1
+
+          content_elements {
+            #value =
+            #if.value.data = page:title
+            #if.value = 1
+            #if.isTrue.field = external_media_source
+            if.value.field = external_media_source
+            if.startsWith.field = http
+
+
+          }
+
+          fal_media = TEXT
+#			fal_media {
+ #           fal_media.field = fal_media
+            #if.isTrue.field = external_media_source
+            if.value.field = fal_media
+            #if.endsWith.field = jpg
+#          }
+          fal_media.value = 1
+#            tx_md_newsfrontend_feuser = TEXT
+#            tx_md_newsfrontend_feuser.field = tx_md_newsfrontend_feuser
+        }
+
+
+        ##############################################################
+        ### EXAMPLE for building a relation to tt_address_group    ###
+        ### over the MM table tt_address_group_mm                  ###
+        ### Add relation to an existing address group with uid 123 ###
+        ##############################################################
+
+          # if external_media_source, add content_elements relation
+        2.if.isTrue.field = external_media_source
+        2 {
+
+            # Enable or disable db entry for table tt_address_group_mm
+			_enable = TEXT
+			_enable.value = 1
+            _enable.if.isTrue.field = external_media_source
+
+            # Set tableName to "tt_address_group_mm"
+			_table = TEXT
+#			_table.value = tt_address_group_mm
+            #_table.value = tx_news_domain_model_news_ttcontent_mm
+            #_table.value = tx_news_related_news
+            _table.value = tt_content
+
+
+
+            # Fill tt_address_group_mm.uid_local with uid of tt_address record from above configuration 1. (usage .field=uid_[key])
+			#uid_local = TEXT
+			#uid_local.field = uid_1
+            #uid_local.field = 1
+
+            # Fill new record of table "tt_address_group_mm" with field "uid_foreign" with uid 123
+			#uid_foreign = TEXT
+			#uid_foreign.value = uid_1
+
+#            tx_news_related_news = TEXT
+#            tx_news_related_news.field = uid_1
+
+            header = TEXT
+			header.field = header
+
+            # tt_conten has no pathsegment, news has
+#            pathsegment = TEXT
+#            pathsegment.field = {uid}_header
+
+
+            # Fill tt_address.tstamp with the current time as timestamp (like 123456789)
+            tstamp = TEXT
+            tstamp.data = date:U
+
+            crdate = TEXT
+            crdate.data = date:U
+
+            frame_class = TEXT
+            #frame_class.value = none
+            frame_class.value = 1
+
+            CType = TEXT
+			CType.value = external_media
+            external_media_source = TEXT
+            external_media_source.field = external_media_source
+
+            external_media_ratio = TEXT
+            external_media_ratio.value = 16by9
+
+            pid = TEXT
+            pid.value = 371 #news content
+
+            bodytext = TEXT
+            bodytext.field = teaser
+            bodytext.wrap = t as b: |
+
+            colPos = TEXT
+			colPos.value = 0
+
+#          fal_media.value = 1
+#            tx_md_newsfrontend_feuser = TEXT
+#            tx_md_newsfrontend_feuser.field = tx_md_newsfrontend_feuser
+#        }
+        } #2 external media source in tt_conten
+
+
+        # add relation to sys_file
+        # can we do this here instead of finischer?
+        #3.if.isTrue.field = fal_media
+        #3 {
+        #	_enable = TEXT
+		#	_enable.value = 1
+        #    _table = TEXT
+        #    _table.value = sys_file
+        #    indentifier = TEXT
+        #    indentifier.field = fal_media_file
+        #    indentifier.stdWrp = /user__upload/|
+        #    storage = TEXT
+        #    storage.value = 1
+        #    name = TEXT
+        #    name.field = fal_media_file
+        #} #3
+
+        # add fal_media relation, sys_file_reference
+        # can we do this here instead of finischer?
+
+        #4.if.isTrue.field = fal_media
+        #4 { # if image field filled
+        #    # Enable or disable db entry for table tt_address_group_mm
+		#	_enable = TEXT
+		#	_enable.value = 1
+        #    # Set tableName to "tt_address_group_mm"
+		#	_table = TEXT
+        #    _table.value = sys_file_reference
+        #
+        #    # 116
+		#	uid_foreign = TEXT
+		#	uid_foreign.field = uid_1
+        #
+        #    # 91
+        #    uid_local = TEXT
+		#	uid_local.field = uid_3
+        #    #uid_local.value = 91
+        #    tablenames = TEXT
+        #    tablenames.value = tx_news_domain_model_news
+        #    fieldname =  TEXT
+        #    fieldname.value = fal_media
+        #    table_local = TEXT
+        #    table_local.value = sys_file
+        #
+        #    pid = TEXT
+		#	pid.data = TSFE:id #366
+       #} #4
+    }
+}
+
+plugin.tx_powermail {
+  view {
+    # cat=powermail_main/file; type=string; label= Path to template root (FE)
+#    templateRootPath = EXT:powermail/Resources/Private/Templates/
+
+    # cat=powermail_main/file; type=string; label= Path to template partials (FE)
+#    partialRootPath = EXT:powermail/Resources/Private/Partials/
+
+    # cat=powermail_main/file; type=string; label= Path to template layouts (FE)
+#    layoutRootPath = EXT:powermail/Resources/Private/Layouts/
+  }
+
+  settings {
+
+    main {
+      # cat=powermail_additional//0010; type=int+; label= Storage PID: Save mails in a defined Page (normally set via Flexform)
+      pid = 359
+
+      # cat=powermail_additional//0020; type=text; label= Form Uid: Commaseparated list of forms to show (normally set via Flexform)
+      form =
+
+      # cat=powermail_additional//0030; type=boolean; label= Confirmation Page Active: Activate Confirmation Page (normally set via Flexform)
+      confirmation = 384
+
+      # cat=powermail_additional//0040; type=boolean; label= Double Optin Active: Activate Double Optin for Mail sender (normally set via Flexform)
+      optin =
+
+      # cat=powermail_additional//0050; type=boolean; label= Morestep Active: Activate Morestep Forms (normally set via Flexform)
+      moresteps =
+    }
+
+    validation {
+      # cat=powermail_additional//0100; type=boolean; label= Native Browser Validation: Validate User Input with HTML5 native browser validation on clientside
+      native = 1
+
+      # cat=powermail_additional//0110; type=boolean; label= JavaScript Browser Validation: Validate User Input with JavaScript on clientside
+      client = 1
+
+      # cat=powermail_additional//0120; type=boolean; label= PHP Server Validation: Validate User Input with PHP on serverside
+      server = 1
+    }
+
+    receiver {
+      # cat=powermail_main/enable/0200; type=boolean; label= Receiver Mail: Enable Email to Receiver
+      enable = 1
+
+      # cat=powermail_main//0210; type=boolean; label= Receiver Attachments: Add uploaded files to emails
+      attachment = 1
+
+      # cat=powermail_main//0220; type=options[both,html,plain]; label= Receiver Mail Format: Change mail format
+      mailformat = both
+
+      default {
+        # cat=powermail_additional//0230; type=text; label= Default Sender Name: Sendername if no sender name given
+        senderName = Kukurtihar
+
+        # cat=powermail_additional//0240; type=text; label= Default Sender Email: Sender-email if no sender email given
+        senderEmail = alex@fabbing.com
+      }
+
+      overwrite {
+        # cat=powermail_additional//0250; type=text; label= Receiver overwrite Email: Commaseparated list of mail receivers overwrites flexform settings (e.g. receiver1@mail.com, receiver1@mail.com)
+        email = alex@fabbing.com
+
+        # cat=powermail_additional//0252; type=text; label= Receiver overwrite Name: Receiver Name overwrites flexform settings (e.g. Receiver Name)
+        name = Kukurtihar
+
+        # cat=powermail_additional//0254; type=text; label= Receiver overwrite SenderName: Sender Name for mail to receiver overwrites flexform settings (e.g. Sender Name)
+        senderName = Kukurtihar
+
+        # cat=powermail_additional//0256; type=text; label= Receiver overwrite SenderEmail: Sender Email for mail to receiver overwrites flexform settings (e.g. sender@mail.com)
+        senderEmail = alex@fabbing.com
+
+        # cat=powermail_additional//0258; type=text; label= Receiver overwrite Mail Subject: Subject for mail to receiver overwrites flexform settings (e.g. New Mail from website)
+        subject = Kukurtihar Registration
+
+        # cat=powermail_additional//0260; type=text; label= Receiver CC Email Addresses: Commaseparated list of cc mail receivers (e.g. rec2@mail.com, rec3@mail.com)
+        cc =
+
+        # cat=powermail_additional//0262; type=text; label= Receiver BCC Email Addresses: Commaseparated list of bcc mail receivers (e.g. rec2@mail.com, rec3@mail.com)
+        bcc =
+
+        # cat=powermail_additional//0264; type=text; label= Receiver Mail Return Path: Return Path for emails to receiver (e.g. return@mail.com)
+        returnPath =
+
+        # cat=powermail_additional//0266; type=text; label= Receiver Mail Reply Mail: Reply Email address for mail to receiver (e.g. reply@mail.com)
+        replyToEmail =
+
+        # cat=powermail_additional//0268; type=text; label= Receiver Mail Reply Name: Reply Name for mail to receiver (e.g. Mr. Reply)
+        replyToName =
+
+        # cat=powermail_additional//0270; type=options[1,2,3,4,5]; label= Receiver Mail Priority: Set mail priority for mail to receiver (e.g. 3)
+        priority = 3
+      }
+
+      senderHeader {
+        # cat=powermail_additional//0060; type=text; label= Server-Mail: If set, the Mail-Header Sender is set (RFC 2822 - 3.6.2 Originator fields)
+        email = SenderHeaderEmail
+
+        # cat=powermail_additional//0070; type=text; label= Server-Name: you can define a name along with the mail address (optional)
+        name = SenderHeaderName
+      }
+    }
+
+    sender {
+      # cat=powermail_main/enable/0400; type=boolean; label= Sender Mail: Enable Email to Sender
+      enable = 1
+
+      # cat=powermail_main//0410; type=boolean; label= Sender Attachments: Add uploaded files to emails
+      attachment = 0
+
+      # cat=powermail_main//0420; type=options[both,html,plain]; label= Sender Mail Format: Change mail format
+      mailformat = both
+
+      # cat=powermail_main//0425; type=boolean; label= Add disclaimer link: Add disclaimer link to the sender email (also in optin mail)
+      addDisclaimerLink = 1
+
+      default {
+        # cat=powermail_additional//0430; type=text; label= Sender Mail - Default Sender Name: Sendername if no sender name given
+        senderName = Kukurtihar No Reply
+
+        # cat=powermail_additional//0432; type=text; label= Sender Mail - Default Sender Email: Sender email address if no sender email given
+        senderEmail = noreply@kukurtihar.com
+      }
+
+      overwrite {
+        # cat=powermail_additional//0450; type=text; label= Sender overwrite Email: Comma-separated list of mail receivers overwrites flexform settings (e.g. receiver1@mail.com, receiver1@mail.com)
+#        email = alex@fabbing.com
+
+        # cat=powermail_additional//0452; type=text; label= Sender overwrite Name: Receiver Name overwrites flexform settings (e.g. Receiver Name)
+#        name = alex@fabbing.com
+
+        # cat=powermail_additional//0454; type=text; label= Sender overwrite SenderName: Sender Name for mail to sender overwrites flexform settings (e.g. Sender Name)
+        senderName = Kukurtihar
+
+        # cat=powermail_additional//0456; type=text; label= Sender overwrite SenderEmail: Sender Email for mail to sender overwrites flexform settings (e.g. sender@mail.com)
+#        senderEmail = alex@fabbing.com
+
+        # cat=powermail_additional//0458; type=text; label= Sender overwrite Mail Subject: Subject for mail to sender overwrites flexform settings (e.g. Thx for your mail)
+        subject = Kukurtihar
+
+        # cat=powermail_additional//0460; type=text; label= Sender CC Email Addresses: Comma-separated list of cc mail receivers (e.g. rec2@mail.com, rec3@mail.com)
+        cc =
+
+        # cat=powermail_additional//0462; type=text; label= Sender BCC Email Addresses: Comma-separated list of bcc mail receivers (e.g. rec2@mail.com, rec3@mail.com)
+        bcc =
+
+        # cat=powermail_additional//0464; type=text; label= Sender Mail Return Path: Return Path for emails to sender (e.g. return@mail.com)
+        returnPath =
+
+        # cat=powermail_additional//0466; type=text; label= Sender Mail Reply Mail: Reply Email address for mail to sender (e.g. reply@mail.com)
+        replyToEmail = noreply@kukurtihar.com
+
+        # cat=powermail_additional//0468; type=text; label= Sender Mail Reply Name: Reply Name for mail to sender (e.g. Mr. Reply)
+        replyToName = No Repley
+
+        # cat=powermail_additional//0470; type=options[1,2,3,4,5]; label= Sender Mail Priority: Set mail priority for mail to sender (e.g. 3)
+        priority = 3
+      }
+
+      senderHeader {
+        # cat=powermail_additional//0060; type=text; label= Server-Mail: If set, the Mail-Header Sender is set (RFC 2822 - 3.6.2 Originator fields)
+        email = noreply@kukurtihar.com
+
+        # cat=powermail_additional//0070; type=text; label= Server-Name: you can define a name along with the mail address (optional)
+        name = Kukurtihar
+      }
+    }
+
+    db {
+      # cat=powermail_main/enable/0600; type=boolean; label= Mail Storage enabled: Store Mails in database
+      enable = 1
+
+      # cat=powermail_additional//0610; type=boolean; label= Hidden Mails in Storage: Add mails with hidden flag (e.g. 1)
+      hidden = 1
+    }
+
+    marketing {
+      # cat=powermail_additional//0700; type=boolean; label= Enable Google Conversion: Enable JavaScript for google conversion - This is interesting if you want to track every submit in your Google Adwords account for a complete conversion.
+      enable = 0
+
+      # cat=powermail_additional//0710; type=int+; label= Google Conversion Id: Add your google conversion id (see www.google.com/adwords for details)
+      #google_conversion_id = 1234567890
+
+      # cat=powermail_additional//0720; type=text; label= Google Conversion Label: Add your google conversion label (see www.google.com/adwords for details)
+      #google_conversion_label = abcdefghijklmnopqrs
+
+      # cat=powermail_additional//0730; type=text; label= Google Conversion Language: Add your google conversion language (see www.google.com/adwords for details)
+      #google_conversion_language = en
+    }
+
+    misc {
+      # cat=powermail_additional//0800; type=boolean; label= Allow html in html fields: Per default output of fields of type HTML is parsed through a htmlspecialchars() function to avoid Cross-Site-Scripting for security reasons. If you are aware of possible XSS-problems, caused by editors, you can enable it and your original HTML is shown in the Frontend.
+      htmlForHtmlFields = 0
+
+      # cat=powermail_additional//0802; type=boolean; label= Allow html in field labels: Per default labels are generated with htmlspecialchars() to prevent xss. This also disables links in labels. If you aware of possible XSS-problems, caused by editors, you can enable it.
+      htmlForLabels = 0
+
+      # cat=powermail_additional//0803; type=boolean; label= Show only filled values: If the user submits a form, even not filled values are viewable. If you only want to show labels with filled values, use this setting
+      showOnlyFilledValues = 0
+
+      # cat=powermail_additional//0805; type=boolean; label= AJAX Submit Form: Submit Powermail Forms with AJAX (browser will not reload complete page)
+      ajaxSubmit = 1
+
+      # cat=powermail_additional//0808; type=boolean; label= Enable AddQueryString: Keep GET-params in form Action (e.g. to use powermail on a tx_news detail page)
+      addQueryString = 0
+
+      # cat=powermail_additional//0810; type=text; label= Misc Upload Folder: Define the folder where files should be uploaded with upload fields (e.g. fileadmin/uploads/)
+      uploadFolder = fileadmin/uploads/tx_powermail/
+      #uploadFolder = fileadmin/
+
+      # cat=powermail_additional//0820; type=int+; label= Misc Upload Filesize: Define the maximum filesize of file uploads in bytes (10485760 Byte -> 10 MB)
+      uploadSize = 10485760
+
+      # cat=powermail_additional//0830; type=text; label= Misc Upload Fileextensions: Define the allowed filetypes with their extensions for fileuploads and separate them with commas (e.g. jpg,jpeg,gif)
+      uploadFileExtensions = jpg,jpeg,gif,png,tif,txt,doc,docx,xls,xlsx,ppt,pptx,pdf,mpg,mpeg,avi,mp3,zip,rar,ace,csv,svg,mp4,wepM
+
+      # cat=powermail_additional//0840; type=boolean; label= Randomized Filenames: Uploaded filenames can be randomized to respect data privacy
+      randomizeFileName = 1
+
+      # cat=powermail_additional//0840; type=boolean; label= Prepend original file name: Prepend original file name to randomized file name if randomizeFileName is enabled
+      randomizePrependOriginalFileName = 1
+
+      # cat=powermail_additional//0850; type=boolean; label= Debug Settings: Show all Settings from TypoScript, Flexform and Global Config in Devlog
+      debugSettings = 1
+
+      # cat=powermail_additional//0860; type=boolean; label= Debug Variables: Show all given Plugin variables from GET or POST in Devlog
+      debugVariables = 1
+
+      # cat=powermail_additional//0870; type=boolean; label= Debug Mails: Show all mail values in Devlog
+      debugMail = 1
+
+      # cat=powermail_additional//0880; type=boolean; label= Debug Save to Table: Show all values if you want to save powermail variables to another table in Devlog
+      debugSaveToTable = 1
+
+      # cat=powermail_additional//0890; type=boolean; label= Debug Spamshield: Show Spamshield Functions in Devlog
+      debugSpamshield = 0
+    }
+
+    spamshield {
+      # cat=powermail_spam//0900; type=boolean; label= SpamShield Active: En- or disable Spamshield for Powermail
+      enable = 1
+
+      # cat=powermail_spam//0910; type=int+; label= Spamshield Spamfactor in %: Set limit for spamfactor in powermail forms in % (e.g. 85)
+      factor = 80
+
+      # cat=powermail_spam//0920; type=text; label= Spamshield Notifymail: Admin can get an email if he/she wants to get informed if a mail failed. Let this field empty and no mail will be sent (e.g. admin@mail.com)
+      email =
+
+      # cat=powermail_spam//0925; type=text; label= Spamshield Notifymail sendermail: Define sender email address for mails
+      senderEmail =
+
+      # cat=powermail_spam//0930; type=text; label= Spamshield Notifymail Subject: Subject for notification Email to Admin
+      emailSubject = Spam in powermail form recognized
+
+      # cat=powermail_spam//0940; type=text; label= Spamshield Notifymail Template: Template for notification Email to Admin
+      emailTemplate = EXT:powermail/Resources/Private/Templates/Mail/SpamNotification.html
+
+      # cat=powermail_spam//0950; type=text; label= Spamshield Log Template Location: Path of log file, ie. typo3temp/logs/powermail_spam.log, if empty, logging is deactivated
+      logfileLocation =
+
+      # cat=powermail_spam//0960; type=text; label= Spamshield Log Template: Template for entries written to log file
+      logTemplate = EXT:powermail/Resources/Private/Templates/Log/SpamNotification.html
+    }
+
+    captcha {
+      # cat=powermail_spam//0930; type=text; label= Captcha Background: Set own captcha background image (e.g. fileadmin/bg.png)
+      image = EXT:powermail/Resources/Private/Image/captcha_bg.png
+
+      # cat=powermail_spam//0940; type=text; label= Captcha Font: Set TTF-Font for captcha image (e.g. fileadmin/font.ttf)
+      font = EXT:powermail/Resources/Private/Fonts/Segment16cBold.ttf
+
+      # cat=powermail_spam//0950; type=text; label= Captcha Text Color: Define your text color in hex code - must start with # (e.g. #ff0000)
+      textColor = #111111
+
+      # cat=powermail_spam//0960; type=int+; label= Captcha Text Size: Define your text size in px (e.g. 24)
+      textSize = 32
+
+      # cat=powermail_spam//0970; type=text; label= Captcha Text Angle: Define two different values (start and stop) for your text random angle and separate it with a comma (e.g. -10,10)
+      textAngle = -5,5
+
+      # cat=powermail_spam//0980; type=text; label= Captcha Text Distance Hor: Define two different values (start and stop) for your text horizontal random distance and separate it with a comma (e.g. 20,80)
+      distanceHor = 20,100
+
+      # cat=powermail_spam//0990; type=text; label= Captcha Text Distance Ver: Define two different values (start and stop) for your text vertical random distance and separate it with a comma (e.g. 30,60)
+      distanceVer = 30,45
+    }
+
+    # CSS classes for frameworks (add only if bootstrapClassesAndLayout is not added before)
+    styles {
+      framework {
+        # cat=powermail_styles//0020; type=int+; label= Number of columns
+        numberOfColumns = 0
+
+        # cat=powermail_styles//0100; type=text; label= Framework classname(s) for containers to build rows
+        rowClasses = row
+
+        # cat=powermail_styles//0105; type=text; label= Framework classname(s) for form "form-horizontal"
+        formClasses =
+
+        # cat=powermail_styles//0110; type=text; label= Framework classname(s) for overall wrapping container of a field/label pair e.g. "row form-group"
+        fieldAndLabelWrappingClasses =
+
+        # cat=powermail_styles//0120; type=text; label= Framework classname(s) for wrapping container of a field e.g. "row form-group"
+        fieldWrappingClasses = powermail_field
+
+        # cat=powermail_styles//0130; type=text; label= Framework classname(s) for fieldlabels e.g. "col-md-2 col-md-3"
+        labelClasses = powermail_label
+
+        # cat=powermail_styles//0140; type=text; label= Framework classname(s) for fields e.g. "form-control"
+        fieldClasses = form-control
+
+        # cat=powermail_styles//0150; type=text; label= Framework classname(s) for fields with an offset e.g. "col-sm-offset-2"
+        offsetClasses =
+
+        # cat=powermail_styles//0160; type=text; label= Framework classname(s) especially for radiobuttons e.g. "radio"
+        radioClasses = radio
+
+        # cat=powermail_styles//0170; type=text; label= Framework classname(s) especially for checkboxes e.g. "check"
+        checkClasses = checkbox
+
+        # cat=powermail_styles//0180; type=text; label= Framework classname(s) for the submit button e.g. "btn btn-primary"
+        submitClasses = powermail_submit
+
+        # cat=powermail_styles//0190; type=text; label= Framework classname(s) for "create" message after submit
+        createClasses = powermail_create
+      }
+
+      bootstrap {
+        # cat=powermail_styles//0200; type=boolean; label= Activate bootstrap classes (constants in {$plugin.tx_powermail.settings.styles.bootstrap.*} override {$plugin.tx_powermail.settings.styles.framework.*})
+        important = 0
+      }
+    }
+  } #settings
+}

@@ -1,0 +1,151 @@
+plugin.tx_cart {
+    view {
+        templateRootPath = EXT:cart/Resources/Private/Templates/
+        partialRootPath = EXT:cart/Resources/Private/Partials/
+        layoutRootPath = EXT:cart/Resources/Private/Layouts/
+    }
+
+    taxClasses {
+        1 {
+            # cat=plugin.cart//0160; type=text; label= Tax rate: Enter the tax value for this tax class item (e.g. 19). Value will be displayed.
+            value = 19
+            # cat=plugin.cart//0161; type=text; label= Tax rate: Enter the tax rate for this tax class item (e.g. 0.19). Used for calculation.
+            calc = 0.19
+            # cat=plugin.cart//0162; type=text; label= Tax rate: Enter the name for this tax class item (e.g. normal). Value can be displayed.
+            name = normal
+        }
+
+        2 {
+            # cat=plugin.cart//0170; type=text; label= Tax rate: Enter the tax value for this tax class item (e.g. 7). Value will be displayed.
+            value = 7
+            # cat=plugin.cart//0171; type=text; label= Tax rate: Enter the tax rate for this tax class item (e.g. 0.07). Used for calculation.
+            calc = 0.07
+            # cat=plugin.cart//0172; type=text; label= Tax rate: Enter the name for this tax class item (e.g. reduced). Value can be displayed.
+            name = reduced
+        }
+
+        3 {
+            # cat=plugin.cart//0180; type=text; label= Tax rate: Enter the tax value for this tax class item (e.g. 0). Value will be displayed.
+            value = 0
+            # cat=plugin.cart//0181; type=text; label= Tax rate: Enter the tax rate for this tax class item (e.g. 0.19). Used for calculation.
+            calc = 0.00
+            # cat=plugin.cart//0182; type=text; label= Tax rate: Enter the name for this tax class item (e.g. free). Value can be displayed.
+            name = free
+        }
+    }
+
+    orderNumber {
+        # cat=plugin.cart//0600; type=text; label= Prefix (prepend) for order confirmation number (e.g. DE).
+        prefix =
+        # cat=plugin.cart//0610; type=text; label= Suffix (append) for order confirmation number (e.g. O).
+        suffix =
+        # cat=plugin.cart//0620; type=int+; label= Offset for order confirmation number: The offset is added to the order confirmation number (e.g. if the offset is 999 the first order confirmation number will be 1000).
+        offset =
+    }
+
+    invoiceNumber {
+        # cat=plugin.cart//0630; type=text; label= Prefix (prepend) for invoice number (e.g. DE).
+        prefix =
+        # cat=plugin.cart//0640; type=text; label= Suffix (append) for invoice number (e.g. I).
+        suffix =
+        # cat=plugin.cart//0650; type=int+; label= Offset for invoice number: The offset is added to the invoice number (e.g. if the offset is 999 the first invoice number will be 1000).
+        offset =
+    }
+
+    deliveryNumber {
+        # cat=plugin.cart//0660; type=text; label= Prefix (prepend) for delivery note number (e.g. DE).
+        prefix =
+        # cat=plugin.cart//0670; type=text; label= Suffix (append) for delivery note number (e.g. I).
+        suffix =
+        # cat=plugin.cart//0680; type=int+; label= Offset for delivery note number: The offset is added to the delivery note number (e.g. if the offset is 999 the first delivery note number will be 1000).
+        offset =
+    }
+
+    settings {
+        addToCartByAjax = 2278001
+
+        format.currency {
+            currencySign       = &euro;
+            decimalSeparator   = ,
+            thousandsSeparator = .
+            prependCurrency    = false
+            separateCurrency   = true
+            decimals           = 2
+        }
+
+        validation {
+            orderItem {
+                fields {
+                    acceptTermsAndConditions {
+                        validator = Boolean
+                        options.is = true
+                    }
+                    acceptRevocationInstruction {
+                        validator = Boolean
+                        options.is = true
+                    }
+                    acceptPrivacyPolicy {
+                        validator = Boolean
+                        options.is = true
+                    }
+                }
+            }
+            billingAddress {
+                fields {
+                    salutation.validator = NotEmpty
+                    firstName.validator = NotEmpty
+                    lastName.validator = NotEmpty
+                    email.validator = NotEmpty
+                    phone.validator = Empty
+                    fax.validator = Empty
+                    street.validator = NotEmpty
+                    streetNumber.validator = Empty
+                    addition.validator = Empty
+                    zip.validator = NotEmpty
+                    city.validator = NotEmpty
+                }
+            }
+            shippingAddress {
+                fields {
+                    salutation.validator = NotEmpty
+                    firstName.validator = NotEmpty
+                    lastName.validator = NotEmpty
+                    email.validator = NotEmpty
+                    phone.validator = Empty
+                    fax.validator = Empty
+                    street.validator = NotEmpty
+                    streetNumber.validator = Empty
+                    addition.validator = Empty
+                    zip.validator = NotEmpty
+                    city.validator = NotEmpty
+                }
+            }
+        }
+    }
+}
+
+
+########################
+
+plugin.tx_cart {
+    settings {
+        cart {
+            pid = 352
+            isNetCart = 1
+            steps = 3
+        }
+        order {
+            pid = 5
+        }
+        addToCartByAjax = 2278001
+        autoGenerateNumbers = order
+        itemsPerPage = 25
+    }
+}
+
+plugin.tx_cart.orderNumber.offset = 0
+plugin.tx_cart.invoiceNumber.offset = 0
+plugin.tx_cart.deliveryNumber.offset = 0
+plugin.tx_cart.steps = 3
+plugin.tx_cart.settings.cart.steps = 3
+plugin.tx_cart.settings.cart.pid = 352

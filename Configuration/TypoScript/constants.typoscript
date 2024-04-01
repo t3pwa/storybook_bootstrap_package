@@ -1,0 +1,58 @@
+plugin.tx_sitepackage {
+	settings {
+		 # cat=plugin.tx_site_package/a; type=int+; label=Editor FE Usergroup uid:Enter the uid of the FE Usergroup that should be allowed to edit Blogs and Post in the frontend
+		editorUsergroupUid = 1
+	}
+	view {
+		 # cat=plugin.tx_site_package/file; type=string; label=Path to template root (FE)
+		#templateRootPath = EXT:site_package/Resources/Private/Templates/
+		templateRootPath = EXT:site_package/Resources/Private/Templates/Extension/bootstrap_package
+
+		 # cat=plugin.tx_site_package/file; type=string; label=Path to template partials (FE)
+		#partialRootPath = EXT:site_package/Resources/Private/Partials/
+		partialRootPath = EXT:site_package/Resources/Private/Partials/Extension/bootstrap_package
+
+		 # cat=plugin.tx_site_package/file; type=string; label=Path to template layouts (FE)
+		#layoutRootPath = EXT:site_package/Resources/Private/Layouts/
+		layoutRootPath = EXT:site_package/Resources/Private/Layouts/Extension/bootstrap_package
+	}
+
+	persistence {
+		 # cat=plugin.tx_blogexample//a; type=int+; label=Default storage PID
+		storagePid = 359
+	}
+}
+
+
+plugin.tx_bootstrappackage.view {
+	# cat=bootstrap package: templates/200/layoutRootPath; type=string; label=Layout Root Path: Path to layouts
+	#layoutRootPath = EXT:bootstrap_package/Resources/Private/Layouts/
+	layoutRootPath = EXT:site_package/Resources/Private/Layouts/Extension/bootstrap_package/
+	# cat=bootstrap package: templates/200/partialRootPath; type=string; label=Partial Root Path: Path to partials
+	#partialRootPath = EXT:bootstrap_package/Resources/Private/Partials/
+	partialRootPath = EXT:bootstrap_package/Resources/Private/Partials/Extension/bootstrap_package/
+	# cat=bootstrap package: templates/200/templateRootPath; type=string; label=Template Root Path: Path to templates
+	#templateRootPath = EXT:bootstrap_package/Resources/Private/Templates/
+	templateRootPath = EXT:bootstrap_package/Resources/Private/Templates/Extension/bootstrap_package/
+}
+
+module.tx_sitepackage {
+	view {
+
+		templateRootPaths.50 = EXT:site_package/Resources/Private/Templates/
+		# cat=module.tx_site_package/file; type=string; label=Path to template root (BE)
+		templateRootPath = EXT:site_package/Resources/Private/Backend/Templates/
+
+		partialRootPaths.50 = EXT:site_package/Resources/Private/Partials/
+		# cat=module.tx_site_package/file; type=string; label=Path to template partials (BE)
+		partialRootPath = EXT:site_package/Resources/Private/Partials/
+
+		layoutRootPaths.50 = EXT:site_package/Resources/Private/Backend/Layouts/
+		# cat=module.tx_site_package/file; type=string; label=Path to template layouts (BE)
+		layoutRootPath = EXT:site_package/Resources/Private/Backend/Layouts/
+	}
+}
+
+## Cart Constants
+@import 'EXT:site_package/Configuration/TypoScript/Extension/cart/constants.typoscript'
+@import 'EXT:site_package/Configuration/TypoScript/Extension/cart_products/constants.typoscript'

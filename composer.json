@@ -1,0 +1,41 @@
+{
+	"name": "faeb/site-package",
+	"type": "typo3-cms-extension",
+	"description": "Fäb SitePackage (based on b13/bolt)",
+	"homepage": "https://github.com/b13/bolt",
+	"license": "GPL-2.0-or-later",
+	"version": "0.1.2",
+	"keywords": ["TYPO3 CMS", "Integrators", "Site Extension", "Site Package", "TypoScript", "Blog", "Videoprocessing"],
+	"require": {
+		"php": "^7.2 || ^8.0",
+		"typo3/cms-core": "^10.4 || ^11.0",
+		"b13/container": "^2.3",
+		"b13/container-example": "dev-master",
+		"buepro/typo3-container-elements": "dev-main"
+	},
+	"minimum-stability": "dev",
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "site_package"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Faeb\\SitePackage\\": "Classes"
+		}
+	},
+	"require-dev": {
+		"typo3/coding-standards": "^0.4.0",
+		"typo3/tailor": "^1.1"
+	},
+	"config": {
+		"sort-packages": true
+	},
+	"scripts": {
+		"php:cs": "@composer exec php-cs-fixer fix"
+	},
+	"replace": {
+		"cites": "self.version",
+		"typo3-ter/cites": "self.version"
+	}
+}

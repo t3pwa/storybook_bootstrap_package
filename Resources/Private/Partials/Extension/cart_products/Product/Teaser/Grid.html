@@ -1,0 +1,96 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:cartproducts="http://typo3.org/ns/Extcode/CartProducts/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:section name="GridItem">
+    <div class="col">
+
+        {product.appearance}:
+        <pre>{product.appearance}</pre>
+
+        <div class="card h-100">
+            <div class="card-header">
+                <span class="category">{product.category.title}</span>
+                <span class="tags">{product.tag.title}</span>
+            </div>
+            <f:if condition="{product.images}">
+                <cartproducts:link.product pluginName="Products" product="{product}"settings="{settings}">
+                    <f:image src="{product.firstImage.originalResource.originalFile.uid}"
+                             title="{product.firstImage.originalResource.title}"
+                             alt="{product.firstImage.originalResource.title}"
+
+                             width="{settings.listAction.media.image.size.small.maxWidth}"
+                             height="{settings.listAction.media.image.size.small.maxHeight}"
+
+                             width="{settings.listAction.media.image.size.medium.maxWidth}"
+                             height="{settings.listAction.media.image.size.medium.maxHeight}"
+
+                             class="card-img-top"
+                    />
+                </cartproducts:link.product>
+            </f:if>
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <cartproducts:link.product pluginName="Products" product="{product}"settings="{settings}">
+                        {product.title}
+                    </cartproducts:link.product>
+                </h5>
+
+                <f:if condition="{product.teaser}">
+                    <f:then>
+                        <p class="card-text">
+                            <f:format.html>{product.teaser}</f:format.html>
+                        </p>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{product.description}">
+                            <f:then>
+                                <p class="card-text">
+                                    <f:format.html>{product.description}</f:format.html>
+                                </p>
+                            </f:then>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary">
+                    <f:render partial="Product/Price"arguments="{product: product,settings: settings,currencyTranslationData:currencyTranslationData}">
+                    </f:render>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</f:section>
+
+<f:for each="{products}" as="product" iteration="iterator">
+    <f:if condition="{iterator.isFirst}">
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+    </f:if>
+    <f:if condition="{iterator.cycle} % 3">
+        <f:then>
+
+            <f:render section="GridItem" arguments="{_all}"/>
+
+        </f:then>
+        <f:else>
+            <f:render section="GridItem" arguments="{_all}"/>
+            <f:if condition="{iterator.isLast}">
+                <f:then></f:then>
+                <f:else>
+                    </div><div class="row">
+                </f:else>
+            </f:if>
+        </f:else>
+    </f:if>
+    <f:if condition="{iterator.isLast}">
+        </div>
+    </f:if>
+</f:for>
+
+
+
+</html>

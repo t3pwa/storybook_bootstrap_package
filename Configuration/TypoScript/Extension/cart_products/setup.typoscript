@@ -1,0 +1,131 @@
+plugin.tx_cartproducts {
+    view {
+        #templateRootPaths.0 = {$plugin.tx_cartproducts.view.templateRootPath}
+        templateRootPaths.1 = {$plugin.tx_cartproducts.view.templateRootPath}
+        #partialRootPaths.0 = {$plugin.tx_cartproducts.view.partialRootPath}
+        partialRootPaths.1 = {$plugin.tx_cartproducts.view.partialRootPath}
+        #layoutRootPaths.0 = {$plugin.tx_cartproducts.view.layoutRootPath}
+        layoutRootPaths.1 = {$plugin.tx_cartproducts.view.layoutRootPath}
+    }
+
+#    persistence {
+#        storagePid = {$plugin.tx_cartproducts.persistence.storagePid}
+#        recursive = {$plugin.tx_cartproducts.persistence.recursive}
+#
+#        classes {
+#            Extcode\CartProducts\Domain\Model\Category {
+#                mapping {
+#                    tableName = sys_category
+#                }
+#            }
+#        }
+#    }
+#
+#    mvc {
+#        callDefaultActionIfActionCantBeResolved = 1
+#    }
+#    features {
+#        skipDefaultArguments = 1
+#    }
+#
+#    settings {
+#       format.currency < plugin.tx_cart.settings.format.currency
+#
+#        addToCartByAjax = {$plugin.tx_cart.settings.addToCartByAjax}
+#
+#        showAction {
+#            media {
+#                image {
+#                    size {
+#                        small.maxWidth = 100
+#                        small.maxHeight =
+#                        medium.maxWidth = 300
+#                        medium.maxHeight =
+#                        large.maxWidth = 600
+#                        large.maxHeight =
+#                    }
+#                }
+#            }
+#        }
+#        teaserAction < .showAction
+#        listAction < .showAction
+#    }
+} #plugin.tx_cartproducts
+
+#lib.cartProduct = COA
+#lib.cartProduct.showForm = USER
+#lib.cartProduct.showForm {
+#    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+#    vendorName = Extcode
+#    extensionName = CartProducts
+#    pluginName = ProductPartial
+#
+#    controller = Product
+#    action = showForm
+#
+#    product = TEXT
+#    product.value.dataWrap = {field: productUid}
+#
+#    settings =< plugin.tx_cartproducts.settings
+#    persistence =< plugin.tx_cartproducts.persistence
+#    view =< plugin.tx_cartproducts.view
+#    update =< plugin.tx_cartproducts.update
+#}
+
+#lib.renderContent = RECORDS
+#lib.renderContent {
+#    source.current = 1
+#    tables = tt_content
+#    dontCheckPid = 1
+#    conf.tt_content =< tt_content
+#}
+
+
+
+plugin.tx_cartproducts {
+    settings {
+        format.currency < plugin.tx_cart.settings.format.currency
+        addToCartByAjax = {$plugin.tx_cart.settings.addToCartByAjax}
+        itemsPerPage = 9
+    }
+}
+
+plugin.tx_cartproducts {
+    settings {
+        format.currency < plugin.tx_cart.settings.format.currency
+        addToCartByAjax = {$plugin.tx_cart.settings.addToCartByAjax}
+        itemsPerPage = 9
+        cart {
+            pid = 352
+        }
+
+        order {
+            pid = 5
+        }
+        addToCartByAjax = 2278001
+        autoGenerateNumbers = order
+        itemsPerPage = 25
+
+        # needed? productcontroller 261
+        product {
+
+        }
+
+    }
+}
+
+plugin.tx_cart {
+    settings {
+        cart {
+            pid = 352
+            isNetCart = 1
+            steps = 3
+        }
+        order {
+            pid = 352
+        }
+        addToCartByAjax = 2278001
+        autoGenerateNumbers = order
+        itemsPerPage = 25
+    }
+}
