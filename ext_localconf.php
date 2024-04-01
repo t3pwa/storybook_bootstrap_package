@@ -2,9 +2,9 @@
 
 defined('TYPO3') or die();
 
-use Faeb\SitePackage\Controller\BlogController;
-use Faeb\SitePackage\Controller\CommentController;
-use Faeb\SitePackage\Controller\PostController;
+use Faeb\StorybookBootstrapPackage\Controller\BlogController;
+use Faeb\StorybookBootstrapPackage\Controller\CommentController;
+use Faeb\StorybookBootstrapPackage\Controller\PostController;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Information\Typo3Version;
 
@@ -16,7 +16,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 
 
-    $extensionKey = 'site_package';
+    $extensionKey = 'storybook_bootstrap_package';
 
     ExtensionManagementUtility::addTypoScript(
         $extensionKey,
@@ -40,7 +40,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
     ExtensionManagementUtility::addTypoScript(
         'container_elements',
         'setup',
-        '@import "EXT:FILE:EXT:site_package/Configuration/TypoScript/ContentElement/Helper/DynamicContent.typoscript"'
+        '@import "EXT:FILE:EXT:storybook_bootstrap_package/Configuration/TypoScript/ContentElement/Helper/DynamicContent.typoscript"'
     );
 
 
@@ -150,7 +150,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
     // Only include page.tsconfig if TYPO3 version is below 12 so that it is not imported twice.
     if ($versionInformation->getMajorVersion() < 12) {
         ExtensionManagementUtility::addPageTSConfig(
-            '@import "EXT:site_package/Configuration/page.tsconfig"'
+            '@import "EXT:storybook_bootstrap_package/Configuration/page.tsconfig"'
         );
     }
 
@@ -163,7 +163,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 /*
     if (
         GeneralUtility::makeInstance(ExtensionConfiguration::class)->get(
-            'SitePackage',
+            'StorybookBootstrapPackage',
             'registerSinglePlugin'
         )
     ) {
@@ -206,7 +206,7 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
         );
 
         ExtensionUtility::configurePlugin(
-            'SitePackage',
+            'StorybookBootstrapPackage',
             'PostSingle',
             // Cache-able Controller-Actions
             [
@@ -249,4 +249,4 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
     }
 */
-})('SitePackage');
+})('StorybookBootstrapPackage');

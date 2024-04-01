@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Controller;
+namespace Faeb\StorybookBootstrapPackage\Controller;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -20,7 +20,7 @@ use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
- * Abstract base controller for the SitePackage extension
+ * Abstract base controller for the StorybookBootstrapPackage extension
  */
 abstract class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
@@ -50,11 +50,11 @@ abstract class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\Acti
     }
 
     /**
-     * helper function to use localized strings in SitePackage controllers
+     * helper function to use localized strings in StorybookBootstrapPackage controllers
      */
     protected function translate(string $key, string $defaultMessage = ''): string
     {
-        $message = LocalizationUtility::translate($key, 'SitePackage');
+        $message = LocalizationUtility::translate($key, 'StorybookBootstrapPackage');
         if ($message === null) {
             $message = $defaultMessage;
         }

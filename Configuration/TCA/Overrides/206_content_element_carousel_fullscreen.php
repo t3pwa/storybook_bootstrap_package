@@ -23,7 +23,7 @@ if (!is_array($GLOBALS['TCA']['tt_content']['types']['carousel_fullscreen_overri
 // Add content element PageTSConfig
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     'bootstrap_package',
-//    'SitePackage',
+//    'StorybookBootstrapPackage',
     'Configuration/TsConfig/Page/ContentElement/Element/CarouselFullscreen.tsconfig',
     '(Override) Bootstrap Package Content Element: Carousel Fullscreen'
 );

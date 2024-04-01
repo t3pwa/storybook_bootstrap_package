@@ -12,7 +12,7 @@ defined('TYPO3') or die('Access denied.');
 
 /** Add own typoscript */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'site_package',
+    'storybook_bootstrap_package',
     'Configuration/TypoScript',
     'new Blog Example Overrides'
 );
@@ -24,9 +24,9 @@ defined('TYPO3') or die('Access denied.');
  * This includes the full setup including all configurations
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'SitePackage',
+    'StorybookBootstrapPackage',
     'Configuration/TypoScript',
-    'SitePackage: Full Package (Overrides)'
+    'StorybookBootstrapPackage: Full Package (Overrides)'
 );
 
 /***************
@@ -34,9 +34,9 @@ defined('TYPO3') or die('Access denied.');
  * Include only the configuration for content elements
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'SitePackage',
+    'StorybookBootstrapPackage',
     'Configuration/TypoScript/ContentElement',
-    'SitePackage: Content Elements (Overrides)'
+    'StorybookBootstrapPackage: Content Elements (Overrides)'
 );
 
 /***************
@@ -45,7 +45,7 @@ defined('TYPO3') or die('Access denied.');
  */
 /*
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'SitePackage',
+    'StorybookBootstrapPackage',
     'Configuration/TypoScript/Bootstrap4',
     'Bolt: Bootstrap 4.x (SCSS)'
 );
@@ -55,7 +55,7 @@ defined('TYPO3') or die('Access denied.');
  * Include Bootstrap 5.x (SCSS) Assets
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'SitePackage',
+    'StorybookBootstrapPackage',
     'Configuration/TypoScript/Bootstrap5',
-    'SitePackage: Bootstrap 5.x (SCSS) Overrides'
+    'StorybookBootstrapPackage: Bootstrap 5.x (SCSS) Overrides'
 );

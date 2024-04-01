@@ -14,11 +14,11 @@ defined('TYPO3') or die();
  */
 $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class);
 
-if ($extensionConfiguration->get('site_package', 'registerSinglePlugin')) {
+if ($extensionConfiguration->get('storybook_bootstrap_package', 'registerSinglePlugin')) {
     ExtensionUtility::registerPlugin(
-        'site_package',
+        'storybook_bootstrap_package',
         'Pi1',
-        '[Faeb/site_package] registerSinglePlugin' // A title shown in the backend dropdown field
+        '[Faeb/storybook_bootstrap_package] registerSinglePlugin' // A title shown in the backend dropdown field
     );
     $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['blogexample_pi1']
         = 'select_key';
@@ -26,31 +26,31 @@ if ($extensionConfiguration->get('site_package', 'registerSinglePlugin')) {
         = 'pi_flexform,recursive';
     ExtensionManagementUtility::addPiFlexFormValue(
         'blogexample_pi1',
-        'FILE:EXT:site_package/Configuration/FlexForms/flexform_list.xml');
+        'FILE:EXT:storybook_bootstrap_package/Configuration/FlexForms/flexform_list.xml');
 } else {
     ExtensionUtility::registerPlugin(
-        'site_package',
+        'storybook_bootstrap_package',
         'BlogList',
-        'List of Blogs ([Faeb] SitePackage)',
-        'site_package_icon'
+        'List of Blogs ([Faeb] StorybookBootstrapPackage)',
+        'storybook_bootstrap_package_icon'
     );
     ExtensionUtility::registerPlugin(
-        'site_package',
+        'storybook_bootstrap_package',
         'PostList',
-        'List of Posts ([Faeb] SitePackage)',
-        'site_package_icon'
+        'List of Posts ([Faeb] StorybookBootstrapPackage)',
+        'storybook_bootstrap_package_icon'
     );
     ExtensionUtility::registerPlugin(
-        'site_package',
+        'storybook_bootstrap_package',
         'PostSingle',
-        'Single Post ([Faeb] SitePackage)',
-        'site_package_icon'
+        'Single Post ([Faeb] StorybookBootstrapPackage)',
+        'storybook_bootstrap_package_icon'
     );
     ExtensionUtility::registerPlugin(
-        'site_package',
+        'storybook_bootstrap_package',
         'BlogAdmin',
-        'Admin Plugin (SitePackage)',
-        'site_package_icon'
+        'Admin Plugin (StorybookBootstrapPackage)',
+        'storybook_bootstrap_package_icon'
     );
 
     $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['blogexample_postlist']
@@ -59,6 +59,6 @@ if ($extensionConfiguration->get('site_package', 'registerSinglePlugin')) {
         = 'pi_flexform,recursive';
     ExtensionManagementUtility::addPiFlexFormValue(
         'blogexample_postlist',
-        'FILE:EXT:site_package/Configuration/FlexForms/flexform_list.xml'
+        'FILE:EXT:storybook_bootstrap_package/Configuration/FlexForms/flexform_list.xml'
     );
 }

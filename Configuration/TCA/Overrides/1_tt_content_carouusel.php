@@ -42,7 +42,7 @@ defined('TYPO3') or die('Access denied.');
         '*',
         // 'FILE:EXT:container_elements/Configuration/FlexForms/Accordion.xml',
         // 'FILE:EXT:container_elements/Configuration/FlexForms/Carousel.xml',
-        'FILE:EXT:site_package/Configuration/FlexForms/Carousel.xml',
+        'FILE:EXT:storybook_bootstrap_package/Configuration/FlexForms/Carousel.xml',
         'ce_carousel'
     );
 })();

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Domain\Repository;
+namespace Faeb\StorybookBootstrapPackage\Domain\Repository;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -16,8 +16,8 @@ namespace Faeb\SitePackage\Domain\Repository;
  * The TYPO3 project - inspiring people to share!
  */
 
-use Faeb\SitePackage\Domain\Model\Blog;
-use Faeb\SitePackage\Domain\Model\Post;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Blog;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Post;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;

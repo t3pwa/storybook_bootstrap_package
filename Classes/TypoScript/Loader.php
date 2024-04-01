@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\TypoScript;
+namespace Faeb\StorybookBootstrapPackage\TypoScript;
 
 /*
  * This file is part of TYPO3 CMS-based extension "bolt" by b13.
@@ -12,7 +12,7 @@ namespace Faeb\SitePackage\TypoScript;
  * of the License, or any later version.
  */
 
-use Faeb\SitePackage\Configuration\PackageHelper;
+use Faeb\StorybookBootstrapPackage\Configuration\PackageHelper;
 use TYPO3\CMS\Core\TypoScript\TemplateService;
 
 /**
@@ -51,7 +51,7 @@ class Loader
             return;
         }
         foreach ($rootLine as $level => $pageRecord) {
-            $package = $this->packageHelper->getSitePackage((int)$pageRecord['uid']);
+            $package = $this->packageHelper->getStorybookBootstrapPackage((int)$pageRecord['uid']);
             if ($package !== null) {
                 $constantsFile = $package->getPackagePath() . 'Configuration/TypoScript/constants.typoscript';
                 $setupFile = $package->getPackagePath() . 'Configuration/TypoScript/setup.typoscript';
@@ -88,12 +88,12 @@ class Loader
                     'nextLevel' => 0,
                     'static_file_mode' => 1,
                     'tstamp' => $setup ? filemtime($setupFile) : time(),
-                    'uid' => 'sys_SitePackage_' . (int)$pageRecord['uid'] . $package->getPackageKey(),
+                    'uid' => 'sys_StorybookBootstrapPackage_' . (int)$pageRecord['uid'] . $package->getPackageKey(),
                     'title' => $package->getPackageKey(),
                     // make this the root template
                     'root' => !$hasRootTemplate
                 ];
-                $templateService->processTemplate($fakeRow, 'sys_SitePackage_' . $package->getPackageKey(), (int)$pageRecord['uid'], 'sys_blogexample_' . $package->getPackageKey());
+                $templateService->processTemplate($fakeRow, 'sys_StorybookBootstrapPackage_' . $package->getPackageKey(), (int)$pageRecord['uid'], 'sys_blogexample_' . $package->getPackageKey());
 
                 if (!$hasRootTemplate) {
                     // $templateService->processTemplate() adds the constants and setup info

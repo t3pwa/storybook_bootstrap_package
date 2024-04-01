@@ -90,20 +90,20 @@
 #            ifEmpty = Default
 #        }
 #
-#		# site_package should be boostrap_package_storybook
+#		# storybook_bootstrap_package should be boostrap_package_storybook
 #        templateRootPaths {
 ##            0 = EXT:bootstrap_package/Resources/Private/Templates/Page/
-#            0 = EXT:site_package/Resources/Private/Templates/Page/
+#            0 = EXT:storybook_bootstrap_package/Resources/Private/Templates/Page/
 ##            1 = {$page.fluidtemplate.templateRootPath}
 #        }
 #        partialRootPaths {
 ##            0 = EXT:bootstrap_package/Resources/Private/Partials/Page/
-#			0 = EXT:site_package/Resources/Private/Partials/Page/
+#			0 = EXT:storybook_bootstrap_package/Resources/Private/Partials/Page/
 ##            1 = {$page.fluidtemplate.partialRootPath}
 #        }
 #        layoutRootPaths {
 ##            0 = EXT:bootstrap_package/Resources/Private/Layouts/Page/
-#            0 = EXT:site_package/Resources/Private/Layouts/Page/
+#            0 = EXT:storybook_bootstrap_package/Resources/Private/Layouts/Page/
 ##            1 = {$page.fluidtemplate.layoutRootPath}
 #        }
 #    }

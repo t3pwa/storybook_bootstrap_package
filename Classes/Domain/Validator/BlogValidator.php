@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Domain\Validator;
+namespace Faeb\StorybookBootstrapPackage\Domain\Validator;
 
-use Faeb\SitePackage\Domain\Model\Blog;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Blog;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 
@@ -34,7 +34,7 @@ class BlogValidator extends AbstractValidator
     public function isValid($blog): bool
     {
         if (strtolower($blog->getTitle()) === 'extbase') {
-            $this->addError(LocalizationUtility::translate('error.Blog.invalidTitle', 'SitePackage'), 1297418974);
+            $this->addError(LocalizationUtility::translate('error.Blog.invalidTitle', 'StorybookBootstrapPackage'), 1297418974);
             return false;
         }
         return true;

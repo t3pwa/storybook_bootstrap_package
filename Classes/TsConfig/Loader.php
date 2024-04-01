@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\TsConfig;
+namespace Faeb\StorybookBootstrapPackage\TsConfig;
 
 /*
  * This file is part of TYPO3 CMS-based extension "bolt" by b13.
@@ -12,7 +12,7 @@ namespace Faeb\SitePackage\TsConfig;
  * of the License, or any later version.
  */
 
-use Faeb\SitePackage\Configuration\PackageHelper;
+use Faeb\StorybookBootstrapPackage\Configuration\PackageHelper;
 use TYPO3\CMS\Core\Configuration\Event\ModifyLoadedPageTsConfigEvent;
 
 /**
@@ -37,7 +37,7 @@ class Loader
         $rootLine = $event->getRootLine();
         $tsConfig = $event->getTsConfig();
         foreach ($rootLine as $level => $pageRecord) {
-            $package = $this->packageHelper->getSitePackage($pageRecord['uid']);
+            $package = $this->packageHelper->getStorybookBootstrapPackage($pageRecord['uid']);
             if ($package !== null) {
                 $tsConfigFile = $package->getPackagePath() . 'Configuration/PageTs/main.tsconfig';
                 if (!file_exists($tsConfigFile)) {

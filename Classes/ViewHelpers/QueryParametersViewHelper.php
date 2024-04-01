@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\ViewHelpers;
+namespace Faeb\StorybookBootstrapPackage\ViewHelpers;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;

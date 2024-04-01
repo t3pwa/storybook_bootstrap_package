@@ -9,7 +9,7 @@ declare(strict_types = 1);
  */
 
 // namespace Buepro\ContainerElements\Hooks;
-namespace Faeb\SitePackage\Hooks;
+namespace Faeb\StorybookBootstrapPackage\Hooks;
 
 use TYPO3\CMS\Backend\Form\FormDataCompiler;
 use TYPO3\CMS\Backend\Form\FormDataGroup\TcaDatabaseRecord;

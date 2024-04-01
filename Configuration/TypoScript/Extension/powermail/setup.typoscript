@@ -2,7 +2,7 @@ plugin.tx_powermail.settings.setup {
     finishers {
         1 {
           #class = Vendor\Ext\Finisher\AddImageFinisher
-          class = Faeb\SitePackage\Finisher\ImageFinisher
+          class = Faeb\StorybookBootstrapPackage\Finisher\ImageFinisher
 
            # optional: Add configuration for your PHP
            config {

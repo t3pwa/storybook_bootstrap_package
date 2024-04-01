@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Configuration;
+namespace Faeb\StorybookBootstrapPackage\Configuration;
 
 /*
   *
@@ -42,7 +42,7 @@ class PackageHelper
 
     }
 
-    public function getSitePackage(int $pageId): ?PackageInterface
+    public function getStorybookBootstrapPackage(int $pageId): ?PackageInterface
     {
         try {
             $site = $this->siteFinder->getSiteByRootPageId($pageId);

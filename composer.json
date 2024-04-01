@@ -1,7 +1,7 @@
 {
-	"name": "faeb/site-package",
+	"name": "faeb/storybook_bootstrap_package",
 	"type": "typo3-cms-extension",
-	"description": "Fäb SitePackage (based on b13/bolt)",
+	"description": "Fäb StorybookBootstrapPackage (based on b13/bolt)",
 	"homepage": "https://github.com/b13/bolt",
 	"license": "GPL-2.0-or-later",
 	"version": "0.1.2",
@@ -16,17 +16,18 @@
 	"minimum-stability": "dev",
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "site_package"
+			"extension-key": "storybook_bootstrap_package"
 		}
 	},
 	"autoload": {
 		"psr-4": {
-			"Faeb\\SitePackage\\": "Classes"
+			"Faeb\\StorybookBootstrapPackage\\": "Classes"
 		}
 	},
 	"require-dev": {
 		"typo3/coding-standards": "^0.4.0",
-		"typo3/tailor": "^1.1"
+		"typo3/tailor": "^1.1",
+		"philip-hartmann/typo3fluid-api": "^0.2"
 	},
 	"config": {
 		"sort-packages": true

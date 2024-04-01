@@ -1,5 +1,5 @@
 <?php
-namespace Faeb\SitePackage\Finisher;
+namespace Faeb\StorybookBootstrapPackage\Finisher;
 
 use In2code\Powermail\Domain\Model\Mail;
 use In2code\Powermail\Finisher\AbstractFinisher;

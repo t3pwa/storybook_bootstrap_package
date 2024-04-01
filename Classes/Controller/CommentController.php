@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Controller;
+namespace Faeb\StorybookBootstrapPackage\Controller;
 
-use Faeb\SitePackage\Domain\Model\Comment;
-use Faeb\SitePackage\Domain\Model\Post;
-use Faeb\SitePackage\Domain\Repository\PostRepository;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Comment;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Post;
+use Faeb\StorybookBootstrapPackage\Domain\Repository\PostRepository;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 
 /*
@@ -22,7 +22,7 @@ use TYPO3\CMS\Core\Messaging\FlashMessage;
  */
 
 /**
- * The comment controller for the SitePackage extension
+ * The comment controller for the StorybookBootstrapPackage extension
  */
 class CommentController extends AbstractController
 {

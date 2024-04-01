@@ -2,7 +2,7 @@
 
 #@isroot
 #@clear
-#@sitetitle "SitePackage Sitetitle TS Setup Example/Base"
+#@sitetitle "StorybookBootstrapPackage Sitetitle TS Setup Example/Base"
 #@import "EXT:gridelements/TypoScript/*.txt"
 #@import "myexample/site_base/Configuration/TypoScript/setup.txt"
 
@@ -25,8 +25,8 @@
 @import 'EXT:bootstrap_package/Configuration/TypoScript/Helper/PageClass.typoscript'
 
 # added manually
-@import 'EXT:site_package/Configuration/TypoScript/ContentElement/Helper/setup.typoscript'
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:site_package/Configuration/TypoScript/ContentElement/Helper/DynamicContent.typoscript">
+@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/ContentElement/Helper/setup.typoscript'
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:storybook_bootstrap_package/Configuration/TypoScript/ContentElement/Helper/DynamicContent.typoscript">
 
 ###################
 #### FRAMEWORK ####
@@ -36,7 +36,7 @@
 #@import 'EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript'
 
 
-#@import 'EXT:SitePackage/Configuration/TypoScript/setup.typoscript'
+#@import 'EXT:StorybookBootstrapPackage/Configuration/TypoScript/setup.typoscript'
 
 
 # Render Content Elements in Container
@@ -69,7 +69,7 @@ page {
 		# bootstrap 5.x will be included in the themes.scss file
 		# for standalone usage just uncomment the following line
 		# bootstrap = EXT:bootstrap_package/Resources/Public/Contrib/bootstrap5/scss/bootstrap.scss
-		theme_SitePackage = EXT:site_package/Resources/Public/Scss/bootstrap5/theme.scss
+		theme_StorybookBootstrapPackage = EXT:storybook_bootstrap_package/Resources/Public/Scss/bootstrap5/theme.scss
 	}
 	includeJSFooterlibs {
 #		popper = EXT:bootstrap_package/Resources/Public/Contrib/popper-core/popper.min.js
@@ -79,14 +79,14 @@ page {
 
 
 # Plugin configuration
-plugin.tx_site_package {
+plugin.tx_storybook_bootstrap_package {
 	settings {
 		# maximum number of posts to display per page
 		postsPerPage = 3
 		# Editor FE Usergroup uid
-		editorUsergroupUid = {$plugin.tx_site_package.settings.editorUsergroupUid}
+		editorUsergroupUid = {$plugin.tx_storybook_bootstrap_package.settings.editorUsergroupUid}
 		# Plaintext page type number
-		plaintextPageType = {$plugin.tx_site_package.settings.plaintextPageType}
+		plaintextPageType = {$plugin.tx_storybook_bootstrap_package.settings.plaintextPageType}
 		rss {
 			channel {
 				typeNum = {$plugin.tx_bloge_xample.settings.rssPageType}
@@ -96,20 +96,20 @@ plugin.tx_site_package {
 	}
 
 	persistence {
-		storagePid = {$plugin.tx_site_package.persistence.storagePid}
+		storagePid = {$plugin.tx_storybook_bootstrap_package.persistence.storagePid}
 	}
 
 	view {
 		// needed for fluid api?
-//		templateRootPath = {$plugin.tx_site_package.view.templateRootPath}
+//		templateRootPath = {$plugin.tx_storybook_bootstrap_package.view.templateRootPath}
 
-		templateRootPath = {$plugin.tx_site_package.view.templateRootPath}
-		partialRootPath = {$plugin.tx_site_package.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_site_package.view.layoutRootPath}
+		templateRootPath = {$plugin.tx_storybook_bootstrap_package.view.templateRootPath}
+		partialRootPath = {$plugin.tx_storybook_bootstrap_package.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_storybook_bootstrap_package.view.layoutRootPath}
 
-		templateRootPaths.50 = {$plugin.tx_site_package.view.templateRootPath}
-		partialRootPaths.50 = {$plugin.tx_site_package.view.partialRootPath}
-		layoutRootPaths.50 = {$plugin.tx_site_package.view.layoutRootPath}
+		templateRootPaths.50 = {$plugin.tx_storybook_bootstrap_package.view.templateRootPath}
+		partialRootPaths.50 = {$plugin.tx_storybook_bootstrap_package.view.partialRootPath}
+		layoutRootPaths.50 = {$plugin.tx_storybook_bootstrap_package.view.layoutRootPath}
 
 
 		defaultPid = auto
@@ -124,24 +124,24 @@ plugin.tx_site_package {
 }
 
 # Module configuration
-module.tx_site_package {
-	settings < plugin.tx_site_package.settings
-	persistence < plugin.tx_site_package.persistence
-	view < plugin.tx_site_package.view
+module.tx_storybook_bootstrap_package {
+	settings < plugin.tx_storybook_bootstrap_package.settings
+	persistence < plugin.tx_storybook_bootstrap_package.persistence
+	view < plugin.tx_storybook_bootstrap_package.view
 	view {
-		templateRootPaths.10 = {$module.tx_site_package.view.templateRootPath}
-		partialRootPaths.10 = {$module.tx_site_package.view.partialRootPath}
-		layoutRootPaths.10 = {$module.tx_site_package.view.layoutRootPath}
+		templateRootPaths.10 = {$module.tx_storybook_bootstrap_package.view.templateRootPath}
+		partialRootPaths.10 = {$module.tx_storybook_bootstrap_package.view.partialRootPath}
+		layoutRootPaths.10 = {$module.tx_storybook_bootstrap_package.view.layoutRootPath}
 	}
 }
 
-# Make postlist available as lib.site_package_post_list
-#lib.site_package_post_list < tt_content.list.20.blogexample_postlist
+# Make postlist available as lib.storybook_bootstrap_package_post_list
+#lib.storybook_bootstrap_package_post_list < tt_content.list.20.blogexample_postlist
 
 
 # Rendering of content elements in detail view
-lib.tx_site_package.contentElementRendering = RECORDS
-lib.tx_site_package.contentElementRendering {
+lib.tx_storybook_bootstrap_package.contentElementRendering = RECORDS
+lib.tx_storybook_bootstrap_package.contentElementRendering {
 	tables = tt_content
 	source.current = 1
 	dontCheckPid = 1
@@ -157,21 +157,21 @@ tt_content.ce_carousel.templateName = CeCarousel
 ## extend template path for container ce_carousel
 lib.containerContentElement {
 
-	templateRootPath = EXT:site_package/Resources/Private/Templates/General
+	templateRootPath = EXT:storybook_bootstrap_package/Resources/Private/Templates/General
 	templateRootPaths {
-		50 = EXT:site_package/Resources/Private/Templates/General
+		50 = EXT:storybook_bootstrap_package/Resources/Private/Templates/General
 	}
 
-	partialRootPath = EXT:site_package/Resources/Private/Partials/General
+	partialRootPath = EXT:storybook_bootstrap_package/Resources/Private/Partials/General
 	partialRootPaths {
-		50 = EXT:site_package/Resources/Private/Partials/General
+		50 = EXT:storybook_bootstrap_package/Resources/Private/Partials/General
 	}
 }
 
 ##
-#@import 'EXT:site_package/Configuration/TypoScript/Extension/cart_products/constants.typoscript'
-#@import 'EXT:site_package/Configuration/TypoScript/Extension/cart_products/setup.typoscript'
-#@import 'EXT:site_package/Configuration/TypoScript/Extension/powermail/setup.typoscript'
+#@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/cart_products/constants.typoscript'
+#@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/cart_products/setup.typoscript'
+#@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/powermail/setup.typoscript'
 
 
 ########### add ts setup for boostrap_package to have it for typo3 fluid api
@@ -179,19 +179,19 @@ lib.containerContentElement {
 
 plugin.tx_bootstrappackage {
 	view {
-		templateRootPath = {$plugin.tx_sitepackage.view.templateRootPath}
+		templateRootPath = {$plugin.tx_storybookbootstrappackage.view.templateRootPath}
 		templateRootPaths {
-			2 = EXT:site_package/Resources/Private/Templates/
+			2 = EXT:storybook_bootstrap_package/Resources/Private/Templates/
 			#1 = {$plugin.tx_bootstrappackage.view.templateRootPath}
 		}
-		partialRootPath = {$plugin.tx_sitepackage.view.partialRootPath}
+		partialRootPath = {$plugin.tx_storybookbootstrappackage.view.partialRootPath}
 		partialRootPaths {
-			2 = EXT:site_package/Resources/Private/Partials/
+			2 = EXT:storybook_bootstrap_package/Resources/Private/Partials/
 			#1 = {$plugin.tx_bootstrappackage.view.partialRootPath}
 		}
-		layoutRootPath = {$plugin.tx_sitepackage.view.layoutRootPath}
+		layoutRootPath = {$plugin.tx_storybookbootstrappackage.view.layoutRootPath}
 		layoutRootPaths {
-			2 = EXT:site_package/Resources/Private/Layouts/
+			2 = EXT:storybook_bootstrap_package/Resources/Private/Layouts/
 			#1 = {$plugin.tx_bootstrappackage.view.layoutRootPath}
 		}
 	}

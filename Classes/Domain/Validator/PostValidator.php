@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Domain\Validator;
+namespace Faeb\StorybookBootstrapPackage\Domain\Validator;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -16,7 +16,7 @@ namespace Faeb\SitePackage\Domain\Validator;
  * The TYPO3 project - inspiring people to share!
  */
 
-use Faeb\SitePackage\Domain\Model\Post;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Post;
 use TYPO3\CMS\Extbase\Validation\Error;
 use TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator;
 

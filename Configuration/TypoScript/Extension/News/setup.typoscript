@@ -4,9 +4,9 @@ plugin.tx_news {
 		templateRootPaths {
 			// 0 = EXT:news/Resources/Private/Templates/
 			// 1 = {$plugin.tx_news.view.templateRootPath}
-			2 = EXT:site_package/Resources/Private/Templates/Extension/News/
+			2 = EXT:storybook_bootstrap_package/Resources/Private/Templates/Extension/News/
 
-			10 = EXT:site_package/Resources/Private/Templates/Extension/News/
+			10 = EXT:storybook_bootstrap_package/Resources/Private/Templates/Extension/News/
 			20 = EXT:news_filter/Resources/Private/Templates/
 
 

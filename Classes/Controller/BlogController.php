@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Controller;
+namespace Faeb\StorybookBootstrapPackage\Controller;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -16,17 +16,17 @@ namespace Faeb\SitePackage\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
-use Faeb\SitePackage\Domain\Model\Blog;
-use Faeb\SitePackage\Domain\Repository\AdministratorRepository;
-use Faeb\SitePackage\Domain\Repository\BlogRepository;
-use Faeb\SitePackage\Service\BlogFactory;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Blog;
+use Faeb\StorybookBootstrapPackage\Domain\Repository\AdministratorRepository;
+use Faeb\StorybookBootstrapPackage\Domain\Repository\BlogRepository;
+use Faeb\StorybookBootstrapPackage\Service\BlogFactory;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Extbase\Annotation\IgnoreValidation;
 use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 
 /**
- * The blog controller for the SitePackage extension
+ * The blog controller for the StorybookBootstrapPackage extension
  */
 class BlogController extends AbstractController
 {

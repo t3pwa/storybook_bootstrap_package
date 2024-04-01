@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Domain\Repository;
+namespace Faeb\StorybookBootstrapPackage\Domain\Repository;
 
 /*
  * This file is part of the TYPO3 CMS project.

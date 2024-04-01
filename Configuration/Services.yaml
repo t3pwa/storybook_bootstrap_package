@@ -4,30 +4,30 @@ services:
     autoconfigure: true
     public: false
 
-  Faeb\SitePackage\:
+  Faeb\StorybookBootstrapPackage\:
     resource: '../Classes/*/*'
     exclude: '../Classes/Domain/Model/*'
 
-  Faeb\SitePackage\TsConfig\Loader:
+  Faeb\StorybookBootstrapPackage\TsConfig\Loader:
     public: true
     tags:
       - name: event.listener
         identifier: 'add-site-configuration'
         event: TYPO3\CMS\Core\Configuration\Event\ModifyLoadedPageTsConfigEvent
 
-#  Faeb\SitePackage\ViewHelpers\QueryParameters\:
+#  Faeb\StorybookBootstrapPackage\ViewHelpers\QueryParameters\:
 #    resource: '../Classes/*'
 #    autowire: true
 #    autoconfigure: true
 #    public: true
 
 
-#  Faeb\SitePackage\Classes\Configuration\PacketHelper:
+#  Faeb\StorybookBootstrapPackage\Classes\Configuration\PacketHelper:
 #    autowire: true
 #    autoconfigure: true
 #    public: true
 
 
-#  Faeb\SitePackage\TypoScript\:
+#  Faeb\StorybookBootstrapPackage\TypoScript\:
 #    resource: '../Classes/TypoScript/*'
 #    public: true

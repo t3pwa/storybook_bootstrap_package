@@ -1,5 +1,5 @@
 <?php
-namespace Faeb\SitePackage\Domain\Model;
+namespace Faeb\StorybookBootstrapPackage\Domain\Model;
 
 /**
  * This file is part of the TYPO3 CMS project.

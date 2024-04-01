@@ -3,7 +3,7 @@ mod.wizards.newContentElement.wizardItems {
   plugins {
     elements {
       blogexample_bloglist {
-        iconIdentifier = site_package_icon
+        iconIdentifier = storybook_bootstrap_package_icon
         title = BlogList
         description = Display a list of blogs
         tt_content_defValues {
@@ -13,7 +13,7 @@ mod.wizards.newContentElement.wizardItems {
       }
 
       blogexample_postlist {
-        iconIdentifier = site_package_icon
+        iconIdentifier = storybook_bootstrap_package_icon
         title = PostList
         description = Display a list of posts in a blog
         tt_content_defValues {
@@ -23,7 +23,7 @@ mod.wizards.newContentElement.wizardItems {
       }
 
       blogexample_postsingle {
-        iconIdentifier = site_package_icon
+        iconIdentifier = storybook_bootstrap_package_icon
         title = PostSingle
         description = Display a single blog post
         tt_content_defValues {
@@ -33,7 +33,7 @@ mod.wizards.newContentElement.wizardItems {
       }
 
       blogexample_blogadmin {
-        iconIdentifier = site_package_icon
+        iconIdentifier = storybook_bootstrap_package_icon
         title = BlogAdmin
         description = Administrate the blog
         tt_content_defValues {

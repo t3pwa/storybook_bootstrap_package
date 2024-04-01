@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Controller;
+namespace Faeb\StorybookBootstrapPackage\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-use Faeb\SitePackage\Domain\Model\Blog;
-use Faeb\SitePackage\Domain\Model\Comment;
-use Faeb\SitePackage\Domain\Model\Post;
-use Faeb\SitePackage\Domain\Model\Tag;
-use Faeb\SitePackage\Domain\Repository\BlogRepository;
-use Faeb\SitePackage\Domain\Repository\PersonRepository;
-use Faeb\SitePackage\Domain\Repository\PostRepository;
-use Faeb\SitePackage\Exception\NoBlogAdminAccessException;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Blog;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Comment;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Post;
+use Faeb\StorybookBootstrapPackage\Domain\Model\Tag;
+use Faeb\StorybookBootstrapPackage\Domain\Repository\BlogRepository;
+use Faeb\StorybookBootstrapPackage\Domain\Repository\PersonRepository;
+use Faeb\StorybookBootstrapPackage\Domain\Repository\PostRepository;
+use Faeb\StorybookBootstrapPackage\Exception\NoBlogAdminAccessException;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 use TYPO3\CMS\Extbase\Annotation\IgnoreValidation;
@@ -35,9 +35,9 @@ use TYPO3\CMS\Extbase\Property\PropertyMapper;
  */
 
 /**
- * The post controller for the SitePackage extension
+ * The post controller for the StorybookBootstrapPackage extension
  */
-class PostController extends \Faeb\SitePackage\Controller\AbstractController
+class PostController extends \Faeb\StorybookBootstrapPackage\Controller\AbstractController
 {
     /**
      * PostController constructor.
@@ -89,7 +89,7 @@ class PostController extends \Faeb\SitePackage\Controller\AbstractController
         if ($blog == null) {
             return (new ForwardResponse('index'))
                 ->withControllerName(('Blog'))
-                ->withExtensionName('site_package')
+                ->withExtensionName('storybook_bootstrap_package')
                 ->withArguments(['currentPage' => $currentPage]);
         }
         if (empty($tag)) {

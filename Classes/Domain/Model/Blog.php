@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Faeb\SitePackage\Domain\Model;
+namespace Faeb\StorybookBootstrapPackage\Domain\Model;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -45,7 +45,7 @@ class Blog extends AbstractEntity
     /**
      * Adds a content element to the record
      *
-     * @param \Faeb\SitePackage\Domain\Model\TtContent $contentElement
+     * @param \Faeb\StorybookBootstrapPackage\Domain\Model\TtContent $contentElement
      * @return void
      */
     public function addContentElement(\MyNameSpace\MyExtension\Domain\Model\TtContent $contentElement)
@@ -140,7 +140,7 @@ class Blog extends AbstractEntity
     /**
      * Initialize content element relation
      *
-     * @return \Faeb\SitePackage\Domain\Model\Blog
+     * @return \Faeb\StorybookBootstrapPackage\Domain\Model\Blog
      */
     public function __construct()
     {

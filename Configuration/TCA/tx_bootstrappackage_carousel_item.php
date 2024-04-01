@@ -763,7 +763,7 @@ return [
                 'allowed' => 'tt_content',
                 'foreign_table' => 'tt_content',
                 'foreign_sortby' => 'sorting',
-                'foreign_field' => 'tx_site_package_content_elements',
+                'foreign_field' => 'tx_storybook_bootstrap_package_content_elements',
                 'minitems' => 0,
                 'maxitems' => 99,
                 'appearance' => [

@@ -2,13 +2,13 @@
 plugin.tx_cartproducts {
     view {
         #templateRootPath = EXT:cart_products/Resources/Private/Templates/
-        templateRootPath = EXT:site_package/Resources/Private/Templates/Extension/cart_products/
+        templateRootPath = EXT:storybook_bootstrap_package/Resources/Private/Templates/Extension/cart_products/
 
         #partialRootPath = EXT:cart_products/Resources/Private/Partials/
-        partialRootPath = EXT:site_package/Resources/Private/Partials/Extension/cart_products/
+        partialRootPath = EXT:storybook_bootstrap_package/Resources/Private/Partials/Extension/cart_products/
 
         #layoutRootPath = EXT:cart_products/Resources/Private/Layouts/
-        layoutRootPath = EXT:site_package/Resources/Private/Layouts/Extension/cart_products/
+        layoutRootPath = EXT:storybook_bootstrap_package/Resources/Private/Layouts/Extension/cart_products/
     }
 
     persistence {
