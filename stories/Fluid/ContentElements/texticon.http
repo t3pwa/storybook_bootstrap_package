@@ -1,0 +1,46 @@
+POST https://t3v11.ddev.site/api/typo3fluid
+Content-Type: application/json
+
+{
+  "extension": "bootstrappackage",
+  "template": "ContentElements/Texticon",
+  "partial": "ContentElements/",
+  "section": "",
+  "arguments": {
+    "debug": "true",
+    "header": "header",
+    "icon": "bootstrap",
+    "width": "32",
+    "height": "32",
+
+    "data": {
+      "icon_position": "top",
+      "hedaer_link": "https://www.de",
+      "icon_size": "medium",
+      "icon_color": "#00ff00",
+      "icon_background": "#c0c0c0",
+      "header": "Icon Header",
+      "bodytext": "bodytext"
+    },
+    "settings": {
+      "texticon": {
+        "icon": {
+          "medium": {
+            "height": "128px",
+            "width": "128px"
+          }
+        }
+      }
+    }
+  },
+  "password": "superpassword"
+}
+
+<> 2024-03-03T072853.404.html
+<> 2024-03-03T072748.404.html
+<> 2024-03-02T191105.404.html
+<> 2024-03-02T163132.404.html
+<> 2024-03-02T162710.404.html
+<> 2024-03-02T103008.500.html
+<> 2024-03-02T102551.400.txt
+<> 2024-03-02T102521.400.txt

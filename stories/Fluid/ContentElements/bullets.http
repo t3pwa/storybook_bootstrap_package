@@ -1,0 +1,33 @@
+POST https://t3v11.ddev.site/api/typo3fluid
+Content-Type: application/json
+
+{
+  "extension": "bootstrappackage",
+  "template": "ContentElements/Bullets",
+  "partial": "ContentElements/",
+  "section": "",
+  "arguments": {
+    "debug": "true",
+    "data": {
+      "bullets_type": 2
+    },
+    "bullets": {
+      "bullets": {
+        "bullet1": "Bullet 1",
+        "bullet2": "Bullet 2",
+        "bullet3": "Bullet 3",
+        "bullet4": "Bullet 4"
+      }
+    }
+  },
+"password": "superpassword"
+}
+
+<> 2024-03-03T072853.404.html
+<> 2024-03-03T072748.404.html
+<> 2024-03-02T191105.404.html
+<> 2024-03-02T163132.404.html
+<> 2024-03-02T162710.404.html
+<> 2024-03-02T103008.500.html
+<> 2024-03-02T102551.400.txt
+<> 2024-03-02T102521.400.txt
