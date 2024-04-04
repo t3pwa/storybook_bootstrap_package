@@ -11,26 +11,18 @@
         <f:else><!-- ELSE --></f:else>
     </f:if>
 
-    <f:comment>
-        <img class="media-rendering-image" loading="lazy" src="{src}">
-    </f:comment>
-
     <f:if condition="{faeb:queryParameters(queryParam: 'debug') == 'true'} && {faeb:queryParameters(queryParam: 'debug') == 'true'}">
         <f:then>
             <f:if condition="{file.properties.id}">
                 <f:then>
-                    (IMAGE-ID) {{image}} &mdash; file.properties.id: >>>{file.properties.id}<<<
-                    <f:image class="media-rendering-image" loading="lazy" src="{file.properties.id}" treatIdAsReference="1">
-                    </f:image>
+                    <!-- file.properties.id: >>>{file.properties.id}<<< -->
+                    <f:image loading="lazy" src="{file.properties.id}" treatIdAsReference="1" />
                 </f:then>
             </f:if>
             <f:if condition="{file.properties.src}">
                 <f:then>
-                    (IMAGE-SRC) {{image}} &mdash; file.properties.src: >>>{file.properties.src}<<<
-                    <br>
-
-
-                    <img class="media-rendering-image" loading="lazy" src="{file.properties.src}" data-debug="1">
+                    <!-- file.properties.src: >>>{file.properties.src}<<< -->
+                    <img loading="lazy" src="{file.properties.src}" data-debug="1" />
                 </f:then>
             </f:if>
         </f:then>
