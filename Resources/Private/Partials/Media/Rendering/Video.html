@@ -1,1 +1,39 @@
-../../../../../../../public/typo3conf/ext/bootstrap_package/Resources/Private/Partials/ContentElements/Media/Rendering/Video.html
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:faeb="http://typo3.org/ns/Faeb/StorybookBootstrapPackage/ViewHelpers"
+      xmlns:faebvideo="http://typo3.org/ns/Faeb/Videoprocessing/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:if condition="{faeb:queryParameters(queryParam: 'debug') == 'true'} && {faeb:queryParameters(queryParam: 'debug') == 'true'}">
+        <f:then>
+
+            <f:if condition="{file.properties.id} > 0">
+                <f:then>
+                    <!-- SBBP Rendering Video ID -->
+                    {file.properties.id}
+                    {settings.media.additionalConfig.autoplay}
+
+                </f:then>
+                <f:else>
+                    <!-- SBBP Rendering/Video SRC -->
+                    <video
+                        class="embed-responsive-item"
+                        src="{file.properties.src}"
+                        onmouseover="this.play(); this.setAttribute('controls','controls');"
+                        onmouseout="this.pause(); this.removeAttribute('controls');"
+                        data-status="has-no-processed-sources-yet"
+                        loop="loop"
+                        data-autoplay="0"
+                    >
+                    </video>
+                </f:else>
+            </f:if>
+        </f:then>
+        <f:else>
+            <!-- Default Behavior -->
+            <f:media class="embed-responsive-item" file="{file}" alt="{file.properties.alternative}" title="{file.properties.title}" additionalConfig="{settings.media.additionalConfig}" />
+
+
+
+        </f:else>
+    </f:if>
+</html>
