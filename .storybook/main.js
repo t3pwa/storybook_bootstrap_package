@@ -2,22 +2,29 @@
 // const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const path = require('path');
+// Not used?
 var sass = require("node-sass");
 require("sass-extract-loader");
 
+//Storybook: how can I pass a global setting to story's / component's argument
+//https://stackoverflow.com/questions/76589946/storybook-how-can-i-pass-a-global-setting-to-storys-components-argument
+
 /*
+@ToDo: method import theme.js as json, works, but not the best idea
 var sassUtils = require("node-sass-utils")(sass);
 const sassVars = require("./theme");
 // console.log(sassVars);
 */
 
-
-//const style = require('sass-extract-loader!./_variables.scss');
-//const brandInfo = style.global['$theme-colors'].value.primary.value.hex;
-//console.log(brandInfo);
-
+/*
+@ToDo newer example, evaluate, works
+const style = require('sass-extract-loader!./_variables.scss');
+const brandInfo = style.global['$theme-colors'].value.primary.value.hex;
+console.log(brandInfo);
+*/
 
 const alias = {
+  // @Todo: not used yet, better: my-theme? tbd
   'my-kit': path.resolve(__dirname, '../src'),
 };
 
@@ -27,6 +34,7 @@ const config = {
     options: {},
   },
   stats: {
+    // @ToDo add those other loaders
     loggingDebug: ["sass-loader", "sass-resources-loader"],
   },
   stories: [
@@ -55,7 +63,13 @@ const config = {
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.
 
+    // You should see this!
+    console.log(configType);
+    console.log(config);
+
     /*
+    // Debug
+
     const scssConfigIndex = config.module.rules.findIndex((c) =>
         '.scss'.match(c.test),
     );
@@ -67,6 +81,7 @@ const config = {
     */
 
 //    config.entry = './.storybook/main.js',
+
 /*
     config.plugins = [
       // Where the compiled SASS is saved to
@@ -94,6 +109,7 @@ const config = {
 */
     config.watchOptions = {
       // those are regex
+      // don't traverse too much!
       ignored: ['/node_modules/', '/node_modules2/', '/app/', '/extensions/', '/tmp/', '/var/', '/vendor/', '/public/fileadmin/', '/public/typo3/', '/public/typo3conf/', '/public/typo3temp/' ]
 
     },
@@ -105,6 +121,9 @@ const config = {
       '/var/www/html/storybook-config-entry.js'
     ],
   */
+
+// This is not needed for now, example doc
+
 //    config.target = 'node',
 //    config.resolve.extensions.push('.scss'),
         /*
@@ -120,11 +139,14 @@ const config = {
             os: false
         }
         */
+
+// @ToDo do we need this?
     config.resolve.fallback.os = false
 
     config.resolve.alias = {
 
 //      ...config.resolve.alias,
+      // This does not help!
 //      ...config.resolve.extensions = ['.scss'],
 
       // @storybook is predefined
@@ -141,22 +163,15 @@ const config = {
         {
           loader: 'raw-loader',
           options: {
+            // @other loaders should be linted
             esModule: false,
           },
         }
       ]
-
     });
 
-    /*
-    config.module.rules.push({
-      test: /\.http$/i,
-      use: [ 'raw-loader' ]
-    });
 
-     */
-
-
+// this schould be in package.json, right? Overwrite here?
 //    config.entry =  '/.storybook/main.js';
     // show all warnings
     config.ignoreWarnings = [];
@@ -181,6 +196,7 @@ const config = {
   docs: {
     autodocs: true,
   },
+  // @ToDo move to pipeline, as long its internal this is ok here
   env: (config) => ({
     ...config,
     STORYBOOK_TYPO3FLUID_API_PASSWORD: 'superpasword',
