@@ -19,7 +19,7 @@ defined('TYPO3') or die('Access denied.');
             new \B13\Container\Tca\ContainerConfiguration(
                 'ce_carousel',
 //                'LLL:EXT:container_elements/Resources/Private/Language/locallang.xlf:accordion.title',
-                '(add.) Container Carosusel',
+                '(add.) Container Carousel',
                 'LLL:EXT:container_elements/Resources/Private/Language/locallang.xlf:accordion.description',
                 [
                     [
