@@ -29,6 +29,11 @@
 		"typo3/tailor": "^1.1",
 		"philip-hartmann/typo3fluid-api": "^0.2"
 	},
+	"suggest": {
+		"headless_bootstrap_package": "^2",
+		"GeorgRinger/news": "^11",
+		"typo3/cms-introduction": "^4"
+	},
 	"config": {
 		"sort-packages": true
 	},

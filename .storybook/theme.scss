@@ -1,17 +1,91 @@
 //
 // Variables
 //
-//@import "variables";
-// import './_variables.scss'
+
+// @import 'variables.scss'
+// @import "./src/Scss/bootstrap5/variables.scss";
+
+@import "./_variables.scss";
 
 //
 // Import needed Bootstrap Files
 //
 //@import "../../Contrib/bootstrap5/scss/bootstrap";
+@import "./src/Contrib/bootstrap5/scss/bootstrap";
+
 
 //
 // Compat
 //
 //@import "compat/text";
+@import "./src/Scss/bootstrap5/compat/text";
 //@import "compat/form";
+@import "./src/Scss/bootstrap5/compat/form";
 //@import "compat/embed";
+@import "./src/Scss/bootstrap5/compat/embed";
+
+
+//
+// Components
+//
+@import "./src/Scss/components/button";
+
+/*
+@import "../components/navbar";
+@import "../components/backendlayout";
+@import "../components/section";
+@import "../components/frame";
+@import "../components/breadcrumb";
+@import "../components/subnav";
+@import "../components/footer";
+*/
+
+@import "./src/Scss/components/carousel";
+@import "./src/Scss/components/accordion";
+@import "./src/Scss/components/tab";
+@import "./src/Scss/components/card";
+
+/*
+@import "../components/audio";
+*/
+
+// @import "../components/link";
+@import "./src/Scss/components/link";
+
+@import "./src/Scss/components/figure";
+@import "./src/Scss/components/gallery";
+@import "./src/Scss/components/address";
+@import "./src/Scss/components/table";
+@import "./src/Scss/components/list";
+@import "./src/Scss/components/filelink";
+@import "./src/Scss/components/blockquote";
+@import "./src/Scss/components/icongroup";
+
+// @ToDo add story
+// @import "../components/timeline";
+@import "./src/Scss/components/timeline";
+
+@import "./src/Scss/components/textpic";
+@import "./src/Scss/components/textteaser";
+
+// @ToDo add story
+//@import "../components/texticon";
+@import "./src/Scss/components/texticon";
+// @import "../components/text";
+@import "./src/Scss/components/text";
+
+/*
+@import "../components/thumbnail-menu";
+@import "../components/sociallink";
+@import "../components/well";
+@import "../components/pagination";
+@import "../components/scrolltop";
+@import "../components/misc";
+@import "../components/contentcontainer";
+
+//
+// Plugins
+//
+@import "../plugins/cookieconsent";
+@import "../plugins/photoswipe";
+*/

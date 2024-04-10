@@ -1,24 +1,25 @@
 /** @type { import('@storybook/vue').Preview } */
 
-
 // import 'bootstrap/dist/css/bootstrap.min.css';
-// import '../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/bootstrap5/theme.scss';
 
-// import base css
-// @ToDo move to main
-// import '../public/typo3conf/ext/bootstrap_package/Resources/Public/Css/bootstrap5-theme.css';
 
-// import './theme.scss';
-// import './bootstrap5-theme.css';
+import { themes } from '@storybook/theming';
+import './theme.scss';
 
-// loaded already in main additional data
-// import "../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/bootstrap5/theme.scss";
-// import './_variables.scss';
+const path = require('path');
 
+
+// const style = require(path.resolve(__dirname, 'sass-extract-loader!./_variables.scss'));
+// const brandInfo = style.global['$theme-colors'].value.primary.value.hex;
+// console.log(brandInfo);
+
+console.log ( path.resolve(__dirname, './') );
+
+// import (path.resolve(__dirname, './theme.scss' ));
 
 // Only import this if you want to use Bootstrap's
 // JQuery helpers
-// import 'bootstrap/dist/js/bootstrap.bundle';
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 
 export const parameters = {
@@ -41,8 +42,9 @@ export const decorators = [
     themes: {
       light: 'light',
       dark: 'dark',
+      init: 'initTheme'
     },
-    defaultTheme: 'light',
+    defaultTheme: 'dark',
     attributeName: 'data-bs-theme',
   }),
 ];

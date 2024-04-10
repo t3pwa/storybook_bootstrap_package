@@ -14,18 +14,19 @@ export default create({
     brandImage: '/fileadmin/introduction/images/introduction-package.svg',
     brandTarget: '_self',
 
+    /*
     //
     //colorPrimary: '#3A10E5',
     colorPrimary: $primary,
     colorSecondary: '#585C6D',
 
     // UI
-/*
-    appBg: '#ffffff',
-    appContentBg: '#ffffff',
-    appPreviewBg: '#ffffff',
 
- */
+//    appBg: '#ffffff',
+//    appContentBg: '#ffffff',
+//    appPreviewBg: '#ffffff',
+
+
     appBorderColor: '#585C6D',
     appBorderRadius: 4,
 
@@ -49,6 +50,6 @@ export default create({
     inputBorder: '#10162F',
     inputTextColor: '#10162F',
     inputBorderRadius: 2,
-
+    */
 
 });

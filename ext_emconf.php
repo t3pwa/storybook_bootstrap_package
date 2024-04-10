@@ -1,10 +1,10 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Fäb | Blog Example',
-    'description' => 'This extension contains code examples used in TYPO3 explained to describe the use of Extbase',
+    'title' => 'Fäb | Storybook Boostrap Package',
+    'description' => '',
     'version' => '11.0.3',
-    'category' => 'example, blog, video, bootstrap, ',
+    'category' => 'example, video, bootstrap, ',
     'author' => 'TYPO3 Documentation Team and Contributors',
     'author_company' => '',
     'author_email' => '',
@@ -13,11 +13,17 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '11.5.0-11.5.99',
-            'Faeb/videoprocessing' => '@dev'
+            'Faeb/videoprocessing' => '@dev',
+            'philip-hartmann/typo3fluid-api' => '^0.2',
+            'bk2k/bootstrap_package' => '^12'
         ],
         'conflicts' => [
+            'philip-hartmann/typo3fluid_storybook_example'
+        ],
+        'suggests' => [
+            "headless_bootstrap_package",
+            "GeorgRinger/news",
 
         ],
-        'suggests' => [],
     ]
 ];

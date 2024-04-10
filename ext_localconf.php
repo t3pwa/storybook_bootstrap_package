@@ -37,11 +37,13 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
         '@import "EXT:container_elements/Configuration/TypoScript/setup.typoscript"'
     );
 
+    /*
     ExtensionManagementUtility::addTypoScript(
         'container_elements',
         'setup',
         '@import "EXT:FILE:EXT:storybook_bootstrap_package/Configuration/TypoScript/ContentElement/Helper/DynamicContent.typoscript"'
     );
+    */
 
 
 
