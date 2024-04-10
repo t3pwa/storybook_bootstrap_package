@@ -5,7 +5,7 @@ import {size} from "../../../../storybook-static/205.4adc836c.iframe.bundle";
 
 import { html } from 'lit';
 
-import './cardgroup.css';
+// import './cardgroup.scss';
 
 
 export default {
@@ -62,7 +62,7 @@ export const Primary = Template.bind({});
 Primary.args = {
     data: {
         pi_flexform: {
-            columns: 3,
+            columns: 4,
             align: "left"
         }
     },
@@ -132,7 +132,8 @@ Primary.args = {
                         link: "http://www.de",
                         header: "record/image/header",
                         title: "record/image/header",
-                        src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
+                        id: "765"
                     }
                 }
 

@@ -9,9 +9,9 @@ export default {
     args : {
         file: {
             properties: {
-                id: "591",
+                id: 765,
                 link: "http://www.de",
-                title: "Image Title"
+                title: "exchange"
             }
         },
         data: {

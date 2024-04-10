@@ -1,19 +1,13 @@
 import { FluidTemplate } from "storybook-typo3fluid/";
+
 import {size} from "../../../../storybook-static/205.4adc836c.iframe.bundle";
-// import '../../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/plugins/_cookieconsent.scss';
-// import '../../../public/typo3conf/ext/bootstrap_package/Resources/Public/Css/bootstrap5-theme.css';
 
 import { html } from 'lit';
 
 import panel_http from './panel.http'
 import panel_txt from './panel.txt'
 
-
-import './debug.css';
-
-// add additional panel.css
-// import './panel.css';
-
+// import './debug.scss';
 // https://www.w3schools.com/Bootstrap/bootstrap_panels.asp
 
 export default {
@@ -107,6 +101,12 @@ Primary.args = {
     primary: true,
 };
 
+export const PrimaryPanel = Template.bind({});
+PrimaryPanel.args = {
+    ...Primary.args,
+}
+
+
 export const Debug = Template.bind({});
 Debug.args = {
     data: {
@@ -127,7 +127,11 @@ Debug.decorators = [
     // (story) => `${Debug(Tertiary.args)}`,
     // (story) => html`<pre>${story()}</pre>`,
     // (story) => html`${panel_http()}`,
-    (story) => html`${panel_txt()}`,
+
+// raw loader deactivated for now debugging
+//    (story) => html`${panel_txt()}`,
+
+
 ];
 
 
@@ -147,7 +151,7 @@ export const Tertiary = Template.bind({});
 // Tertiary.decorators = [(story) => html`<pre>${story()}</pre>`];
 Tertiary.decorators = [
     (story) => `${Debug(Tertiary.args)}`,
-    // (story) => html`<pre>${story()}</pre>`,
+//    (story) => html`<pre>${story()}</pre>`,
 ];
 
 Tertiary.argTypes = {
@@ -159,14 +163,26 @@ Tertiary.argTypes = {
             danger: html`<i>danger Italic</i>`,
 
             Bold: html`<b>Bold</b>`,
-            Italic: html`<i>Italic</i>`,
+//            Italic: html`<i>Italic</i>`,
         },
     },
+    "--bs-card-spacer-y": {
+        value: {
+            control: {
+                type: 'number'
+            }
+        },
+        unit: 'rem'
+    }
 }
 
 Tertiary.args = {
     ...Primary.args,
     primary: false,
+
+    "--bs-card-spacer-y" : "1.7",
+    "--bs-card-spacer-x" : "1.7",
+
     data: {
         panel_class: "info",
         header: "Panel Header Tertiary layout 3",
@@ -188,7 +204,10 @@ Tertiary.args = {
 
 const panel_class = Primary.args.data.panel_class.toString();
 const panel_data = JSON.stringify(Primary.args.data);
-const panel_text = JSON.stringify(panel_txt);
+
+// deactivated for now
+// const panel_text = JSON.stringify(panel_txt);
+
 // const panel_http = JSON.stringify(panel_http);
 
 export const HttpRequest = Template.bind({});
@@ -198,13 +217,8 @@ HttpRequest.args = {
     data: {
         panel_class: "info",
         header: "Import panel_http",
-//        subheader: "subheader",
-//        header_layout: 2,
-        // bodytext: json`${panel_http()}`,
-        // bodytext: "panel_class: "+`${panel_class}`,
-        // bodytext: "data: "+`${panel_data}`,
-        // bodytext: `<pre>${panel_text}</pre>`,
-        bodytext: `<pre>`+JSON.parse(`${panel_text}`)+`</pre>`
+        subheader: "subheader",
+        header_layout: 2,
+        bodytext: `<pre>${panel_http}</pre>`,
     },
-
 };

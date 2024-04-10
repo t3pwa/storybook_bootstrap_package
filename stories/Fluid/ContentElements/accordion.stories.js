@@ -5,7 +5,7 @@ import {size} from "../../../../storybook-static/205.4adc836c.iframe.bundle";
 
 import { html } from 'lit';
 
-import './cardgroup.css';
+//import './cardgroup.scss';
 
 
 export default {

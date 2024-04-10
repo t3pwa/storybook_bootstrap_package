@@ -1,5 +1,5 @@
 import { FluidTemplate } from "storybook-typo3fluid/";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {size} from "../../../../storybook-static/205.4adc836c.iframe.bundle";
 // import '../../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/plugins/_cookieconsent.scss';
@@ -81,7 +81,6 @@ Primary.args = {
             }
         }
     },
-
     files: {
         0: {
             properties: {
@@ -92,7 +91,6 @@ Primary.args = {
         },
 
     },
-
     layout: 1,
     primary: true,
 };
@@ -100,6 +98,7 @@ Primary.args = {
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
+
     header : 'Tertiary Header, layout 4',
     layout : 3,
     class : 'btn btn-tertiary',
@@ -107,7 +106,11 @@ Tertiary.args = {
     positionClass : 'right',
     // link : 'https://typo3.org/right',
     label: 'Tertiary Header Label',
+
     data: {
+
+        imagecols: 3,
+
         header_layout: 3,
         header: "Haader/All",
         header_position: "above",
@@ -127,13 +130,13 @@ Tertiary.args = {
             }
         }
     },
-
     files: {
         0: {
             properties: {
                 link: "http://www.de",
                 title: "Image Title",
-                src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
+                _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
+                src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
             }
         },
         1: {
@@ -142,6 +145,14 @@ Tertiary.args = {
                 title: "Image Title",
                 _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
                 id: "591"
+
+            }
+        },
+        2: {
+            properties: {
+                link: "http://www.de/404",
+                title: "Image Title ID 404",
+                id: "598"
 
             }
         }

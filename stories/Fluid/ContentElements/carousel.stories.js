@@ -5,7 +5,7 @@ import {size} from "../../../../storybook-static/205.4adc836c.iframe.bundle";
 
 import { html } from 'lit';
 
-import './cardgroup.css';
+//import './cardgroup.scss';
 
 
 export default {
@@ -94,7 +94,8 @@ Primary.args = {
                         link_class: "primary",
                         header: "images/0/record/data/image/properties/header",
                         title: "images/0/record/data/image/properties/title",
-                        src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
+                        id: 765
                     }
                 }
             },
@@ -127,9 +128,9 @@ Primary.args = {
             },
 
             data: {
-                item_type: "Image",
-                background_color: "",
-                text_color: ""
+                item_type: "image",
+                background_color: "#00ff00",
+                text_color: "$white"
             }
 
         }
