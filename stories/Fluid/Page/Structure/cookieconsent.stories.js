@@ -2,9 +2,9 @@ import { FluidTemplate } from "storybook-typo3fluid/";
 //import './public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/plugins/_cookieconsent.scss';
 //import './../../../../public/typo3conf/ext/bootstrap_package/Resources/Public/Css/bootstrap5-theme.css'
 // import './../../../../public/typo3conf/ext/bootstrap_package/Resources/Public/Css/bootstrap5-theme.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
-import './cookieconsent.css';
+// import './cookieconsent.scss';
 
 
 

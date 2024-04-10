@@ -50,7 +50,6 @@ export const Template = (args) => FluidTemplate({
 
 export const Primary = Template.bind({});
 Primary.args = {
-
     settings : {
         hidePagination: 1
     },
@@ -63,51 +62,31 @@ Primary.args = {
             text: '<small>][SB</small> &copy; Running with <link pageUid="1">TYPO3</link>, Boostrap Package and Storybook'
         }
     },
-
-    header : 'header',
+    label: 'Primary Copyright',
+    header : 'Primary Copyright',
     layout : 1,
-    class : 'classname',
-    displayClass : 'displayClass',
+    class : 'classname-copyright',
+    displayClass : 'displayClass-copyright',
     positionClass : 'bottom',
     link : 'https://t3pwa.org',
 
-    primary: true,
-    label: 'Button'
-
-
+    primary: false
 
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-    // exampleProp: process.env.STORYBOOK_TYPO3FLUID_API_URL,
-//    arr: ['one', 'two'],
-    /*
-        children_101: {
-            0: {
-                uid: '185',
-                CType: 'textpic',
-                header: 'header',
-                header_position: 'above',
-                bodytext: 'bodytext'
-            },
-            1: {
-                uid: '185'
-            }
-        },
-    */
-
-
+    API_URL: process.env.STORYBOOK_TYPO3FLUID_API_URL,
+    API_PASSWORD: process.env.STORYBOOK_TYPO3FLUID_API_PASSWORD,
     theme: {
-        cookieconsent: {
-            enable: "true"
+        copyright: {
+            enable: "true",
+            text: '<small>][SB</small> &copy; Running with <link pageUid="1">TYPO3</link>, Boostrap Package and Storybook &#128406;'
         }
     },
-
     settings : {
         hidePagination: 1
     },
-
     header : 'Secondary Header',
     layout : 1,
     class : 'classname secondyry-classname',
@@ -116,7 +95,7 @@ Secondary.args = {
     link : 'https://t3pwa.com',
 
     primary: true,
-    label: 'Button Secondary'
+    label: 'Copyright Secondary'
 
 
     /*
