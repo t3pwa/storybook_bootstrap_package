@@ -1,7 +1,8 @@
-import './header.css';
+// import './header.scss';
 import { createButton } from './Button';
 
-import {createLogo} from "./Fluid/Page/Header/Logo";
+import {createLogo} from "./Page/Header/Logo";
+// import {Primary} from "./Fluid/Page/Header/logo.stories";
 
 export const createHeader = ({ user, onLogout, onLogin, onCreateAccount }) => {
   const header = document.createElement('header');
@@ -26,12 +27,18 @@ export const createHeader = ({ user, onLogout, onLogin, onCreateAccount }) => {
     <h1>Acme</h1>
   </div>`;
 
-  //wrapper.insertAdjacentHTML('afterbegin', logo);
+
+  /*
   wrapper.appendChild(
-      createLogo(
-          true, "medium", "LogoLabel"
-      )
+      createLogo( true, "medium", "LogoLabel" )
   );
+
+   */
+
+
+
+
+  wrapper.insertAdjacentHTML('afterbegin', logo);
 
   const account = document.createElement('div');
   if (user) {
