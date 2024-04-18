@@ -1,0 +1,20 @@
+POST https://t3v11.ddev.site/api/typo3fluid
+Content-Type: application/json
+
+{
+  "extension": "bootstrappackage",
+  "template": "ContentElements/Quote",
+  "partial": "ContentElements/",
+  "section": "",
+  "arguments": {
+    "debug": "true",
+    "data": {
+      "quote_link": "http://typo3.dev.init",
+      "bodytext": "Bodytext",
+      "quote_source": "Source"
+    }
+  },
+
+
+"password": "superpassword"
+}

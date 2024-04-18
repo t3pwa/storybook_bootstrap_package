@@ -1,0 +1,79 @@
+POST https://t3v11.ddev.site/api/typo3fluid
+Content-Type: application/json
+
+{
+  "extension": "bootstrappackage",
+  "template": "ContentElements/MenuCardDir",
+  "partial": "ContentElements/",
+  "section": "Main",
+  "arguments": {
+    "menu": {
+      "0": {
+        "title": "Page Title",
+        "link": "https://dev.init",
+        "data": {
+          "abstract": "Abstract <br><br><br><br>...."
+        },
+        "files": {
+          "0": {
+            "id": 0
+          }
+        }
+      }
+    },
+    "data": {
+    },
+    "pi_flexform": {
+      "columns": "3"
+    }
+  },
+  "settings": {
+    "menucard": {
+      "abstract": {
+        "crop": 15
+      },
+      "title": {
+        "crop": 15
+      },
+      "subtitle": {
+        "crop": 15
+      },
+      "icon": {
+        "height": "16",
+        "width": 24
+      }
+    },
+    "header": {
+      "defaultHeaderType": 0
+    },
+    "gallery": {
+      "columns": {
+        "3": {
+          "multiplier": {
+          },
+          "gutters": {
+          },
+          "corrections": {
+          }
+        }
+      }
+    }
+  },
+  "records": {
+    "0": {
+      "image": {
+        "link": "http://www.de",
+        "header": "record/image/header"
+      }
+    },
+    "1": {
+      "link": "http://www.de",
+      "header": "record/image/header",
+      "image": {
+        "link": "http://www.de",
+        "header": "record/image/header"
+      }
+    }
+  },
+  "password": "superpassword"
+}
