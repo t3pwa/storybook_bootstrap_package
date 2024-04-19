@@ -14,10 +14,8 @@ defined('TYPO3') or die('Access denied.');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
     'storybook_bootstrap_package',
     'Configuration/TypoScript',
-    'new Blog Example Overrides'
+    'Storybook Bootstrap Package Overrides'
 );
-
-
 
 /***************
  * TypoScript: Full Package
