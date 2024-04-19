@@ -13,7 +13,7 @@ $gray-800:                          #313131 !default;
 $gray-900:                          #212121 !default;
 $black:                             #000000 !default;
 
-$primary:                           #00ff00 !default;
+$primary:                           #ff851e !default;
 $secondary:                         #e76f51 !default;
 $tertiary:                          #f4a261 !default;
 $quaternary:                        #e9c46a !default;
@@ -23,6 +23,10 @@ $success:                           #5cb85c !default;
 $info:                              #319fc0 !default;
 $warning:                           #f0ad4e !default;
 $danger:                            #d9534f !default;
+
+$error: #db5461 !default;
+$danger: $error;
+
 $lighter:                           $gray-100 !default;
 $light:                             $gray-200 !default;
 $dark:                              $gray-800 !default;
@@ -42,6 +46,7 @@ $theme-colors: (
     'light':                        $light,
     'dark':                         $dark,
     'darker':                       $darker,
+    'error':                        $error,
 ) !default;
 
 $body-bg:                           $white !default;

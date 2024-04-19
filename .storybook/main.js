@@ -18,6 +18,8 @@ const sassVars = require("./theme");
 
 /*
 @ToDo newer example, evaluate, works
+#https://stackoverflow.com/questions/17787845/how-to-control-sass-variable-with-javascript
+# @ToDo load from .storybook folder
 const style = require('sass-extract-loader!./_variables.scss');
 const brandInfo = style.global['$theme-colors'].value.primary.value.hex;
 console.log(brandInfo);
@@ -35,7 +37,7 @@ const config = {
   },
   stats: {
     // @ToDo add those other loaders
-    loggingDebug: ["sass-loader", "sass-resources-loader"],
+    // loggingDebug: ["sass-loader", "sass-resources-loader"],
   },
   stories: [
     "../stories/**/*.mdx",
@@ -82,15 +84,18 @@ const config = {
 
 //    config.entry = './.storybook/main.js',
 
-/*
-    config.plugins = [
-      // Where the compiled SASS is saved to
-       new MiniCssExtractPlugin(
-           {
-             filename: './index.css'
-             // allChunks: true,
-           }
-       )
+
+    /*
+config.plugins = [
+
+// Where the compiled SASS is saved to
+new MiniCssExtractPlugin(
+   {
+     filename: './index.css'
+     // allChunks: true,
+   }
+)
+
     ];
 */
 
@@ -153,7 +158,9 @@ const config = {
 
 //      '@': path.join(process.cwd(), "./public/packages/storybook_bootstrap_package/"),
       //'@css': path.resolve(__dirname, '../public/typo3conf/ext/bootstrap_package/Resources/Public/Css/'),
-      '@scss': path.join(process.cwd(),'./public/typo3conf/ext/bootstrap_package/Resources/Public/Scss')
+      '@scss': path.join(process.cwd(),'./public/typo3conf/ext/bootstrap_package/Resources/Public/Scss'),
+      'jquery': path.join(process.cwd(),'./node_modules/jquery/dist/jquery.js'),
+      'jquery-jsonview': path.join(process.cwd(),'./node_modules/jquery-jsonview/dist/jquery.jsonview.js')
       // ...
     };
 
@@ -169,6 +176,18 @@ const config = {
         }
       ]
     });
+
+    config.module.rules.push({
+      test: /\.(js|jsx)$/i,
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {},
+        }
+      ]
+    });
+
 
 
 // this schould be in package.json, right? Overwrite here?

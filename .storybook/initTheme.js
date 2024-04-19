@@ -14,11 +14,11 @@ export default create({
     brandImage: '/fileadmin/introduction/images/introduction-package.svg',
     brandTarget: '_self',
 
-    /*
+
     //
-    //colorPrimary: '#3A10E5',
-    colorPrimary: $primary,
-    colorSecondary: '#585C6D',
+    colorPrimary: '#3A10E5',
+    // colorPrimary: $primary,
+    // colorSecondary: $secondary,
 
     // UI
 
@@ -45,11 +45,10 @@ export default create({
 //    barBg: '#ffffff',
 
     // Form colors
-//    inputBg: '#ffffff',
     inputBg: '#9E9E9E',
     inputBorder: '#10162F',
     inputTextColor: '#10162F',
     inputBorderRadius: 2,
-    */
+
 
 });
