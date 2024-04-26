@@ -1,6 +1,10 @@
 <?php
 
+
+
 defined('TYPO3') or die();
+
+// $extensionKey = 'storybook_bootstrap_package';
 
 use Faeb\StorybookBootstrapPackage\Controller\BlogController;
 use Faeb\StorybookBootstrapPackage\Controller\CommentController;

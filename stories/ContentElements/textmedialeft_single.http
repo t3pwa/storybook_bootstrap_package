@@ -10,7 +10,7 @@ Content-Type: application/json
     "data": {
       "teaser": "teaser",
       "bodytext": "[ContentElements/TextmediaLeft/Bodytext]\n Lorem ipsum doloret lipsum amtet dolores pagina morum est\n\n\n[/end]",
-      "imagecols": "3"
+      "imagecols": "1"
     },
     "settings": {
       "header": {
@@ -18,7 +18,7 @@ Content-Type: application/json
       },
       "gallery": {
         "columns": {
-          "3": {
+          "1": {
             "multiplier": {
 
             },
@@ -34,27 +34,13 @@ Content-Type: application/json
     },
     "files": {
 
-      "0": {
-        "properties": {
-          "link": "http://www.de",
-          "title": "Image Title",
-          "src": "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
-        }
-      },
-      "1": {
-        "properties": {
-          "link": "http://www.de",
-          "title": "Image Title 2",
-          "src": "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
-        }
-      },
       "2": {
         "properties": {
           "link": "http://www.de",
           "title": "[767] the-creative-exchange-373981-unsplash.jpg",
           "_src": "/fileadmin/pexels-rostislav-uzunov-10613973__1080p__2e10da7287.mp4",
           "id" : 782,
-          "_type": "video"
+          "type": "video"
         }
       }
 

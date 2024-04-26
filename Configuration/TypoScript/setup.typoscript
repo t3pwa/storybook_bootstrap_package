@@ -1,5 +1,78 @@
 
 
+
+lib.dynamicContent = COA
+lib.dynamicContent {
+	5 = LOAD_REGISTER
+	5 {
+		colPos.cObject = TEXT
+		colPos.cObject {
+			field = colPos
+			ifEmpty.cObject = TEXT
+			ifEmpty.cObject {
+				value.current = 1
+				ifEmpty = 0
+			}
+		}
+		slide.cObject = TEXT
+		slide.cObject {
+			override {
+				field = slide
+				if {
+					isInList.field = slide
+					value = -1, 0, 1, 2
+				}
+			}
+			ifEmpty = 0
+		}
+		pageUid.cObject = TEXT
+		pageUid.cObject {
+			field = pageUid
+			ifEmpty.data = TSFE:id
+		}
+		contentFromPid.cObject = TEXT
+		contentFromPid.cObject {
+			data = DB:pages:{register:pageUid}:content_from_pid
+			data.insertData = 1
+		}
+		wrap.cObject = TEXT
+		wrap.cObject {
+			field = wrap
+		}
+		elementWrap.cObject = TEXT
+		elementWrap.cObject {
+			field = elementWrap
+		}
+	}
+	20 = CONTENT
+	20 {
+		table = tt_content
+		select {
+			includeRecordsWithoutDefaultTranslation = 1
+			orderBy = sorting
+			where = {#colPos}={register:colPos}
+			where.insertData = 1
+			pidInList.data = register:pageUid
+			pidInList.override.data = register:contentFromPid
+		}
+		slide = {register:slide}
+		slide.insertData = 1
+		renderObj {
+			stdWrap {
+				dataWrap = {register:elementWrap}
+				required = 1
+			}
+		}
+		stdWrap {
+			dataWrap = {register:wrap}
+			required = 1
+		}
+	}
+	90 = RESTORE_REGISTER
+}
+lib.dynamicContentSlide =< lib.dynamicContent
+lib.dynamicContentSlide.20.slide = -1
+
 #@isroot
 #@clear
 #@sitetitle "StorybookBootstrapPackage Sitetitle TS Setup Example/Base"
@@ -25,8 +98,8 @@
 @import 'EXT:bootstrap_package/Configuration/TypoScript/Helper/PageClass.typoscript'
 
 # added manually
-@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/ContentElement/Helper/setup.typoscript'
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:storybook_bootstrap_package/Configuration/TypoScript/ContentElement/Helper/DynamicContent.typoscript">
+# @import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/ContentElement/Helper/setup.typoscript'
+# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:storybook_bootstrap_package/Configuration/TypoScript/ContentElement/Helper/DynamicContent.typoscript">
 
 ###################
 #### FRAMEWORK ####
@@ -81,8 +154,10 @@ page {
 # Plugin configuration
 plugin.tx_storybook_bootstrap_package {
 	settings {
-		# maximum number of posts to display per page
+		# maximum number of stories to display per page
 		postsPerPage = 3
+		storiesPerPage = 13
+
 		# Editor FE Usergroup uid
 		editorUsergroupUid = {$plugin.tx_storybook_bootstrap_package.settings.editorUsergroupUid}
 		# Plaintext page type number
@@ -135,8 +210,9 @@ module.tx_storybook_bootstrap_package {
 	}
 }
 
-# Make postlist available as lib.storybook_bootstrap_package_post_list
+# Make storylist available as lib.storybook_bootstrap_package_story_list
 #lib.storybook_bootstrap_package_post_list < tt_content.list.20.blogexample_postlist
+#lib.storybook_bootstrap_package_story_list < tt_content.list.20.storybook_bootstrap_package_storylist
 
 
 # Rendering of content elements in detail view
@@ -173,25 +249,24 @@ lib.containerContentElement {
 #@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/cart_products/setup.typoscript'
 #@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/powermail/setup.typoscript'
 
-
+################################################
 ########### add ts setup for boostrap_package to have it for typo3 fluid api
 # BOOTSTRAP PACKAGE
-
 plugin.tx_bootstrappackage {
 	view {
 		templateRootPath = {$plugin.tx_storybookbootstrappackage.view.templateRootPath}
 		templateRootPaths {
-			2 = EXT:storybook_bootstrap_package/Resources/Private/Templates/
+			6007 = EXT:storybook_bootstrap_package/Resources/Private/Templates/
 			#1 = {$plugin.tx_bootstrappackage.view.templateRootPath}
 		}
 		partialRootPath = {$plugin.tx_storybookbootstrappackage.view.partialRootPath}
 		partialRootPaths {
-			2 = EXT:storybook_bootstrap_package/Resources/Private/Partials/
+			6007 = EXT:storybook_bootstrap_package/Resources/Private/Partials/
 			#1 = {$plugin.tx_bootstrappackage.view.partialRootPath}
 		}
 		layoutRootPath = {$plugin.tx_storybookbootstrappackage.view.layoutRootPath}
 		layoutRootPaths {
-			2 = EXT:storybook_bootstrap_package/Resources/Private/Layouts/
+			6007 = EXT:storybook_bootstrap_package/Resources/Private/Layouts/
 			#1 = {$plugin.tx_bootstrappackage.view.layoutRootPath}
 		}
 	}
@@ -483,3 +558,4 @@ config.tx_extbase.persistence.classes {
 	}
 
 }
+

@@ -14,8 +14,12 @@
   "dependencies": {
     "@storybook/preset-scss": "^1.0.3",
     "bootstrap": "^5.3.3",
+    "canvas": "^2.11.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.10.0",
+    "enhanced-resolve": "^5.10.0",
+    "jquery": "^3.7.1",
+    "jquery-jsonview": "^1.2.3",
     "lit": "^3.1.2",
     "node-sass": "^9.0.0",
     "node-sass-utils": "^1.1.3",

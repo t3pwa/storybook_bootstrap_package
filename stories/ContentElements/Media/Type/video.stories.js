@@ -11,7 +11,8 @@ export default {
             properties: {
                 link: "http://www.de",
                 title: "Video Title",
-                src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4"
+                src: "/fileadmin/pexels-rostislav-uzunov-10613973__1080p__2e10da7287.mp4",
+                id : 782
             }
         }
 
@@ -66,8 +67,8 @@ Primary.args = {
             link: "http://www.de",
             title: "Primary external SRC Video Title",
             alternative: "Primary external SRC Video Title",
-            src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4",
-            _id: 584
+            id: 782,
+
         }
     },
     layout: 0,
@@ -85,18 +86,18 @@ Secondary.args = {
     settings: {
         media: {
             additionalConfig: {
-                "loop": 1,
-                "autoplay": 1
+//                "loop": 1,
+//                "autoplay": 1
             }
         }
     },
     file: {
         properties: {
+            id: "782",
             link: "http://www.de",
-            title: "secondary FAL Video Title",
-            alternative: "secondary FAL Video Title",
-            _src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4",
-            id: 584
+            title: "Video Title",
+            src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4",
+            description: "Video description"
         }
     },
     layout: 0,

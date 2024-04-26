@@ -482,8 +482,8 @@ Columns4.args = {
 
 
 
-export const Columns4framed = Template.bind({});
-Columns4framed.args = {
+export const Columns3framed = Template.bind({});
+Columns3framed.args = {
     data: {
         pi_flexform: {
             columns: 4,
@@ -600,7 +600,7 @@ Columns4framed.args = {
 // copied from textmedialeft
 
 // Frame.decorators = [
-Columns4framed.decorators = [
+Columns3framed.decorators = [
     (story) => `
 <div class="frame frame-default 
     frame-type-`+Tertiary.args.frame.type+`
@@ -611,7 +611,7 @@ Columns4framed.decorators = [
     <div class="frame-group-container">
         <div class="frame-group-inner">
             <div class="frame-container frame-container-default">
-                ${Columns4framed(Tertiary.args)}
+                ${Columns3framed(Tertiary.args)}
             </div>
         </div>
     </div>

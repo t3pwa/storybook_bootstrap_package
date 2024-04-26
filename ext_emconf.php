@@ -1,7 +1,7 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Fäb | Storybook Boostrap Package',
+    'title' => 'TYPO3 Fluid Storybook Boostrap Package',
     'description' => '',
     'version' => '11.0.3',
     'category' => 'example, video, bootstrap, ',
@@ -13,17 +13,16 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '11.5.0-11.5.99',
-            'Faeb/videoprocessing' => '@dev',
             'philip-hartmann/typo3fluid-api' => '^0.2',
             'bk2k/bootstrap_package' => '^12'
         ],
-        'conflicts' => [
+        'replaces' => [
             'philip-hartmann/typo3fluid_storybook_example'
         ],
         'suggests' => [
             "headless_bootstrap_package",
             "GeorgRinger/news",
-
+            'Faeb/videoprocessing' => '@dev',
         ],
     ]
 ];

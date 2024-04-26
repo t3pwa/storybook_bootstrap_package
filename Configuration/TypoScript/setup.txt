@@ -1,2 +1,1 @@
-# Important: This file is deprecated and will removed with EXT:news 10.x
 @import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/setup.typoscript'

@@ -10,10 +10,12 @@ Content-Type: application/json
     "debug": "true",
     "file": {
       "properties": {
-        "id": "591",
+        "_id": "591",
         "link": "http://www.de",
-        "title": "Image Title",
-        "src": "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
+        "title": "Launch Night <small>[Image Title]</small>",
+        "_src": "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
+        "src": "/fileadmin/user_upload/undraw_relaunch_day_902d.svg",
+        "embedSVG": 1
       }
     },
     "settings": {}

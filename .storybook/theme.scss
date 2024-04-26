@@ -34,7 +34,10 @@
 @import "../components/navbar";
 @import "../components/backendlayout";
 @import "../components/section";
-@import "../components/frame";
+*/
+//@import "../components/frame";
+@import "./src/Scss/components/frame";
+/*
 @import "../components/breadcrumb";
 @import "../components/subnav";
 @import "../components/footer";
@@ -74,18 +77,32 @@
 // @import "../components/text";
 @import "./src/Scss/components/text";
 
+
+//@import "../components/thumbnail-menu";
+@import "./src/Scss/components/thumbnail-menu";
+
+//@import "../components/sociallink";
+@import "./src/Scss/components/sociallink";
 /*
-@import "../components/thumbnail-menu";
-@import "../components/sociallink";
 @import "../components/well";
 @import "../components/pagination";
 @import "../components/scrolltop";
 @import "../components/misc";
-@import "../components/contentcontainer";
-
+*/
+//@import "../components/contentcontainer";
+@import "./src/Scss/components/contentcontainer";
+/*
 //
 // Plugins
 //
 @import "../plugins/cookieconsent";
 @import "../plugins/photoswipe";
 */
+
+
+//
+// Storybook Overrides
+//
+
+// there is no logo.scss in BSP
+@import "./../stories/Page/Header/_logo.scss";

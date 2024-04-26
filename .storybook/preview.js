@@ -13,14 +13,13 @@ const path = require('path');
 // const brandInfo = style.global['$theme-colors'].value.primary.value.hex;
 // console.log(brandInfo);
 
-console.log ( path.resolve(__dirname, './') );
+console.log ( "base path", path.resolve(__dirname, './') );
 
 // import (path.resolve(__dirname, './theme.scss' ));
 
 // Only import this if you want to use Bootstrap's
 // JQuery helpers
 import 'bootstrap/dist/js/bootstrap.bundle';
-
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

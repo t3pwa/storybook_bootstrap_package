@@ -5,20 +5,17 @@ export default {
     title: 'ContentElements/MenuThumbnailDir',
     tags: ['autodocs'],
     args : {
-
         data : {
-
             pi_flexform: {
                 align: "left",
                 columns: "3",
                 icon_position: "left"
-
             },
         },
 
         "menu": {
-            "accordion": {
-                title: "Accordion 1",
+            0: {
+                title: "menu/Accordion 1",
                 link: "https://dev.init",
                 target: "",
                 data: {
@@ -30,7 +27,7 @@ export default {
                             link: "http://www.de",
                             title: "the-creative-exchange-373981-unsplash.jpg",
                             _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
-                            id: "765"
+                            id: 765
                         }
                     },
                     1: {
@@ -39,12 +36,12 @@ export default {
                             title: "Image Title",
                             _src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4#t=5",
                             type: "image",
-                            id: "765"
+                            id: 763
                         }
                     }
                 },
             },
-            "menucarddir": {
+            1: {
                 "title": "Menu Card Directory",
                 "link": "https://dev.init:6006/?path=/story/contentelements-menucarddir--primary",
                 "data": {
@@ -56,7 +53,7 @@ export default {
                             link: "http://www.de",
                             title: "the-creative-exchange-373981-unsplash.jpg",
                             _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
-                            id: "765"
+                            id: 767
                         }
                     },
                     1: {
@@ -70,7 +67,7 @@ export default {
                     }
                 },
             },
-            "cardgroup": {
+            3: {
                 "title": "Card Group",
                 "link": "https://dev.init:6006/?path=/story/contentelements-cardgroup--primary",
                 "data": {
@@ -82,7 +79,7 @@ export default {
                             link: "http://www.de",
                             title: "the-creative-exchange-373981-unsplash.jpg",
                             _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
-                            id: "765"
+                            id: 772
                         }
                     },
                     1: {
@@ -167,6 +164,119 @@ Primary.args = {
     },
 
 
+    menu: {
+        // ...default.args,
+        4: {
+            title: "associative menu/Fourth 0",
+            link: "https://dev.init",
+            target: "",
+            data: {
+                "abstract": "Abstract <br> \n\r \n\r \n\r /end",
+            },
+            files: {
+                0: {
+                    properties: {
+                        link: "http://www.de",
+                        title: "the-creative-exchange-373981-unsplash.jpg",
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
+                        id: 765
+                    }
+                },
+                1: {
+                    properties: {
+                        link: "http://www.de",
+                        title: "Image Title",
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4#t=5",
+                        type: "image",
+                        id: 763
+                    }
+                }
+            },
+        },
+        51: {
+            title: "menu/Fourth2",
+            link: "https://dev.init",
+            target: "",
+            data: {
+                "abstract": "Abstract <br> \n\r \n\r \n\r /end",
+            },
+            files: {
+                0: {
+                    properties: {
+                        link: "http://www.de",
+                        title: "the-creative-exchange-373981-unsplash.jpg",
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
+                        id: 767
+                    }
+                },
+                1: {
+                    properties: {
+                        link: "http://www.de",
+                        title: "Image Title",
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4#t=5",
+                        type: "image",
+                        id: 763
+                    }
+                }
+            },
+        },
+        41: {
+            title: "menu/Fourth3",
+            link: "https://dev.init",
+            target: "",
+            data: {
+                "abstract": "Abstract <br> \n\r \n\r \n\r /end",
+            },
+            files: {
+                0: {
+                    properties: {
+                        link: "http://www.de",
+                        title: "the-creative-exchange-373981-unsplash.jpg",
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
+                        id: 761
+                    }
+                },
+                1: {
+                    properties: {
+                        link: "http://www.de",
+                        title: "Image Title",
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4#t=5",
+                        type: "image",
+                        id: 763
+                    }
+                }
+            },
+        },
+        44: {
+            title: "menu/Fourth",
+            link: "https://dev.init",
+            target: "",
+            data: {
+                "abstract": "Abstract <br> \n\r \n\r \n\r /end",
+            },
+            files: {
+                0: {
+                    properties: {
+                        link: "http://www.de",
+                        title: "the-creative-exchange-373981-unsplash.jpg",
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
+                        id: 771
+                    }
+                },
+                1: {
+                    properties: {
+                        link: "http://www.de",
+                        title: "Image Title",
+                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4#t=5",
+                        type: "image",
+                        id: 763
+                    }
+                }
+            },
+        },
+    },
+
+
     page: {
         title: "page title",
         data: {
@@ -185,7 +295,6 @@ Primary.args = {
             }
         }
     },
-
 
     layout: 0,
     primary: true,

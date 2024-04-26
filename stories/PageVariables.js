@@ -6,7 +6,7 @@ import './_pageVariables.scss';
 // import { createPanel } from './Fluid/ContentElements/Panel';
 
 // Should i import a story to a page module?
-import {Debug, Primary, Tertiary} from "./ContentElements/panel.stories";
+import {Debug, Primary, Tertiary} from "./ContentElements/panel/panel.stories";
 
 import {VariablesDefault} from "./Variables.stories";
 
@@ -109,10 +109,11 @@ export const createVariablesPage = () => {
       recursive_collapser: true
     });
 
+    // removes quotes and adds value to data attribute
     jQuery(".jsonview .string").attr('data-value', function() {
       return $(this).text().replace(/['"]+/g, '');
     });
-    // add background color, when data-value is a color
+    // add background color, if data-value is a Sass color (begins with raute, asume is hex)
     jQuery(".jsonview .string[data-value^='#']").attr('style', function() {
           return "background: " + $(this).data('value') + ";";
         }

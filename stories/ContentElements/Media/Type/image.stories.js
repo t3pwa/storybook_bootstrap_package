@@ -22,7 +22,6 @@ export default {
         data: {
 
         },
-        backgroundColor: { control: 'color' },
         // label: { control: 'text' },
         primary: { control: 'boolean' },
         size: {
@@ -32,10 +31,7 @@ export default {
         layout: {
             control: { type: 'select' },
             options: ['0', '1', '2'],
-        },
-
-        apiUrl: { control: 'text' },
-        apiPassword: { control: 'text' },
+        }
     },
 };
 
@@ -51,12 +47,42 @@ export const Template = (args) => FluidTemplate({
 
 export const Primary = Template.bind({});
 Primary.args = {
-
     file: {
         properties: {
             id: "591",
             link: "http://www.de",
             title: "Image Title"
+        }
+    },
+    layout: 0,
+    primary: true,
+};
+
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+    title: "SVG",
+    file: {
+        properties: {
+            id: 770,
+            link: "http://svg.org",
+            title: "SVG Title"
+        }
+    },
+    layout: 0,
+    primary: true,
+};
+
+export const OpenSVG = Template.bind({});
+OpenSVG.args = {
+    title: "open SVG",
+    file: {
+        properties: {
+            _id: 770,
+            src: "/fileadmin/user_upload/undraw_relaunch_day_902d.svg",
+            link: "http://svg.org",
+            title: "Open SVG Title",
+            embedSVG: 1
         }
     },
     layout: 0,

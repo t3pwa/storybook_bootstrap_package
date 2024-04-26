@@ -170,9 +170,11 @@ Special.args = {
                         link: "http://storybook.dev.typo3.init?path=/story/contentelements-carousel--primary",
                         link_class: "primary",
                         header: "images/0/record/data/image/properties/header",
-                        title: "images/0/record/data/image/properties/title",
-                        _src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png",
-                        id: 767
+
+                        id: 770,
+                        src: "/fileadmin/user_upload/undraw_relaunch_day_902d.svg",
+                        title: "Open SVG Title",
+                        embedSVG: 1
                     }
                 }
             },
@@ -271,8 +273,11 @@ Tertiary.args = {
                         link: "http://storybook.dev.typo3.init?path=/story/contentelements-carousel--primary",
                         link_class: "primary",
                         header: "images/0/record/data/image/properties/header",
-                        title: "images/0/record/data/image/properties/title",
-                        src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
+
+                        id: 770,
+                        src: "/fileadmin/user_upload/undraw_relaunch_day_902d.svg",
+                        title: "Open SVG Title",
+                        embedSVG: 1
                     }
                 }
             },
@@ -285,32 +290,7 @@ Tertiary.args = {
             }
 
         },
-        "1": {
-            link: "http://www.de",
-            nav_title: "carousel/record/1/header",
-            header: "carousel/record/1/header",
-            layout: 1,
 
-            images: {
-                0: {
-                    properties: {
-                        link: "http://www.de",
-                        link_class: "primary",
-                        header: "1/record/data/image/properties/header",
-                        title: "1/record/data/image/properties/title",
-                        _src: "",
-                        id: "594",
-                    }
-                }
-            },
-
-            data: {
-                item_type: "Image",
-                background_color: "",
-                text_color: ""
-            }
-
-        }
     },
 
     layout: 1,
@@ -343,10 +323,13 @@ Secondary.args = {
                 0: {
                     properties: {
                         link: "http://storybook.dev.typo3.init?path=/story/contentelements-carousel--primary",
-                        link_class: "secondary",
+                        link_class: "primary",
                         header: "images/0/record/data/image/properties/header",
-                        title: "images/0/record/data/image/properties/title",
-                        id: "594",
+
+                        _id: 770,
+                        src: "/fileadmin/user_upload/undraw_relaunch_day_902d.svg",
+                        title: "Open SVG Title",
+                        embedSVG: 1
                     }
                 }
             },
@@ -359,32 +342,7 @@ Secondary.args = {
             }
 
         },
-        "1": {
-            link: "http://www.de",
-            nav_title: "carousel/record/1/header",
-            header: "carousel/record/1/header",
-            layout: 1,
 
-            images: {
-                0: {
-                    properties: {
-                        link: "http://www.de",
-                        link_class: "primary",
-                        header: "1/record/data/image/properties/header",
-                        title: "1/record/data/image/properties/title",
-                        _src: "",
-                        id: 594,
-                    }
-                }
-            },
-
-            data: {
-                item_type: "Image",
-                background_color: "",
-                text_color: ""
-            }
-
-        }
     },
 
     layout: 1,

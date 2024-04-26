@@ -77,6 +77,9 @@ Secondary.args = {
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
+    logo: {
+        alt: "ALT",
+    },
     header : 'TYPO3 für Verwaltungen und Behörden CMS-Projekte einfach umgesetzt ',
     layout : 4,
     class : 'btn btn-tertiary',

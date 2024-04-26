@@ -1,0 +1,92 @@
+*[data-content="SassColor"],
+span[data-content="SassColor"],
+span[data-content="\"SassColor\""] {
+  border: 3px solid red;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0.9em;
+  li {
+    &:has(li span.string[data-value="SassColor"]) {
+      > span.prop {
+        border-bottom: 1px solid deeppink;
+
+        &:hover:after {
+//          content: attr(data-value) ": ";
+        }
+      }
+
+    }
+    &:has(li span.string[data-value="SassMap"]) {
+      border-bottom: 1px solid blueviolet;
+    }
+    &:has(li span.string[data-value="SassNumber"]) {
+      border-bottom: 1px solid springgreen;
+    }
+
+    .collapser {
+      display: inline;
+      cursor: pointer;
+      width: 1em;
+      height: 1em;
+      padding: 0.3em 0.3em;
+      // outline: 1px solid pink;
+      text-align: center;
+      &:before {
+        content:  '\0000b1';
+      }
+
+    }
+    ul {
+      &:has(li span.string[data-value="SassColor"]) {
+
+        border: 1px solid deeppink;
+
+        span[data-value="hex"] ~ span {
+          &.string {
+            outline: 2px solid deeppink;
+
+            &:before {
+              content: attr(data-value) ": ";
+
+            }
+
+
+
+
+          }
+        }
+
+
+      }
+
+      &:has(li span.string[data-value="SassMap"]) {
+        border: 1px solid blueviolet;
+      }
+
+
+      li {
+        display: inline;
+
+        &:has(span.string[data-value="SassColor"]) {
+          border: 1px solid deeppink;
+        }
+
+        span {
+          &.string {
+            border-bottom: 1px solid lightgrey;
+            &[data-value="SassColor"] {
+              border: 3px solid blue;
+            }
+          }
+          &.prop {
+            border-bottom: 1px solid green;
+          }
+        }
+
+
+    }
+  }
+}
+}

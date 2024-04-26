@@ -1,7 +1,25 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 
+      xmlns:faeb="http://typo3.org/ns/Faeb/StorybookBootstrapPackage/ViewHelpers"
+
       data-namespace-typo3-fluid="true">
 
-      <!-- Type Video in sbbp -->
-        <f:media class="embed-responsive-item" file="{file}" alt="{file.properties.alternative}" title="{file.properties.title}" additionalConfig="{settings.media.additionalConfig}" />
+      <!-- Type Video in sbbp faeb:media -->
+
+
+      <!-- {file.properties.id} -->
+      <!-- settings.media.additionalConfig.autoplay: {settings.media.additionalConfig.autoplay} -->
+
+      <div class="embed-responsive-item" data-type="video">
+
+            <figure>
+            <faeb:media
+                    class="embed-responsive-item"
+                    file="{file}"
+                    treatIdAsReference="1"
+                    src="{file.properties.id}"
+            />
+            </figure>
+      </div>
+
 </html>

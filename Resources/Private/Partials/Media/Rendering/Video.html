@@ -5,24 +5,34 @@
 
     <f:if condition="{faeb:queryParameters(queryParam: 'debug') == 'true'} && {faeb:queryParameters(queryParam: 'debug') == 'true'}">
         <f:then>
-
+            <!-- request via fluid api storybook overwrite-->
             <f:if condition="{file.properties.id} > 0">
                 <f:then>
                     <!-- SBBP Rendering Video ID -->
-                    {file.properties.id}
-                    {settings.media.additionalConfig.autoplay}
+                    <!-- {file.properties.id} -->
+                    <!-- settings.media.additionalConfig.autoplay: {settings.media.additionalConfig.autoplay} -->
 
+                    <div class="embed-responsive-item">
+                        <faeb:media
+                                class="embed-responsive-item"
+                                file="{file}"
+                                treatIdAsReference="1"
+                                src="{file.properties.id}"
+                        />
+                    </div>
                 </f:then>
                 <f:else>
-                    <!-- SBBP Rendering/Video SRC -->
+                    <!-- ELSE NO ID #### SBBP Rendering/Video SRC -->
+                    <!-- file.properties.src: {file.properties.src} -->
                     <video
                         class="embed-responsive-item"
                         src="{file.properties.src}"
                         onmouseover="this.play(); this.setAttribute('controls','controls');"
                         onmouseout="this.pause(); this.removeAttribute('controls');"
-                        data-status="has-no-processed-sources-yet"
+                        data-status="passed-through-api-debug"
+                        data-autoplay="1"
+                        data-loop="1"
                         loop="loop"
-                        data-autoplay="0"
                     >
                     </video>
                 </f:else>
@@ -30,10 +40,14 @@
         </f:then>
         <f:else>
             <!-- Default Behavior -->
-            <f:media class="embed-responsive-item" file="{file}" alt="{file.properties.alternative}" title="{file.properties.title}" additionalConfig="{settings.media.additionalConfig}" />
-
-
-
+            <!-- Should not be reached via API -->
+            <f:media
+                    class="embed-responsive-item"
+                    file="{file}"
+                    alt="{file.properties.alternative}"
+                    title="{file.properties.title}"
+                    additionalConfig="{settings.media.additionalConfig}"
+            />
         </f:else>
     </f:if>
 </html>

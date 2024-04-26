@@ -4,7 +4,7 @@ Content-Type: application/json
 {
   "extension": "bootstrappackage",
   "template": "",
-  "partial": "ContentElements/",
+  "partial": "ContentElements/Media/Type/Video",
   "section": "",
   "arguments": {
 
@@ -12,13 +12,15 @@ Content-Type: application/json
 
     "file": {
       "properties": {
-        "id": "584",
+        "id": "782",
         "link": "http://www.de",
         "title": "Video Title",
         "src": "https://t3v11.ddev.site/fileadmin/_processed_/e/9/pexels-rostislav-uzunov-10613973__1080p__e73feb0b12.mp4",
         "description": "Video description"
       }
     },
+
+
     "settings": {}
   },
   "password": "superpassword"
