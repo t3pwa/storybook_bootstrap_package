@@ -16,7 +16,7 @@ TYPO3 Header/Header are Typography/Headings in Boostrap
 https://getbootstrap.com/docs/5.0/content/typography/#headings
 */
 
-import './frame.scss'
+// import './frame.scss' // should be loaded in frame.js
 
 
 export default {

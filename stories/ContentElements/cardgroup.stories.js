@@ -7,7 +7,7 @@ import { html } from 'lit';
 import {Frame} from "./textmedialeft.stories";
 
 import './cardgroup.scss';
-import './frame.scss'
+// import './frame.scss' // should be loaded from Frame.js
 
 
 export default {

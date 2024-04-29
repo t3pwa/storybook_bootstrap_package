@@ -1,9 +1,5 @@
 import { FluidTemplate } from "storybook-typo3fluid/";
-import './frame.scss'
-
-import { createFrame } from './../Frame';
-import {createButton} from "../Button";
-
+import { createFrame, Frame } from './../Frame';
 
 export default {
     title: 'ContentElements/TextmediaRight',
@@ -11,7 +7,7 @@ export default {
     render: ({ label, ...args }) => {
         // You can either use a function to create DOM elements or use a plain html string!
         // return `<div>${label}</div>`;
-        return createFrame ({ label, ...args });
+        return createFrame ({ label, ...args, frameOptions });
     },
     argTypes: {
         frameSpaceBefore: {
@@ -90,6 +86,7 @@ var frameSpaceAfterOptions = {
 export const Framed = Template.bind({});
 
 Framed.argTypes = {
+    /*
     frameLayout: {
         control: {type: 'select'},
         options: ['small', 'medium', 'large']
@@ -109,21 +106,15 @@ Framed.argTypes = {
         options: Object.keys(frameSpaceAfterOptions),
         mapping: frameSpaceAfterOptions,
         sort: 'requiredFirst',
-        /*
-        labels: {
-            None: 'none',
-            Default: 'Default',
-            'extra-small': 'Extra Small',
-        },
-        */
         table: {
             type: { summary: 'select' },
             defaultValue: { summary: 'default' },
         },
-
-
     },
+
+     */
 }
+
 /*
 Frame.argTypes = {
     ...Frame.argTypes,
@@ -201,15 +192,15 @@ Framed.args = {
 Frame.decorators = [
     ({frameSpaceBefore, frameSpaceAfter }) => (
 
-        `<div class="frame frame-default 
+        `<div class="frame frame-default
             frame-type-`+Frame.args.frameType+`
-            frame-layout-`+Frame.args.frameLayout+` 
+            frame-layout-`+Frame.args.frameLayout+`
             frame-size-`+Frame.args.frameSize+`
-            frame-height-`+Frame.args.frameHeight+` 
-            frame-background-none 
+            frame-height-`+Frame.args.frameHeight+`
+            frame-background-none
             frame-space-before-`+Frame.args.frameSpaceBefore+`
             frame-space-after-`+Frame.args.frameSpaceAfter+`
-            
+
             frame-no-backgroundimage
         ">
             <div class="frame-group-container">
@@ -220,7 +211,7 @@ Frame.decorators = [
                         ${Frame.args.frameSpaceAfter}
                         ${frameSpaceBefore}
                         ${frameSpaceAfter}
-                        
+
                     </div>
                 </div>
             </div>
@@ -266,22 +257,17 @@ Tertiary.args = {
     },
 };
 
-
+/*
 export const PrimaryFramed = {
     // title: 'Example/Button',
     tags: ['autodocs'],
     render: ({ label, ...args }) => {
         // You can either use a function to create DOM elements or use a plain html string!
         // return `<div>${label}</div>`;
-        return createFrame({ label, ...args });
+        return createFrame({ label, ...args, frameOptions });
     },
     argTypes: {
-        /*
-        backgroundColor: { control: 'color' },
-        label: { control: 'text' },
-        onClick: { action: 'onClick' },
-        primary: { control: 'boolean' },
-        */
+        ...Frame.argTypes,
         size: {
             control: { type: 'select' },
             options: ['small', 'medium', 'large'],
@@ -312,28 +298,18 @@ export const PrimaryFramed = {
             options: Object.keys(frameSpaceAfterOptions),
             mapping: frameSpaceAfterOptions,
             sort: 'requiredFirst',
-            /*
-            labels: {
-                None: 'none',
-                Default: 'Default',
-                'extra-small': 'Extra Small',
-            },
-            */
             table: {
                 type: {summary: 'select'},
                 defaultValue: {summary: 'default'},
             },
-
         }
-
-
-
         },
     args: {
+        ...Frame.args,
         innerHTML: Template(Primary.args)
     }
 };
-
+*/
 /*
 export const newFrameTest = Template.bind({});
 newFrameTest.args = {
@@ -344,14 +320,11 @@ newFrameTest.args = {
 }
 
  */
-
-
-
-
+/*
 export const SecondaryFramed = {
     tags: ['autodocs'],
     render: ({ label, ...args }) => {
-        return createFrame({ label, ...args });
+        return createFrame({ label, ...args, frameOptions });
     },
     argTypes: {
         frameLayout: {
@@ -390,65 +363,46 @@ export const SecondaryFramed = {
         innerHTML: Template(Primary.args)
     }
 };
-
+*/
+/*
 export const SecondaryFramedRatio5 = {
     tags: ['autodocs'],
     render: ({ label, ...args }) => {
-        return createFrame({ label, ...args });
+        return createFrame({ label, ...args, frameOptions });
     },
     argTypes: {
         ...Primary.argTypes,
-        /*
-        frameLayout: {
-            control: {type: 'select'},
-            options: [
-                'custom-boxxed',
-                'ratio3',
-                'ratio5',
-                'glass',
-                'light',
-                'dark'
-            ]
-        },
-        frameSize: {
-            control: {type: 'select'},
-            options: ['small', 'medium', 'large']
-        },
-        frameSpaceBefore: {
-            control: {type: 'select'},
-            options: ['default', 'extra-small', 'small', 'medium', 'large', 'extra-large']
-        },
-        frameSpaceAfter: {
-            control: {type: 'select'},
-            // is default = none? Is there a difference?
-            // options: ['none', 'default', 'extra-small', 'small', 'medium', 'large', 'extra-large'],
-            options: Object.keys(frameSpaceAfterOptions),
-            mapping: frameSpaceAfterOptions,
-            sort: 'requiredFirst',
-            table: {
-                type: {summary: 'select'},
-                defaultValue: {summary: 'default'},
-            },
-        }
-         */
     },
-
     args: {
         innerHTML: Template(Primary.args),
         frameLayout: 'ratio5'
     }
 };
+*/
 
+/*
 export const SecondaryFramedHeader = {
-    tags: ['autodocs'],
     render: ({ label, ...args }) => {
-        return createFrame({ label, ...args });
+        return createFrame({ label, ...args, frameOptions });
     },
     argTypes: {
         ...Primary.argTypes,
     },
 
     args: {
+        innerHTML: Template(Primary.args),
+        frameLayout: 'header-underline'
+    }
+};
+*/
+
+export const DefaultFrame = {
+    render: ({ label, ...args }) => {
+        return createFrame({ label, ...args});
+    },
+    argTypes: {...Frame.argTypes},
+    args: {
+        ...Frame.args,
         innerHTML: Template(Primary.args),
         frameLayout: 'header-underline'
     }

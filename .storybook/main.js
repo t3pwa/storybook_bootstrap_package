@@ -1,6 +1,13 @@
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
+/*
+Multiple Options in Toolbar:
+https://storybook.js.org/addons/storybook-addon-multiselect
+
+ */
+
+
 const path = require('path');
 // Not used?
 var sass = require("node-sass");
