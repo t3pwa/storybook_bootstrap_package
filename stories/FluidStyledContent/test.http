@@ -1,0 +1,56 @@
+POST https://t3v11.ddev.site/api/typo3fluid
+Content-Type: application/json
+
+{
+  "extension": "tt_content",
+  "template": "Templates/Header",
+  "partial": "",
+  "section": "",
+  "arguments": {
+    "data": {
+      "uid": "0",
+      "pi_flexform": {
+        "default_element": "1"
+      }
+    },
+    "settings": {
+      "header": {
+        "defaultHeaderType": 0
+      }
+    },
+    "records": {
+      "0": {
+        "uid": "0",
+        "header": "accordion/record/0/header",
+
+
+        "files": {
+          "0": {
+            "properties": {
+              "link": "http://www.de",
+              "link_class": "primary",
+              "header": "record/data/image/properties/header",
+              "title": "0/record/data/image/properties/title",
+              "src": "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
+            }
+          }
+        }
+
+      },
+      "1": {
+        "link": "http://www.de",
+        "header": "accordion/record/1/header"
+      }
+    }
+  },
+  "password": "superpassword"
+}
+
+<> 2024-03-03T072853.404.html
+<> 2024-03-03T072748.404.html
+<> 2024-03-02T191105.404.html
+<> 2024-03-02T163132.404.html
+<> 2024-03-02T162710.404.html
+<> 2024-03-02T103008.500.html
+<> 2024-03-02T102551.400.txt
+<> 2024-03-02T102521.400.txt

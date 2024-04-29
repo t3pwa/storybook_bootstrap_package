@@ -1,0 +1,26 @@
+POST https://t3v11.ddev.site/api/typo3fluid
+Content-Type: application/json
+
+{
+  "extension": "bootstrappackage",
+  "template": "Page/Simple",
+  "partial": "",
+  "section": "Main",
+  "arguments": {
+    "debug": "true",
+    "pagelayout": "simple",
+    "data": {
+      "uid": 82
+    }
+  },
+"password": "superpassword"
+}
+
+<> 2024-03-03T072853.404.html
+<> 2024-03-03T072748.404.html
+<> 2024-03-02T191105.404.html
+<> 2024-03-02T163132.404.html
+<> 2024-03-02T162710.404.html
+<> 2024-03-02T103008.500.html
+<> 2024-03-02T102551.400.txt
+<> 2024-03-02T102521.400.txt
