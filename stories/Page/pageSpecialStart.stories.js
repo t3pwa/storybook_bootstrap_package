@@ -18,7 +18,7 @@ export default {
     args : {
         pagelayout: "special_start",
         data: {
-            "uid": 82
+            "uid": 16
         }
     },
     argTypes: {
@@ -28,7 +28,7 @@ export default {
 
 Template.args = {
     data: {
-        uid: 82
+        uid: 16
     },
     primary: false,
 };
@@ -57,7 +57,7 @@ Secondary.args = {
     ...Template.args,
     data: {
         ...Template.args.data,
-        uid: 82
+        uid: 16
     },
     primary: false,
 };
@@ -73,7 +73,7 @@ Startpage.args = {
     backendLayout: "special_start",
     data: {
         ...Template.args.data,
-        uid: 82
+        uid: 16
     },
     primary: false,
 };

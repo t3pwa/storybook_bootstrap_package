@@ -3,14 +3,14 @@ Content-Type: application/json
 
 {
   "extension": "bootstrappackage",
-  "template": "Page/Simple",
+  "template": "Page/SpecialStart",
   "partial": "",
   "section": "Main",
   "arguments": {
     "debug": "true",
-    "pagelayout": "startpage",
+    "pagelayout": "SpecialStart",
     "data": {
-      "uid":
+      "uid": 16
     }
   },
 "password": "superpassword"

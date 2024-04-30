@@ -8,9 +8,9 @@ Content-Type: application/json
   "section": "Main",
   "arguments": {
     "debug": "true",
-    "pagelayout": "simple",
+    "pagelayout": "Simple",
     "data": {
-      "uid": 82
+      "uid": 16
     }
   },
 "password": "superpassword"
