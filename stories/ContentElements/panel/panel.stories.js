@@ -11,7 +11,8 @@ export const Template = (args) => FluidTemplate({
 
 import { html } from 'lit';
 import panel_http from './panel.http'
-import {createFrame, Frame} from "../../../packages/storybook_bootstrap_package/stories/Frame";
+
+// import {createFrame, Frame} from "../../../packages/storybook_bootstrap_package/stories/Frame";
 
 export const HttpRequest = Template.bind({});
 HttpRequest.args = {
@@ -34,9 +35,7 @@ export default {
         data: {
             /*
             pi_flexform: {
-
             },
-
              */
             panel_class: 'default'
         }
@@ -208,25 +207,16 @@ Tertiary.args = {
 
 };
 
+import { createFrame, Frame } from './../../Frame';
 
-export const DefaultFramedPanel = Template.bind({});
-
-// import { createFrame, Frame } from './Frame';
-
-// export const DefaultFramedPanel = {
-/*
+export const DefaultFrame = {
     render: ({ label, ...args }) => {
         return createFrame({ label, ...args});
     },
-
- */
-//    argTypes: {...Frame.argTypes},
-/*
+    argTypes: {...Frame.argTypes},
     args: {
         ...Frame.args,
-//        innerHTML: Template(Primary.args),
-        frameLayout: 'header-underline'
+        innerHTML: Template(Primary.args),
+        frameLayout: 'custom-boxxed'
     }
-
- */
-// };
+};
