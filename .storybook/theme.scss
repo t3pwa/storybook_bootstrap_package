@@ -30,11 +30,14 @@
 //
 @import "./src/Scss/components/button";
 
-/*
-@import "../components/navbar";
-@import "../components/backendlayout";
-@import "../components/section";
-*/
+
+//@import "../components/navbar";
+@import "./src/Scss/components/navbar";
+// @import "../components/backendlayout";
+@import "./src/Scss/components/backendlayout";
+// @import "../components/section";
+@import "./src/Scss/components/section";
+
 //@import "../components/frame";
 @import "./src/Scss/components/frame";
 /*
@@ -45,6 +48,8 @@
 
 @import "./src/Scss/components/carousel";
 @import "./src/Scss/components/accordion";
+
+// @ToDo add tab story
 @import "./src/Scss/components/tab";
 @import "./src/Scss/components/card";
 
