@@ -1,3 +1,8 @@
 /stories/Fluid/news_list.stories.js
 
 zzz_*
+/Classes/Domain/Model/
+/Classes/Controller/
+/Classes/TypoScript/
+/Classes/TsConfig/
+/Classes/Hooks/
