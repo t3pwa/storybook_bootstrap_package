@@ -24,6 +24,7 @@ export default {
     },
 };
 
+
 // used for page simple
 const ContentElementsPanelTemplate = (args) => FluidTemplate({
     extension: 'bootstrappackage',
@@ -97,6 +98,7 @@ VariablesDefault.args = {
     }
 };
 
+
 // https://github.com/storybookjs/storybook/issues/17089
 // import { useArgs } from '@storybook/client-api';
 import React from 'react';
@@ -158,7 +160,7 @@ export const PageSimple = ContentElementsPanelTemplate.bind({
 
 // uses panel template
 PageSimple.args = {
-    ...VariablesDefault.args,
+//    ...VariablesDefault.args,
     ...VariablesExtracted.args,
     primary: true,
     label: 'Simple',
@@ -170,11 +172,12 @@ PageSimple.args = {
         header_layout: 1,
     }
 };
+/*
 PageSimple.argTypes = {
-    ...VariablesDefault.argTypes,
+//    ...VariablesDefault.argTypes,
     ...VariablesExtracted.argTypes
 }
-
+*/
 
 //https://stackoverflow.com/questions/71848065/adding-external-script-to-specific-story-in-storybook
 import { Story, Meta } from '@storybook/react';
@@ -210,8 +213,8 @@ export default {
 
 export const LoggedOut = {};
 LoggedOut.args = {
-    ...VariablesDefault.args,
-    ...VariablesDefault.argTypes,
+//    ...VariablesDefault.args,
+//    ...VariablesDefault.argTypes,
     primary: false,
     label: 'LoggedOut'
 };
@@ -234,13 +237,13 @@ export const LoggedIn = {
 };
 
 LoggedIn.args = {
-    ...VariablesDefault.args,
+//    ...VariablesDefault.args,
     ...VariablesExtracted.args,
     primary: false,
     label: 'LoggedIn'
 };
 
 LoggedIn.argTypes = {
-    ...VariablesDefault.argTypes,
+//    ...VariablesDefault.argTypes,
     ...VariablesExtracted.argTypes
 }

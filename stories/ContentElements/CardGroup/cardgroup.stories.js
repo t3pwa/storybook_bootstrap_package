@@ -53,7 +53,7 @@ export const Primary = Template.bind({});
 Primary.args = {
     data: {
         pi_flexform: {
-            columns: 4,
+            columns: 3,
             align: "left"
         }
     },
@@ -311,7 +311,58 @@ Secondary.args = {
                 }
 
             }
+        },
+        3: {
+            data: {
+                header: "Once upon a time, they lived happily after all!",
+                bodytext: "Lorem ipsum bodytext<br><br><br><hr>...",
+                subheader: "Sup header?",
+                link: "/news",
+                link_title: "Read more",
+                link_class: "primary",
+            },
+            image: {
+                link: "http://www.de",
+                header: "record/image/header",
+                title: "record/image/header",
+
+                0: {
+                    properties: {
+                        link: "http://www.de",
+                        header: "record/image/header",
+                        title: "record/image/header",
+                        id: 771
+                    }
+                }
+
+            }
+        },
+        4: {
+            data: {
+                header: "Once upon a time, they lived happily after all!",
+                bodytext: "Lorem ipsum bodytext<br><br><br><hr>...",
+                subheader: "Sup header?",
+                link: "/news",
+                link_title: "Read more",
+                link_class: "primary",
+            },
+            image: {
+                link: "http://www.de",
+                header: "record/image/header",
+                title: "record/image/header",
+
+                0: {
+                    properties: {
+                        link: "http://www.de",
+                        header: "record/image/header",
+                        title: "record/image/header",
+                        id: 771
+                    }
+                }
+
+            }
         }
+
     },
     layout: 1,
     primary: false,
@@ -465,6 +516,7 @@ Columns3framed.decorators = [
 */
 
 import { createFrame, Frame } from './../../Frame';
+//import { createFrame, Frame } from 'stories/Frame';
 
 export const DefaultFrame = {
     render: ({ label, ...args }) => {
@@ -474,6 +526,30 @@ export const DefaultFrame = {
     args: {
         ...Frame.args,
         innerHTML: Template(Primary.args),
-        frameLayout: 'custom-boxxed'
+        frameLayout: 'custom-boxxed',
+        data: {
+            pi_flexform: {
+                columns: 3
+            }
+        }
+    }
+};
+
+
+
+export const DefaultFrameB = {
+    render: ({ label, ...args }) => {
+        return createFrame({ label, ...args});
+    },
+    argTypes: {...Frame.argTypes},
+    args: {
+        ...Frame.args,
+        innerHTML: Template(Secondary.args),
+        frameLayout: 'custom-boxxed',
+        data: {
+            pi_flexform: {
+                columns: 4
+            }
+        }
     }
 };

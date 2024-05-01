@@ -10,14 +10,14 @@ export default {
         label: { control: 'text' },
         onClick: { action: 'onClick' },
         primary: { control: 'boolean' },
+
+        /*
         size: {
             control: { type: 'select' },
             options: ['small', 'medium', 'large'],
         },
+        */
 
-        exampleProp: { control: 'text' },
-        apiUrl: { control: 'text' },
-        apiPassword: { control: 'text' },
     },
 };
 
@@ -32,9 +32,36 @@ export const Template = (args) => FluidTemplate({
 
 export const Primary = Template.bind({});
 Primary.args = {
-    exampleProp: process.env.STORYBOOK_TYPO3FLUID_API_URL,
-
     primary: true,
-    label: 'News'
+    label: 'News',
+
+    data: {
+        news: {
+            0: {
+                data: {
+                    title: "0/record/data/title",
+                    header: "0/record/data/header",
+                    subheader: "0/record/data/subheader",
+                    bodytext: "records/0/data/bodytext<br>Lorem ipsum bodytext<br>...<br>..<br>.<br>\n/end",
+                    link: "http://www.de",
+                    link_title: "Read more",
+                    link_class: "primary",
+                },
+                image: {
+                    0: {
+                        properties: {
+                            link: "http://www.de",
+                            link_class: "primary",
+                            header: "record/data/image/properties/header",
+                            title: "0/record/data/image/properties/title",
+                            src: "https://t3v11.ddev.site/fileadmin/_processed_/2/e/csm_Antilocapra_americana_Pronghorn_9f7cfcfb72.png"
+                        }
+                    }
+                }
+            },
+        }
+
+    }
+
 };
 

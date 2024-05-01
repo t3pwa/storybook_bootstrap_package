@@ -1,5 +1,5 @@
 import { FluidTemplate } from "storybook-typo3fluid/";
-import { createFrame, Frame } from './../Frame';
+import { createFrame, Frame } from 'stories/Frame';
 
 export default {
     title: 'ContentElements/TextmediaRight',
@@ -83,9 +83,9 @@ var frameSpaceAfterOptions = {
 };
 
 
-export const Framed = Template.bind({});
+export const OldFramed = Template.bind({});
 
-Framed.argTypes = {
+OldFramed.argTypes = {
     /*
     frameLayout: {
         control: {type: 'select'},
@@ -139,7 +139,7 @@ Frame.argTypes = {
 }
 */
 
-Framed.args = {
+OldFramed.args = {
     ...Template.args,
     header : 'Frame Tertiary Header, layout 1',
     layout : 1,
@@ -225,7 +225,7 @@ Frame.decorators = [
 
 export const Tertiary = Template.bind({});
 Tertiary.args = {
-    ...Framed.args,
+    ...OldFramed.args,
 
     header : 'Tertiary Header, layout 1',
     layout : 1,

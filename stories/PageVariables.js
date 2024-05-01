@@ -6,7 +6,7 @@ import './_pageVariables.scss';
 // import { createPanel } from './Fluid/ContentElements/Panel';
 
 // Should i import a story to a page module?
-import {Debug, Primary, Tertiary} from "./ContentElements/panel/panel.stories";
+import {Debug, Primary, Tertiary} from "./ContentElements/Panel/panel.stories";
 
 import {VariablesDefault} from "./Variables.stories";
 

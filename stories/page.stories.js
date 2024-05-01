@@ -3,34 +3,11 @@ import { FluidTemplate } from "storybook-typo3fluid/";
 
 export default {
     title: 'Page',
-
     parameters: {
         // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
         layout: 'fullscreen',
     },
-
     argTypes: {
-/*
-{
-    "header" : "header",
-    "layout" : 1,
-    "class" : "classname",
-    "displayClass" : "displayClass",
-    "positionClass" : "bottom",
-    "link" : "http://www.de"
-}
-*/
-
-        backgroundColor: { control: 'color' },
-        label: { control: 'text' },
-        onClick: { action: 'onClick' },
-        primary: { control: 'boolean' },
-        size: {
-            control: { type: 'select' },
-            options: ['small', 'medium', 'large'],
-        },
-        // apiUrl: { control: 'text' },
-        apiPassword: { control: 'text' },
     },
 };
 

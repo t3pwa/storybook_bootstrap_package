@@ -61,3 +61,75 @@ Secondary.args = {
     },
     primary: false,
 };
+
+export const SecondaryB = Template.bind({});
+SecondaryB.argTypes = { ...Template.argTypes, }
+SecondaryB.args = { ...Template.args, data: {
+        ...Template.args.data,
+        uid: 81
+    }, primary: false,
+};
+
+export const SecondaryC = Template.bind({});
+SecondaryC.argTypes = { ...Template.argTypes, }
+SecondaryC.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 79
+    }
+};
+
+export const CardGroup = Template.bind({});
+CardGroup.argTypes = { ...Template.argTypes, }
+CardGroup.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 68
+    }
+};
+
+
+export const MediaMedia = Template.bind({});
+MediaMedia.argTypes = { ...Template.argTypes, }
+MediaMedia.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 61
+    }
+};
+
+export const andMoreFrames = Template.bind({});
+andMoreFrames.argTypes = { ...Template.argTypes, }
+andMoreFrames.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 25
+    }
+};
+
+export const Home = Template.bind({});
+Home.argTypes = { ...Template.argTypes, }
+Home.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 98
+    }
+};
+
+export const PowerfulFormHandling = Template.bind({});
+PowerfulFormHandling.argTypes = { ...Template.argTypes, }
+PowerfulFormHandling.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 52
+    }
+};
+
+export const NewsList = Template.bind({});
+NewsList.argTypes = { ...Template.argTypes, }
+NewsList.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 13
+    }
+};

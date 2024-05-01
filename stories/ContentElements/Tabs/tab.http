@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "extension": "bootstrappackage",
-  "template": "ContentElements/Accordion",
+  "template": "ContentElements/Tab",
   "partial": "ContentElements/",
   "section": "Main",
   "arguments": {
