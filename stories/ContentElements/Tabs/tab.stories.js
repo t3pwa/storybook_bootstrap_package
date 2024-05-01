@@ -249,7 +249,8 @@ Tertiary.args = {
 };
 
 
-import { createFrame, Frame } from './../../Frame';
+//import { createFrame, Frame } from './../../ViewHelpers/Frame';
+import { createFrame, Frame } from 'stories/ViewHelpers/Frame';
 
 export const DefaultFrame = {
     render: ({ label, ...args }) => {

@@ -1,23 +1,4 @@
 import { FluidTemplate } from "storybook-typo3fluid/";
-//import 'bootstrap/dist/css/bootstrap.min.css';
-
-import {size} from "../../../../storybook-static/205.4adc836c.iframe.bundle";
-import panel_txt from "../../../packages/storybook_bootstrap_package/stories/Fluid/ContentElements/panel.txt";
-import {Debug} from "./panel.stories";
-// import '../../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/plugins/_cookieconsent.scss';
-// import "@scss/theme.scss";
-// import "@scss/components/textpic.scss";
-// import '../../public/typo3conf/ext/bootstrap_package/Resources/Public/Css/bootstrap5-theme.css';
-// import './page_structure_copyright.css';
-
-/*
-Vokalbelheft:
-TYPO3 Header/Header are Typography/Headings in Boostrap
-https://getbootstrap.com/docs/5.0/content/typography/#headings
-*/
-
-// import './frame.scss' // should be loaded in frame.js
-
 
 export default {
     title: 'ContentElements/TextmediaLeft',
@@ -63,7 +44,7 @@ Primary.args = {
                 link: "http://www.de",
                 title: "the-creative-exchange-373981-unsplash.jpg",
                 src: "https://dev.kukurtihar.com/fileadmin/user_upload/undraw_lost_online_re_upmy.svg",
-                id: "767",
+                _id: 767,
         } } },
 
     layout: 0,
@@ -118,8 +99,8 @@ Secondary.args = {
         1: { properties: {
                 link: "http://www.de",
                 title: "[767] the-creative-exchange-373981-unsplash.jpg",
-                _src: "/fileadmin/pexels-rostislav-uzunov-10613973__1080p__2e10da7287.mp4",
-                id : 782,
+                src: "/fileadmin/pexels-rostislav-uzunov-10613973__1080p__2e10da7287.mp4",
+                _id : 782,
                 type: 'video'
             } }
 

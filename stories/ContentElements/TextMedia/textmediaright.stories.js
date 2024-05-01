@@ -1,5 +1,6 @@
 import { FluidTemplate } from "storybook-typo3fluid/";
-import { createFrame, Frame } from 'stories/Frame';
+import { createFrame, Frame } from 'stories/ViewHelpers/Frame';
+
 
 export default {
     title: 'ContentElements/TextmediaRight',

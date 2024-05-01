@@ -515,8 +515,7 @@ Columns3framed.decorators = [
 ];
 */
 
-import { createFrame, Frame } from './../../Frame';
-//import { createFrame, Frame } from 'stories/Frame';
+import { createFrame, Frame } from './../../ViewHelpers/Frame';
 
 export const DefaultFrame = {
     render: ({ label, ...args }) => {

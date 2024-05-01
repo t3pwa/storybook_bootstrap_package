@@ -207,7 +207,7 @@ Tertiary.args = {
 
 };
 
-import { createFrame, Frame } from './../../Frame';
+import { createFrame, Frame } from './../../ViewHelpers/Frame';
 
 export const DefaultFrame = {
     render: ({ label, ...args }) => {
