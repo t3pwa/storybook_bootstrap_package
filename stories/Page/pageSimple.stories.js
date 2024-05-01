@@ -79,6 +79,25 @@ SecondaryC.args = { ...Template.args,
     }
 };
 
+export const SecondaryD = Template.bind({});
+SecondaryD.argTypes = { ...Template.argTypes, }
+SecondaryD.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 78
+    }
+};
+
+export const Pid77 = Template.bind({});
+SecondaryD.argTypes = { ...Template.argTypes, }
+SecondaryD.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 77
+    }
+};
+
+
 export const CardGroup = Template.bind({});
 CardGroup.argTypes = { ...Template.argTypes, }
 CardGroup.args = { ...Template.args,
@@ -131,5 +150,14 @@ NewsList.args = { ...Template.args,
     data: {
         ...Template.args.data,
         uid: 13
+    }
+};
+
+export const FormUpload = Template.bind({});
+FormUpload.argTypes = { ...Template.argTypes, }
+FormUpload.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 102
     }
 };
