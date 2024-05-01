@@ -14,16 +14,6 @@ require("sass-extract-loader");
 //Storybook: how can I pass a global setting to story's / component's argument
 //https://stackoverflow.com/questions/76589946/storybook-how-can-i-pass-a-global-setting-to-storys-components-argument
 
-
-/*
-@ToDo newer example, evaluate, works
-#https://stackoverflow.com/questions/17787845/how-to-control-sass-variable-with-javascript
-# @ToDo load from .storybook folder
-const style = require('sass-extract-loader!./_variables.scss');
-const brandInfo = style.global['$theme-colors'].value.primary.value.hex;
-console.log(brandInfo);
-*/
-
 const alias = {
   // @Todo: not used yet, better: my-theme? tbd
   'my-kit': path.resolve(__dirname, '../src'),
@@ -42,7 +32,7 @@ const config = {
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
-  staticDirs: ['../public'],
+  staticDirs: ['../../../public'],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -135,11 +125,6 @@ new MiniCssExtractPlugin(
       ]
     });
 
-
-
-// this schould be in package.json, right? Overwrite here?
-//    config.entry =  '/.storybook/main.js';
-    // show all warnings
     config.ignoreWarnings = [];
 /*
     config.output = {
