@@ -1,5 +1,7 @@
 import { FluidTemplate } from "storybook-typo3fluid/";
 import {size} from "../../../../storybook-static/205.4adc836c.iframe.bundle";
+import {createFrame, Frame} from "../../ViewHelpers/Frame";
+import {Secondary} from "../CardGroup/cardgroup.stories";
 // import '../../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/plugins/_cookieconsent.scss';
 // import '../../public/typo3conf/ext/bootstrap_package/Resources/Public/Css/bootstrap5-theme.css';
 
@@ -48,15 +50,34 @@ export const Template = (args) => FluidTemplate({
 export const Primary = Template.bind({});
 Primary.args = {
     data: {
-        bodytext: "Primary bodytext, layout 0\n\n\n" +
-            "<br>\n" +
-            "Unsere Projektteams sind interdisziplinär aufgebaut. Zudem vereinen wir in der ]init[ TYPO3-Unit umfassende, lückenlose Kompetenzen in allen Bereichen der Full-Stack-Entwicklung. So können wir den Anforderungen unserer Kund:innen entlang der gesamten CMS-Wertschöpfungskette gerecht werden. \n" +
-            "<br>\n" +
-            "Von der auf TYPO3-Projekte spezialisierten Projektleitung über Konzeption und Design, Back- und Frontend-Entwicklung, Content- und Support-Leistungen sowie dem Hosting im eigenen BSI-zertifizierten Sicherheitsrechenzentrum arbeiten alle Spezialist:innen Hand in Hand an unseren Website-Projekten. \n" +
-            "<br>\n" +
-            "Das sichert eine flexible und schnelle Projektumsetzung sowie hohe Ergebnisqualität unserer TYPO3-Lösungen. Auch über die Unit und Projektteams hinaus sind rund 100 Spezialist:innen aus allen Bereichen versiert im Umgang mit TYPO3 und bringen ihre Expertise zielgerichtet ein. \n",
-        teaser: "<small>[Primary Teaser]</small><h1> \n Hohe Ergebnissicherheit aus einer Hand</h1>"
+//        header: "Header",
+//        subheader: "subheader",
+        bodytext: "[Primary bodytext, layout 0]" +
+            "<br>" +
+            "<p>Unsere Projektteams sind interdisziplinär aufgebaut. Zudem vereinen wir in der ]init[ TYPO3-Unit umfassende, lückenlose Kompetenzen in allen Bereichen der Full-Stack-Entwicklung. So können wir den Anforderungen unserer Kund:innen entlang der gesamten CMS-Wertschöpfungskette gerecht werden.</p>" +
+            "<p>Von der auf TYPO3-Projekte spezialisierten Projektleitung über Konzeption und Design, Back- und Frontend-Entwicklung, Content- und Support-Leistungen sowie dem Hosting im eigenen BSI-zertifizierten Sicherheitsrechenzentrum arbeiten alle Spezialist:innen Hand in Hand an unseren Website-Projekten.</p>" +
+            "<p>Das sichert eine flexible und schnelle Projektumsetzung sowie hohe Ergebnisqualität unserer TYPO3-Lösungen. Auch über die Unit und Projektteams hinaus sind rund 100 Spezialist:innen aus allen Bereichen versiert im Umgang mit TYPO3 und bringen ihre Expertise zielgerichtet ein.</p>",
+        teaser: "<small>[Primary Teaser]</small><h1>Hohe Ergebnissicherheit aus einer Hand</h1>" +
+            "<p>Unsere Projektteams sind interdisziplinär aufgebaut. Zudem vereinen wir in der ]init[ TYPO3-Unit umfassende, lückenlose Kompetenzen in allen Bereichen der Full-Stack-Entwicklung. So können wir den Anforderungen unserer Kund:innen entlang der gesamten CMS-Wertschöpfungskette gerecht werden.</p>" +
+            ""
     },
     layout: 0,
     primary: true,
+};
+
+export const DefaultFrameB = {
+    render: ({ label, ...args }) => {
+        return createFrame({ label, ...args});
+    },
+    argTypes: {...Frame.argTypes},
+    args: {
+        ...Frame.args,
+        innerHTML: Template(Primary.args),
+        frameLayout: 'custom-boxxed',
+        data: {
+            pi_flexform: {
+                columns: 4
+            }
+        }
+    }
 };

@@ -16,7 +16,6 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-
 (function () {
 
 
@@ -40,6 +39,18 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
         'container_elements',
         'setup',
         '@import "EXT:container_elements/Configuration/TypoScript/setup.typoscript"'
+    );
+
+    ExtensionManagementUtility::addTypoScriptSetup(
+        trim('
+            plugin.tx_form.settings.yamlConfigurations {
+                847999 = EXT:' . $extensionKey . '/Configuration/Form/FormSetup.yaml
+            }
+            
+            module.tx_form.settings.yamlConfigurations {
+                847999 = EXT:' . $extensionKey . '/Configuration/Form/FormSetup.yaml
+            }
+        ')
     );
 
     /*

@@ -88,14 +88,20 @@
 
 //@import "../components/sociallink";
 @import "./src/Scss/components/sociallink";
-/*
-@import "../components/well";
-@import "../components/pagination";
-@import "../components/scrolltop";
-@import "../components/misc";
-*/
+
+//@import "../components/well";
+@import "./src/Scss/components/well";
+
+//@import "../components/pagination";
+@import "./src/Scss/components/pagination";
+// @import "../components/scrolltop";
+@import "./src/Scss/components/scrolltop";
+// @import "../components/misc";
+@import "./src/Scss/components/misc";
+
 //@import "../components/contentcontainer";
 @import "./src/Scss/components/contentcontainer";
+
 /*
 //
 // Plugins

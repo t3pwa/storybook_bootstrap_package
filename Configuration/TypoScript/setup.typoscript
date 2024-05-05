@@ -1,3 +1,11 @@
+#module.tx_form.settings.yamlConfigurations {
+#	123456789 = EXT:typo3fluid_storybook_example/Configuration/Form/Backend.yaml
+#}
+
+module.tx_form.settings.yamlConfigurations {
+	123456789 = EXT:storybook_bootstrap_package/Configuration/Form/FormSetup.yaml
+}
+
 lib.dynamicContent = COA
 lib.dynamicContent {
 	5 = LOAD_REGISTER

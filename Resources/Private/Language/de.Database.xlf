@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" date="2021-02-20T11:57:00Z"
+		  original="EXT:storybook_bootstrap_package/Resources/Private/Language/Database.xlf"
+		  product-name="storybook_bootstrap_package">
+		<header/>
+		<body>
+			<!-- ### FORM EDITOR LABELS (TYPO3 backend)
+				 Translation keys: as set in your custom form setup
+			-->
+			<trans-unit id="formManager.selectablePrototypesConfiguration.standardExamples.label" approved="yes">
+				<source>Standard (EXT:storybook_bootstrap_package)</source>
+				<target>Standard (EXT:storybook_bootstrap_package)</target>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.prettyEmailTemplates.label" approved="yes">
+				<source>Pretty email templates (EXT:storybook_bootstrap_package)</source>
+				<target>Hübsche E-Mail-Templates (EXT:storybook_bootstrap_package)</target>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.complaintForm.label" approved="yes">
+				<source>Complaint form (EXT:storybook_bootstrap_package)</source>
+				<target>Beschwerdeformular (EXT:storybook_bootstrap_package)</target>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.standardExamples.newFormTemplates.BasicContactFormExample.label" approved="yes">
+				<source>Basic contact form</source>
+				<target>Einfaches Kontaktformular</target>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.standardExamples.newFormTemplates.UploadFormExample.label" approved="yes">
+				<source>Upload form</source>
+				<target>Upload-Formular</target>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.prettyEmailTemplates.newFormTemplates.CustomFluidEmailExample.label" approved="yes">
+				<source>Custom Email templates</source>
+				<target>Individuelle Email-Templates</target>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.complaintForm.newFormTemplates.CustomPrototypeExample.label" approved="yes">
+				<source>Complaint form</source>
+				<target>Beschwerdeformular</target>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.editor.formStyleClass.label" approved="yes">
+				<source>Form styling</source>
+				<target>Formular-Design</target>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.editor.formStyleClass.default.label" approved="yes">
+				<source>Contact form</source>
+				<target>Kontaktformular</target>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.editor.formStyleClass.survey.label" approved="yes">
+				<source>Survey</source>
+				<target>Umfrage</target>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.editor.formStyleClass.subscription.label" approved="yes">
+				<source>Newsletter subscription</source>
+				<target>Newsletter-Abonnement</target>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.label" approved="yes">
+				<source>Email template</source>
+				<target>E-Mail-Template</target>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.PrettyEmailToSender" approved="yes">
+				<source>Pretty email</source>
+				<target>Hübsche E-Mail</target>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.SpecialEmailToSender" approved="yes">
+				<source>Special email</source>
+				<target>Außergewöhnliche E-Mail</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

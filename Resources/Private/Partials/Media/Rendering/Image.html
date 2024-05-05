@@ -17,10 +17,14 @@
                 <f:then>
                     <!-- file.properties.id: >>>{file.properties.id}<<< -->
 
+
+
                     <!-- f:image Viewhelper -->
                     <f:image loading="lazy"
                              src="{file.properties.id}"
                              treatIdAsReference="1" />
+
+
                     <f:if condition="{file.properties.embedSVG}">
                         <f:then>
                             <!-- embedded from ID: -->

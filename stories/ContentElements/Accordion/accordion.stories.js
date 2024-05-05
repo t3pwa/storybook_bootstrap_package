@@ -87,7 +87,7 @@ Primary.args = {
             header: "accordion/record/1/header",
             data: {
                 uid: "1",
-                header: "[Header] Lorem ipsum doloret 1/record/data/header",
+                header: "1/record/data/header",
                 bodytext: "Lorem ipsum bodytext",
                 subheader: "Sup header?",
                 link: "/news",
@@ -193,7 +193,7 @@ Tertiary.args = {
         },
         1: {
             data: {
-                header: "[Header] Lorem ipsum doloret 1/record/data/header",
+                header: "1/record/data/header",
                 bodytext: "Lorem ipsum bodytext",
                 subheader: "Sup header?",
                 link: "/news",

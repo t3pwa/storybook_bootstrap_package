@@ -1,0 +1,151 @@
+renderingOptions:
+  submitButtonLabel: Upload
+type: Form
+identifier: UploadFalMediaToNews
+label: 'Upload Fal Media to News'
+prototypeName: standard
+finishers:
+  -
+    options:
+      -
+        table: tx_news_domain_model_news
+        mode: insert
+        databaseColumnMappings:
+          pid:
+            value: 5
+          crdate:
+            value: '{__currentTimestamp}'
+          tstamp:
+            value: '{__currentTimestamp}'
+          datetime:
+            value: '{__currentTimestamp}'
+          title:
+#            value: '{SaveToDatabase.insertedUids.0}'
+            value: title
+          bodytext:
+            value: '{}'
+        elements:
+          fileupload:
+            mapOnDatabaseColumn: fal_media
+            #mapOnDatabaseColumn: fal_related_files
+      -
+        table: sys_file_reference
+        mode: insert
+        elements:
+          fileupload:
+            mapOnDatabaseColumn: uid_local
+            skipIfValueIsEmpty: true
+        databaseColumnMappings:
+          pid:
+            value: 5
+          tablenames:
+            value: tx_news_domain_model_news
+          fieldname:
+            value: fal_media
+            #value: fal_related_files
+          tstamp:
+            value: '{__currentTimestamp}'
+          crdate:
+            value: '{__currentTimestamp}'
+          showinpreview:
+            value: 1
+          table_local:
+            value: sys_file
+          uid_foreign:
+            value: '{SaveToDatabase.insertedUids.0}'
+
+      - table: sys_file_reference
+        mode: update
+        whereClause:
+          uid_foreign: '{SaveToDatabase.insertedUids.0}'
+          uid_local: 0
+        databaseColumnMappings:
+          pid:
+            value: 0
+          uid_foreign:
+            #value: 0
+            value: '{SaveToDatabase.insertedUids.0}'
+      - table: tx_news_domain_model_news
+        mode: update
+        whereClause:
+          uid: '{SaveToDatabase.insertedUids.0}'
+        databaseColumnMappings:
+          title:
+            value: '{SaveToDatabase.insertedUids.1}'
+
+    identifier: SaveToDatabase
+  -
+    options:
+      message: 'The file was uploaded successfully.'
+#      messageBody: 'The file was uploaded successfully.'
+#      messageCode: 0
+      contentElementUid: 458
+    identifier: Confirmation
+#    identifier: FlashMessage
+  -
+    options:
+      pageUid: 104 #news detail
+      additionalParameters: 'tx_news_pi1[news]={SaveToDatabase.insertedUids.0}'
+    identifier: Redirect
+  -
+    options:
+      message: 'The file was uploaded successfully.'
+      messageBody: 'The file was uploaded successfully.'
+      messageCode: 0
+    identifier: FlashMessage
+
+
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: 'Last Step Upload Video'
+    renderables:
+      -
+        properties:
+          saveToFileMount: '1:/user_upload/'
+          allowedMimeTypes:
+            - video/mp4
+            - video/avi
+            - video/mkv
+            - video/mpeg
+          fluidAdditionalAttributes:
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'Required valid video file'
+            -
+              code: 1221560718
+              message: 'Required valid video file'
+            -
+              code: 1347992400
+              message: 'Required valid video file'
+            -
+              code: 1347992453
+              message: 'Required valid video file'
+        type: FileUpload
+        identifier: fileupload
+        label: 'File upload (Video)'
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            options:
+              minimum: 1B
+              maximum: 1000M
+            identifier: FileSize
+      -
+        defaultValue: 'Video News Title'
+        type: Text
+        identifier: title
+        label: Title
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty

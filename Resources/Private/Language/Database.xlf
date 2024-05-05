@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" date="2021-02-20T11:57:00Z"
+		  original="EXT:storybook_bootstrap_package/Resources/Private/Language/Database.xlf"
+		  product-name="storybook_bootstrap_package">
+		<header/>
+		<body>
+			<!-- ### FORM EDITOR LABELS (TYPO3 backend)
+				 Translation keys: as set in your custom form setup
+			-->
+			<trans-unit id="formManager.selectablePrototypesConfiguration.standardExamples.label">
+				<source>Standard (EXT:storybook_bootstrap_package)</source>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.prettyEmailTemplates.label">
+				<source>Pretty email templates (EXT:storybook_bootstrap_package)</source>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.complaintForm.label">
+				<source>Complaint form (EXT:storybook_bootstrap_package)</source>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.standardExamples.newFormTemplates.BasicContactFormExample.label">
+				<source>Basic contact form</source>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.standardExamples.newFormTemplates.UploadFormExample.label">
+				<source>Upload form</source>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.prettyEmailTemplates.newFormTemplates.CustomFluidEmailExample.label">
+				<source>Custom Email templates</source>
+			</trans-unit>
+			<trans-unit id="formManager.selectablePrototypesConfiguration.complaintForm.newFormTemplates.CustomPrototypeExample.label">
+				<source>Complaint form</source>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.editor.formStyleClass.label">
+				<source>Form styling</source>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.editor.formStyleClass.default.label">
+				<source>Contact form</source>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.editor.formStyleClass.survey.label">
+				<source>Survey</source>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.editor.formStyleClass.subscription.label">
+				<source>Newsletter subscription</source>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.label">
+				<source>Email template</source>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.PrettyEmailToSender">
+				<source>Pretty email</source>
+			</trans-unit>
+			<trans-unit id="formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.SpecialEmailToSender">
+				<source>Special email</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

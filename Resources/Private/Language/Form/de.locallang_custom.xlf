@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" date="2018-09-08T12:46:21Z"
+		  original="EXT:storybook_bootstrap_package/Resources/Private/Language/Form/locallang_custom.xlf"
+		  product-name="storybook_bootstrap_package">
+		<header/>
+		<body>
+			<!-- ### CUSTOM VALUES IN FORMS
+				 Translation keys: are freely selectable
+				 Note: This also means that the fallback chain of the Form Framework is not available.
+			-->
+			<trans-unit id="email.salutation.mr" approved="yes">
+				<source>Dear Mr %s,</source>
+				<target>Sehr geehrter Herr %s,</target>
+			</trans-unit>
+			<trans-unit id="email.salutation.ms" approved="yes">
+				<source>Dear Ms %s,</source>
+				<target>Sehr geehrte Frau %s,</target>
+			</trans-unit>
+			<trans-unit id="email.salutation.neutral" approved="yes">
+				<source>Dear %1s %2s,</source>
+				<target>Guten Tag %1s %2s,</target>
+			</trans-unit>
+			<trans-unit id="email.thankyouMessage" xml:space="preserve" approved="yes">
+				<source>thank you for your message. We will contact you as soon as possible.
+
+Enclosed you will find your message sent to us.</source>
+				<target>vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.
+
+Anbei finden Sie eine Kopie Ihrer Nachricht.</target>
+			</trans-unit>
+			<trans-unit id="email.thankyouMessage.special" approved="yes">
+				<source>how great to hear from you. We'll get back to you soon - we promise!</source>
+				<target>wie toll, von Ihnen zu hören. Wir melden uns schon bald bei Ihnen – versprochen!</target>
+			</trans-unit>
+			<trans-unit id="email.receiver.introduction" approved="yes">
+				<source>The following message was sent via the contact form on our website:</source>
+				<target>Die folgende Nachricht wurde über das Kontaktformular unserer Website versendet:</target>
+			</trans-unit>
+			<trans-unit id="email.complimentaryClose" xml:space="preserve" approved="yes">
+				<source>Yours sincerely,
+ACME Inc.</source>
+				<target>Mit freundlichen Grüßen,
+Ihre ACME Inc.</target>
+			</trans-unit>
+			<trans-unit id="email.yourMessageToUs" approved="yes">
+				<source>Your message to us:</source>
+				<target>Ihre Nachricht an uns:</target>
+			</trans-unit>
+			<trans-unit id="email.footer.note.customization" approved="yes">
+				<source>This email uses a customized Fluid template and layout.</source>
+				<target>Diese E-Mail verwendet ein benutzerdefiniertes Fluid-Template und -Layout.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

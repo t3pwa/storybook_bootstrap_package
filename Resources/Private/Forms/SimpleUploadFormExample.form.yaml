@@ -1,0 +1,72 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+type: Form
+identifier: SimpleUploadFormExample
+label: 'Example - Upload form'
+prototypeName: standardExamples
+finishers:
+  -
+    options:
+      -
+        table: tx_storybookbootstrappackage_domain_model_data
+        mode: insert
+        databaseColumnMappings:
+          pid:
+            value: 140
+          crdate:
+            value: '{__currentTimestamp}'
+          tstamp:
+            value: '{__currentTimestamp}'
+          formtitle:
+            value: 'Upload form'
+        elements:
+          fileupload:
+            mapOnDatabaseColumn: media
+      -
+        table: sys_file_reference
+        mode: insert
+        elements:
+          fileupload:
+            mapOnDatabaseColumn: uid_local
+        databaseColumnMappings:
+          pid:
+            value: 140
+          tablenames:
+            value: tx_storybookbootstrappackage_domain_model_data
+          fieldname:
+            value: media
+          tstamp:
+            value: '{__currentTimestamp}'
+          crdate:
+            value: '{__currentTimestamp}'
+          uid_foreign:
+            value: '{SaveToDatabase.insertedUids.0}'
+    identifier: SaveToDatabase
+  -
+    options:
+      message: 'The file was uploaded successfully.'
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: "Why don't you upload something?"
+    renderables:
+      -
+        properties:
+          saveToFileMount: '1:/user_upload/'
+          allowedMimeTypes:
+            - application/pdf
+          fluidAdditionalAttributes:
+            required: required
+        type: FileUpload
+        identifier: fileupload
+        label: 'File upload'
+        validators:
+          -
+            identifier: NotEmpty

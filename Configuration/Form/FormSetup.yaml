@@ -1,0 +1,164 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          999: EXT:storybook_bootstrap_package/Resources/Private/Forms/
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: true
+
+      ### FORM MANAGER (TYPO3 BACKEND MODULE)
+      ### "Create new form" > "Predefined form"
+      ### The configuration adds more options to the "Form prototype" select field.
+      ### Each prototype provides existing forms as templates to build a new form.
+      formManager:
+        translationFiles:
+          20: 'EXT:storybook_bootstrap_package/Resources/Private/Language/Database.xlf'
+        selectablePrototypesConfiguration:
+          990:
+            identifier: standardExamples
+            label: formManager.selectablePrototypesConfiguration.standardExamples.label
+            newFormTemplates:
+              100:
+                templatePath: 'EXT:storybook_bootstrap_package/Resources/Private/Forms/BasicContactFormExample.form.yaml'
+                label: formManager.selectablePrototypesConfiguration.standardExamples.newFormTemplates.BasicContactFormExample.label
+              200:
+                templatePath: 'EXT:storybook_bootstrap_package/Resources/Private/Forms/UploadFormExample.form.yaml'
+                label: formManager.selectablePrototypesConfiguration.standardExamples.newFormTemplates.UploadFormExample.label
+          991:
+            identifier: prettyEmailTemplates
+            label: formManager.selectablePrototypesConfiguration.prettyEmailTemplates.label
+            newFormTemplates:
+              100:
+                templatePath: 'EXT:storybook_bootstrap_package/Resources/Private/Forms/CustomFluidEmailExample.form.yaml'
+                label: formManager.selectablePrototypesConfiguration.prettyEmailTemplates.newFormTemplates.CustomFluidEmailExample.label
+          992:
+            identifier: complaintForm
+            label: formManager.selectablePrototypesConfiguration.complaintForm.label
+            newFormTemplates:
+              100:
+                templatePath: 'EXT:storybook_bootstrap_package/Resources/Private/Forms/CustomPrototypeExample.form.yaml'
+                label: formManager.selectablePrototypesConfiguration.complaintForm.newFormTemplates.CustomPrototypeExample.label
+
+      prototypes:
+        ### PROTOTYPE: STANDARD (FOR EXAMPLES)
+        ### By using this custom prototype for (almost) all provided example forms,
+        ### the "storybook_bootstrap_package" extension prevents the following configuration
+        ### from affecting other forms in your TYPO3 installation.
+        ###
+        ### This does NOT necessarily mean that you MUST use custom prototypes in your TYPO3 project!
+        standardExamples:
+          __inheritances:
+            10: 'TYPO3.CMS.Form.prototypes.standard'
+          formEditor:
+            translationFiles:
+              20: 'EXT:storybook_bootstrap_package/Resources/Private/Language/Database.xlf'
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                translation:
+                  translationFiles:
+                    # index "10" is reserved for the default translation file.
+                    20: 'EXT:storybook_bootstrap_package/Resources/Private/Language/Form/locallang_general.xlf'
+                    30: 'EXT:storybook_bootstrap_package/Resources/Private/Language/Form/locallang_specific.xlf'
+                    40: 'EXT:storybook_bootstrap_package/Resources/Private/Language/Form/locallang_custom.xlf'
+                templateRootPaths:
+                  90: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Templates/Standard/'
+                partialRootPaths:
+                  90: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Partials/Standard/'
+                layoutRootPaths:
+                  90: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Layouts/Standard/'
+              formEditor:
+                editors:
+                  # Add "form styling" select field in form editor:
+                  500:
+                    identifier: formStyleClass
+                    templateName: Inspector-SingleSelectEditor
+                    label: formEditor.elements.Form.editor.formStyleClass.label
+                    propertyPath: renderingOptions.formStyleClass
+                    selectOptions:
+                      10:
+                        value: ''
+                        label: formEditor.elements.Form.editor.formStyleClass.default.label
+                      20:
+                        value: survey
+                        label: formEditor.elements.Form.editor.formStyleClass.survey.label
+                      30:
+                        value: subscription
+                        label: formEditor.elements.Form.editor.formStyleClass.subscription.label
+
+        ### PROTOTYPE: PRETTY EMAIL TEMPLATES
+        ### Again, the additional template paths are only applied to a new prototype
+        ### so that other forms are not affected by this example.
+        prettyEmailTemplates:
+          __inheritances:
+            # Inherits our "standardExamples" prototype with the additional translation files:
+            10: 'TYPO3.CMS.Form.prototypes.standardExamples'
+          finishersDefinition:
+            EmailToReceiver:
+              # Enable FluidEmail for all newly added email finishers:
+              formEditor:
+                predefinedDefaults:
+                  options:
+                    useFluidEmail: true
+              options:
+                # Custom templateName is set as a new preset for all emails to the receiver.
+                # If not set, the finisher would search for "Default" in all given template paths.
+                templateName: 'PrettyEmailToReceiver'
+                templateRootPaths:
+                  20: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Templates/Standard/Finishers/Email/'
+                layoutRootPaths:
+                  20: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Layouts/Standard/Finishers/Email/'
+            EmailToSender:
+              # Enable FluidEmail for all newly added email finishers:
+              formEditor:
+                predefinedDefaults:
+                  options:
+                    useFluidEmail: true
+              options:
+                # Custom templateName is set as a new preset for all emails to the sender.
+                # We will allow to override/select this name further below.
+                templateName: 'PrettyEmailToSender'
+                templateRootPaths:
+                  20: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Templates/Standard/Finishers/Email/'
+                layoutRootPaths:
+                  20: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Layouts/Standard/Finishers/Email/'
+          formElementsDefinition:
+            Form:
+              formEditor:
+                propertyCollections:
+                  finishers:
+                    # Allow to select the templateName in the Form Editor!
+                    # "10" is the existing key for the EmailToSender finisher configuration.
+                    # Note: If you also want a select field for the EmailToReceiver finisher, you will need to add configuration to key "20".
+                    10:
+                      editors:
+                        1199:
+                          identifier: templateName
+                          templateName: Inspector-SingleSelectEditor
+                          label: formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.label
+                          propertyPath: options.templateName
+                          selectOptions:
+                            10:
+                              value: PrettyEmailToSender
+                              label: formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.PrettyEmailToSender
+                            20:
+                              value: SpecialEmailToSender
+                              label: formEditor.elements.Form.finisher.EmailToReceiver.editor.templateName.SpecialEmailToSender
+
+        ### PROTOTYPE: COMPLAINT FORM
+        complaintForm:
+          __inheritances:
+            10: 'TYPO3.CMS.Form.prototypes.standard'
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  100: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Templates/ComplaintForm/'
+                partialRootPaths:
+                  100: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Partials/ComplaintForm/'
+                layoutRootPaths:
+                  100: 'EXT:storybook_bootstrap_package/Resources/Private/Frontend/Layouts/ComplaintForm/'
+            SingleSelect:
+              properties:
+                elementClassAttribute: 'custom-select'

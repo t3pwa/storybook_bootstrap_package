@@ -61,8 +61,8 @@ Primary.args = {
         0: {
             data: {
                 uid: "0",
-                title: "0/record/data/title",
-                header: "accordion/record/0/header",
+                // title: "0/record/data/title",
+                header: "header 0",
                 subheader: "0/record/data/subheader",
                 bodytext: "records/0/data/bodytext<br>Lorem ipsum bodytext<br>...<br>..<br>.<br>\n/end",
                 link: "http://www.de",
@@ -83,12 +83,11 @@ Primary.args = {
 
         },
         1: {
-
-            header: "accordion/record/1/header",
+            // header: "accordion/record/1/header",
             data: {
                 uid: "1",
-                header: "[Header] Lorem ipsum doloret 1/record/data/header",
-                bodytext: "Lorem ipsum bodytext",
+                header: "1/record/data/header",
+                bodytext: "Lorem ipsum bodytext 1",
                 subheader: "Sup header?",
                 link: "/news",
                 link_title: "Read more",
@@ -193,7 +192,7 @@ Tertiary.args = {
         },
         1: {
             data: {
-                header: "[Header] Lorem ipsum doloret 1/record/data/header",
+                header: "1/record/data/header",
                 bodytext: "Lorem ipsum bodytext",
                 subheader: "Sup header?",
                 link: "/news",

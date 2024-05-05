@@ -161,3 +161,13 @@ FormUpload.args = { ...Template.args,
         uid: 102
     }
 };
+
+export const NewsAddFormCongratulations = Template.bind({});
+NewsAddFormCongratulations.argTypes = { ...Template.argTypes, }
+NewsAddFormCongratulations.args = { ...Template.args,
+    data: {
+        ...Template.args.data,
+        uid: 105
+    }
+};
+

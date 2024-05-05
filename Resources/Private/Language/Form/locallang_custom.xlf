@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" date="2018-09-08T12:46:21Z"
+		  original="EXT:storybook_bootstrap_package/Resources/Private/Language/Form/locallang_custom.xlf"
+		  product-name="storybook_bootstrap_package">
+		<header/>
+		<body>
+			<!-- ### CUSTOM VALUES IN FORMS
+				 Translation keys: are freely selectable
+				 Note: This also means that the fallback chain of the Form Framework is not available.
+			-->
+			<trans-unit id="email.salutation.mr">
+				<source>Dear Mr %s,</source>
+			</trans-unit>
+			<trans-unit id="email.salutation.ms">
+				<source>Dear Ms %s,</source>
+			</trans-unit>
+			<trans-unit id="email.salutation.neutral">
+				<source>Dear %1s %2s,</source>
+			</trans-unit>
+			<trans-unit id="email.thankyouMessage" xml:space="preserve">
+				<source>thank you for your message. We will contact you as soon as possible.
+
+Enclosed you will find your message sent to us.</source>
+			</trans-unit>
+			<trans-unit id="email.thankyouMessage.special">
+				<source>how great to hear from you. We'll get back to you soon - we promise!</source>
+			</trans-unit>
+			<trans-unit id="email.receiver.introduction">
+				<source>The following message was sent via the contact form on our website:</source>
+			</trans-unit>
+			<trans-unit id="email.complimentaryClose" xml:space="preserve">
+				<source>Yours sincerely,
+ACME Inc.</source>
+			</trans-unit>
+			<trans-unit id="email.yourMessageToUs">
+				<source>Your message to us:</source>
+			</trans-unit>
+			<trans-unit id="email.footer.note.customization">
+				<source>This email uses a customized Fluid template and layout.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
