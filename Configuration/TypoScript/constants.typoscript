@@ -54,7 +54,9 @@ module.tx_storybookbootstrappackage {
 }
 
 ## Cart Constants
-@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/cart/constants.typoscript'
-@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/cart_products/constants.typoscript'
+#@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/cart/constants.typoscript'
+#@import 'EXT:storybook_bootstrap_package/Configuration/TypoScript/Extension/cart_products/constants.typoscript'
 
 page.theme.googleFont.enable = 0
+
+plugin.bootstrap_package.settings.scss >
