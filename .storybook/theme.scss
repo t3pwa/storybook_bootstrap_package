@@ -14,6 +14,7 @@
 @import "./src/Contrib/bootstrap5/scss/bootstrap";
 
 
+
 //
 // Compat
 //
@@ -31,8 +32,13 @@
 @import "./src/Scss/components/button";
 
 
+
+
 //@import "../components/navbar";
 @import "./src/Scss/components/navbar";
+
+
+
 // @import "../components/backendlayout";
 @import "./src/Scss/components/backendlayout";
 // @import "../components/section";
@@ -40,11 +46,14 @@
 
 //@import "../components/frame";
 @import "./src/Scss/components/frame";
-/*
-@import "../components/breadcrumb";
-@import "../components/subnav";
-@import "../components/footer";
-*/
+
+
+//@import "../components/breadcrumb";
+@import "./src/Scss/components/breadcrumb";
+//@import "../components/subnav";
+@import "./src/Scss/components/subnav";
+//@import "../components/footer";
+@import "./src/Scss/components/footer";
 
 @import "./src/Scss/components/carousel";
 @import "./src/Scss/components/accordion";
@@ -53,9 +62,9 @@
 @import "./src/Scss/components/tab";
 @import "./src/Scss/components/card";
 
-/*
-@import "../components/audio";
-*/
+
+//@import "../components/audio";
+@import "./src/Scss/components/audio";
 
 // @import "../components/link";
 @import "./src/Scss/components/link";
@@ -102,11 +111,13 @@
 //@import "../components/contentcontainer";
 @import "./src/Scss/components/contentcontainer";
 
-/*
+
 //
 // Plugins
 //
-@import "../plugins/cookieconsent";
+//@import "../plugins/cookieconsent";
+@import "./src/Scss/plugins/cookieconsent";
+/*
 @import "../plugins/photoswipe";
 */
 
@@ -117,3 +128,12 @@
 
 // there is no logo.scss in BSP
 @import "./../stories/Page/Header/_logo.scss";
+// @ToDo add scss component sf_events_mgt
+
+
+
+// Add a custom color to $theme-colors
+$custom-colors: (
+        "custom-color": #712cf9
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
