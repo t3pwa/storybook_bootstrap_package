@@ -109,9 +109,9 @@ renderables:
           saveToFileMount: '1:/user_upload/'
           allowedMimeTypes:
             - video/mp4
-            - video/avi
-            - video/mkv
+            - video/x-msvideo #avi
             - video/mpeg
+            - video/x-matroska
           fluidAdditionalAttributes:
             required: required
           validationErrorMessages:
