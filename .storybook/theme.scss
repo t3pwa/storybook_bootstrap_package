@@ -6,6 +6,8 @@
 // @import "./src/Scss/bootstrap5/variables.scss";
 
 @import "./_variables.scss";
+@import "./_variables-dark.scss";
+
 
 //
 // Import needed Bootstrap Files
@@ -137,3 +139,5 @@ $custom-colors: (
         "custom-color": #712cf9
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+

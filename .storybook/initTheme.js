@@ -10,7 +10,6 @@ export default create({
     brandTitle: ']init[ Storybook',
     brandUrl: 'http://t3v11.ddev.site:6006/',
 
-
     brandImage: '/fileadmin/introduction/images/introduction-package.svg',
     brandTarget: '_self',
 
